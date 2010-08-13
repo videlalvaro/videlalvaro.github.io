@@ -1,1 +1,28 @@
-My GitHub Page
+---
+layout: default
+title: Alvaro Videla
+---
+
+<div id="home">
+  <h1>Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h1>Projects</h1>
+  <ul class="posts">
+    <li><a href="http://code.google.com/p/mypeb/">PEB</a>: PHP Erlang Bridge</li>
+    <li><a href="http://github.com/videlalvaro/phpcask">PHPCask</a>: PHP Client for Bitcask</li>
+    <li><a href="http://github.com/videlalvaro/closerl">Closerl</a>: Clojure Erlang Bridge</li>
+    <li><a href="http://addons.mozilla.org/en-US/firefox/addon/9096/">FireSymfony</a>: Firebug extension for debugging symfony apps</li>
+    <li><a href="http://github.com/videlalvaro/InspectorD">InspectorD</a>: A Python server to inspect PHP Sessions</li>
+  </ul>
+
+  <h1>Talks</h1>
+  <ul class="posts">
+    <li><a href="http://www.slideshare.net/old_sound/debugging-and-profiling-symfony-apps">Debugging and Profiling Symfony Apps</a>: Symfony Live, February 2010 - Paris</li>
+    <li><a href="http://www.slideshare.net/old_sound/integrating-rabbitmq-with-php">Integrating RabbitMQ with PHP</a>: IPC Spring Edition, June 2010 - Berlin</li>
+    <li><a href="http://www.slideshare.net/old_sound/integrating-erlang-with-php">Integrating RabbitMQ with PHP</a>: IPC Spring Edition, June 2010 - Berlin and Erlang Factory London 2010</li>
+</div>
