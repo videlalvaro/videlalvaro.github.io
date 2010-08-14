@@ -16,7 +16,9 @@ Installation:
 First we have to configure the JInterface to work with our mvn local repo. (If there's a better way of doing this let me know, since I'm a complete Java n00b). We use *mvn* to install JInterface. Adapt the following command to suit your specific configuration:
 
 {% highlight sh %}
-mvn install:install-file -DgroupId=com.ericsson.otp -DartifactId=erlang -Dversion=1.5.3 -Dpackaging=jar -Dfile=/usr/local/lib/erlang/lib/jinterface-1.5.3/priv/OtpErlang.jar
+mvn install:install-file -DgroupId=com.ericsson.otp \
+-DartifactId=erlang -Dversion=1.5.3 -Dpackaging=jar \
+-Dfile=/usr/local/lib/erlang/lib/jinterface-1.5.3/priv/OtpErlang.jar
 {% endhighlight sh %}
 
 Then obtain the *closerl* source code:
@@ -50,7 +52,20 @@ Up to here what we did is to connect to the remote node. We have to create our n
 The result should be something like this, depending on your RabbitMQ configuration:
 
 {% highlight clj %}
-(("exchange" ("resource" "/" "exchange" "amq.direct") "direct" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "amq.topic") "topic" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "amq.rabbitmq.log") "topic" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "amq.fanout") "fanout" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "amq.headers") "headers" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "") "direct" "true" "false" ()) ("exchange" ("resource" "/" "exchange" "amq.match") "headers" "true" "false" ()))
+(("exchange" 
+  ("resource" "/" "exchange" "amq.direct") "direct" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "amq.topic") "topic" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "amq.rabbitmq.log") "topic" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "amq.fanout") "fanout" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "amq.headers") "headers" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "") "direct" "true" "false" ()) 
+("exchange" 
+  ("resource" "/" "exchange" "amq.match") "headers" "true" "false" ()))
 {% endhighlight %}
 
 What we did with *otp-rpc-and-receive* was to call the equivalent of Erlang's *rpc:call(node, module, function, args)*. Instead of using *node* we use our *connection* object. Then the second and third parameters are the module and function respectively.
