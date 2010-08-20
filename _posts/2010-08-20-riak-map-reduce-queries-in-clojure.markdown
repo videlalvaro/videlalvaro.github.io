@@ -16,8 +16,14 @@ When the Clojure server receives the message, it will do some processing and mar
 So, how does a Map/Reduce request looks like in this case? Based on the examples for the Riak Wiki this will be a similar query but for Clojure:
 
 {% highlight sh %}
-curl -X POST -H "content-type: application/json" http://localhost:8098/mapred --data @-
-{"inputs":[["alice","p1"],["alice","p2"],["alice","p5"]],"query":[{"map":{"language":"clojure","source":"(fn [data]  (let [words (re-seq #\"\\w+\" data)] (map (fn [v] (closerl/otp-tuple (closerl/otp-binary v) (closerl/otp-long 1))) words)))"}},{"reduce":{"language":"clojure","source":"(fn [vs] (let [v1 (remove-struct (remove-not-found vs)) v2 (apply concat v1) v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) (second v)))) {} v2)] (as-proplist v3 closerl/otp-binary closerl/otp-long)))"}}]}
+curl -X POST -H "content-type: application/json" \
+http://localhost:8098/mapred --data @-
+{"inputs":[["alice","p1"],["alice","p2"],["alice","p5"]],"query":
+[{"map":{"language":"clojure","source":"(fn [data]  (let [words (re-seq #\"\\w+\" data)]
+(map (fn [v] (closerl/otp-tuple (closerl/otp-binary v) (closerl/otp-long 1))) words)))"}},
+{"reduce":{"language":"clojure","source":"(fn [vs] (let [v1 (remove-struct (remove-not-found vs)) 
+v2 (apply concat v1) v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) (second v))))
+{} v2)] (as-proplist v3 closerl/otp-binary closerl/otp-long)))"}}]}
 {% endhighlight %}
 
 From all this mess let's extract the map function:
@@ -117,51 +123,7 @@ running m/r server
 
 The important thing here is that you see that *true* there before the "running m/r server" message. That means that Clojure could connect to the Erlang node where Riak is running.
 
-Now following the example from the Riak wiki you could try the following in a separate Terminal:
-
-{% highlight sh %}
-#insert some data in riak:
-curl -X PUT -H "content-type: text/plain" \
- http://localhost:8098/riak/alice/p1 --data-binary @-
-Alice was beginning to get very tired of sitting by her sister on the
-bank, and of having nothing to do: once or twice she had peeped into the
-book her sister was reading, but it had no pictures or conversations in
-it, 'and what is the use of a book,' thought Alice 'without pictures or
-conversation?'
-^D
-
-curl -X PUT -H "content-type: text/plain" \
- http://localhost:8098/riak/alice/p2 --data-binary @-
-So she was considering in her own mind (as well as she could, for the
-hot day made her feel very sleepy and stupid), whether the pleasure
-of making a daisy-chain would be worth the trouble of getting up and
-picking the daisies, when suddenly a White Rabbit with pink eyes ran
-close by her.
-^D
-
-curl -X PUT -H "content-type: text/plain" \
- http://localhost:8098/riak/alice/p5 --data-binary @-
-The rabbit-hole went straight on like a tunnel for some way, and then
-dipped suddenly down, so suddenly that Alice had not a moment to think
-about stopping herself before she found herself falling down a very deep
-well.
-^D
-
-#get data back just for a sanity check:
-curl -X GET -H "content-type: text/plain" http://localhost:8098/riak/alice/p1
-
-# run Clojure M/R Query:
-curl -X POST -H "content-type: application/json" http://localhost:8098/mapred --data @-
-{"inputs":[["alice","p1"],["alice","p2"],["alice","p5"]],"query":[{"map":{"language":"clojure","source":"(fn [data]  (let [words (re-seq #\"\\w+\" data)] (map (fn [v] (closerl/otp-tuple (closerl/otp-binary v) (closerl/otp-long 1))) words)))"}},{"reduce":{"language":"clojure","source":"(fn [vs] (let [v1 (remove-struct (remove-not-found vs)) v2 (apply concat v1) v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) (second v)))) {} v2)] (as-proplist v3 closerl/otp-binary closerl/otp-long)))"}}]}
-^D
-{% endhighlight %}
-
-
-You should see some output like:
-
-{% highlight js %}
-[{"hole":1,"moment":1,"Alice":3,"into":1,"picking":1,"a":6,"could":1,"no":1,"once":1,"but":1,"chain":1,"herself":2,"eyes":1,"sleepy":1,"down":2,"found":1,"be":1,"conversation":1,"or":3,"dipped":1,"sister":2,"what":1,"getting":1,"having":1,"in":2,"with":1,"feel":1,"own":1,"use":1,"that":1,"falling":1,"tunnel":1,"without":1,"twice":1,"White":1,"for":2,"book":2,"was":3,"considering":1,"is":1,"do":1,"it":2,"had":3,"making":1,"sitting":1,"deep":1,"reading":1,"hot":1,"about":1,"pleasure":1,"nothing":1,"worth":1,"well":2,"way":1,"conversations":1,"she":4,"daisies":1,"The":1,"the":7,"as":2,"mind":1,"think":1,"daisy":1,"not":1,"stopping":1,"some":1,"went":1,"made":1,"would":1,"her":5,"pictures":2,"whether":1,"very":3,"pink":1,"get":1,"by":2,"of":5,"and":5,"trouble":1,"stupid":1,"like":1,"suddenly":3,"close":1,"thought":1,"rabbit":1,"Rabbit":1,"straight":1,"when":1,"to":3,"up":1,"tired":1,"bank":1,"so":1,"So":1,"day":1,"beginning":1,"then":1,"ran":1,"on":2,"peeped":1,"before":1}]
-{% endhighlight %}
+You could follow the examples posted [here](http://github.com/videlalvaro/closerl/blob/master/riak_commands.sh) to see this in action.
 
 And that's it! Thanks for reading this long and please post your comments about this topic.
 
