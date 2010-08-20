@@ -11,7 +11,7 @@ Over this week I've been working on a proof of concept to see if it's possible t
 
 After startup that server will ping the Riak node to start a connecting and then will wait for incoming map/reduce queries. Then when there's a m/r request to Riak it will send a a message like this: *{slef(), Command, Value, CljFun}*, where Command will be the atom *map* or *red* –indicating the operation to perform–, Value is the return riak_object:get_value(Object), and CljFun is the function sent in the JSON request.
 
-When the Clojure server receives the message, it will do some processing and marshaling to the data, and the it will apply the CljFun to the Value. The CljFun will be read using _(read-string fval)_. I wrote some helpers that the function can call to do the processing and the assembly of the reply to Riak, which I will document later.
+When the Clojure server receives the message, it will do some processing and marshaling to the data, and then it will apply the CljFun to the Value. The CljFun will be read using _(read-string fval)_. I wrote some helpers that the function can call to do the processing and the assembly of the reply to Riak, which I will document later.
 
 So, how does a Map/Reduce request looks like in this case? Based on the examples for the Riak Wiki this will be a similar query but for Clojure:
 
@@ -47,7 +47,7 @@ And the reduce function:
   (as-proplist v3 closerl/otp-binary closerl/otp-long)))
 {% endhighlight %}
 
-What have here are a couple of anonymous functions that have access to some Clojure libraries for processing the data. For example in in the reduce example we want to return a data structure like:
+What we have here are a couple of anonymous functions that have access to some Clojure libraries for processing the data. For example in the reduce example we want to return a data structure like:
 
     [{<<"word1">>, Count1}, {<<"word2">>, Count2}, ...]
     
