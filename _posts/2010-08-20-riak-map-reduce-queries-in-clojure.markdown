@@ -73,7 +73,7 @@ What's missing on the Clojure side of things:
 - Add more helpers, load more libraries by default.
 - Polish the code implementation, suggestions are welcomed.
 
-As you can see there's a lot to do, but if you check the code, there's a lot ready to.
+As you can see there's a lot to do, but if you check the code, there's a lot ready to. Also since I'm mostly trying to get this working properly, I haven't test with complex cases etc. So please take it as it is.
 
 How can I get to play with it?
 
