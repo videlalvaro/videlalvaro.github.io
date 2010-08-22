@@ -1,3 +1,4 @@
+
 /*****************************************************************************/
 /*
 /* Common
@@ -33,7 +34,7 @@ body {
   background-color: #D1EAEF;
   font: 13.34px "helvetica neue", helvetica, arial, clean, sans-serif;
   *font-size: small;
-  text-align: center;
+  text-align: center; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,10 +82,12 @@ ul.posts {
   }
 
   ul.posts span{
-    color: #262F2F;
+    color: #666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
+    font-style: italic;
   }
+
 
 /*****************************************************************************/
 /*
@@ -129,7 +132,8 @@ ul.posts {
   }
 
   .site .meta {
-    color: #aaa;
+    color: #666;
+    font-style: italic;
   }
 
   .site .footer {
@@ -172,13 +176,11 @@ ul.posts {
   /* standard */
   
   #post pre {
-    border: 1px solid #ddd;
-    background-color: #eef;
     padding: 0 .4em;
+    border: none;
   }
   
   #post code {
-    border: 1px solid #ddd;
     background-color: #eef;
     font-size: 95%;
     padding: 0 .2em;
@@ -203,6 +205,8 @@ ul.posts {
   #post ul {
     margin-left: 1em;
   }
+
+ 
 
 #related {
   margin-top: 2em;
