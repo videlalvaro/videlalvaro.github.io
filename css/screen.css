@@ -30,8 +30,8 @@ img.floatleft {
 }
 
 body {
-  background-color: white;
-  font: 13.34px helvetica, arial, clean, sans-serif;
+  background-color: #D1EAEF;
+  font: 13.34px "helvetica neue", helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
 }
@@ -41,24 +41,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  margin-bottom: 1em;
+  font-size: 2.1em;
+  margin: 1.5em 0 1em -.5em;
 }
 
 p {
   margin: 1em 0;
 }
 
-a {
-  color: #00a;
+a:link,
+a:visited {
+  color: #006A7F;
+  text-decoration: none;
 }
 
 a:hover {
-  color: black;
+  color: #33CFCC;
 }
 
-a:visited {
-  color: #a0a;
-}
 
 table {
   font-size: inherit;
@@ -80,10 +80,10 @@ ul.posts {
     line-height: 1.75em;
   }
 
-  ul.posts span {
-    color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+  ul.posts span{
+    color: #262F2F;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
   }
 
 /*****************************************************************************/
@@ -106,13 +106,16 @@ ul.posts {
   margin-bottom: 2em;
 }
 
-  .site .title a {
-    color: #a00;
+  .site .title a:link,
+  .site .title a:visited {
+    color: #006A7F;
     text-decoration: none;
+    font-size: 4em;
+    margin-left: -.5em;
   }
   
   .site .title a:hover {
-    color: black;
+    color: #33CFCC;
   }
 
   .site .title a.extra {
