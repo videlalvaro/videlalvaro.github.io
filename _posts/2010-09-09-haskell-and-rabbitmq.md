@@ -23,7 +23,7 @@ Among the list of exchanges you will see a topic exchange by the name _amq.rabbi
 
 So we could have tree queues as the destination for the log messages. 
 
-In the following example I'll try to show how to consume messages from three private queues. The idea is that we could "spy" the server events on demand, and when we stop the consumers the queues should be gone. AMQP has a neat feature to allow this kind of use case which is to declare queues with no name –the server will provide a random name–, giving the _auto\_delete_ and _exclusive__ options as *true* and _durable_ as *false*. Then when our consumer get disconnected, the queue is deleted from the server.
+In the following example I'll try to show how to consume messages from three private queues. The idea is that we could "spy" the server events on demand, and when we stop the consumers the queues should be gone. AMQP has a neat feature to allow this kind of use case which is to declare queues with no name –the server will provide a random name–, giving the _auto\_delete_ and _exclusive_ options as *true* and _durable_ as *false*. Then when our consumer get disconnected, the queue is deleted from the server.
 
 Here's the code based on the examples from the AMQP library
 
