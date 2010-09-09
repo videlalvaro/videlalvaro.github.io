@@ -34,18 +34,17 @@ import Network.AMQP
 
 import qualified Data.ByteString.Lazy.Char8 as BL
 
-
 main = do
     conn <- openConnection "127.0.0.1" "/" "guest" "guest"
     chan <- openChannel conn
     
     --declare queues
-    errorQueue    <- declareQueue chan anonQueue
-    warningQueue  <- declareQueue chan anonQueue
-    infoQueue     <- declareQueue chan anonQueue
+    (errorQueue, _, _)     <- declareQueue chan anonQueue
+    (warningQueue,  _, _)  <- declareQueue chan anonQueue
+    (infoQueue, _, _)      <- declareQueue chan anonQueue
     
     putStrLn "Queues Declared: "
-    mapM_ putStrLn [errorQueue, warningQueue, infoQueue]
+    mapM_ (putStrLn) [errorQueue, warningQueue, infoQueue]
     
     -- bind queues
     bindQueue chan errorQueue "amq.rabbitmq.log" "error"
@@ -135,3 +134,6 @@ cabal install amqp
 {% endhighlight %}
 
 I really like Haskell as a language, so I'm quite happy that now there's a library to use it with RabbitMQ which is another nice piece of software.
+
+*UPDATE 2010-09-10*
+Holger Reinhard, the author of the AMQP package, kindly updated the library to return a tuple of (String, Int, Int) from the call to _declareQueue_. The first _Int_ is the number of messages and the second one is the number of consumers.
