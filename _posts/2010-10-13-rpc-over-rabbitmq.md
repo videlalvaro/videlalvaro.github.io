@@ -15,7 +15,7 @@ According to the AMQP spec there's a direct exchange with no public name to whic
 
 Here's an image to further illustrate the point:
 
-![RPC Over RabbitMQ](/images/RPC-OverRMQ.jpg)
+![RPC Over RabbitMQ](/images/RPC-OverRMQ.png)
 
 So, let's see the code now, which is written in Haskell as in the previous post. In this case we will have a server that will hold a Map of users to their surnames. We will query the server for the users surnames, so our request will be the user name that we will input as a parameter when we invoke our client. 
 
