@@ -7,9 +7,11 @@ title: RPC over RabbitMQ
 
 <span class="meta">September 09 2010</span>
 
-In this blog I would like to address a question that I see often in the RabbitMQ mailing list and IRC channel. How to reply to a job request with RabbitMQ? I think this question can be quite tricky for new users when one is still not familiar with AMQP. The big deal here is to know about the options that we can use to call _exchange.declare_ and _queue.declare_. Let's see then how to implement RPC using RabbitMQ and AMQP.
+In this blog I would like to address a question that I see often in the RabbitMQ mailing list and IRC channel. How to reply to a client request with RabbitMQ? I think this question can be quite tricky for new users when we are not familiar with AMQP. The big deal here is to know about the options that we can use to call _exchange.declare_ and _queue.declare_. So let's see how to implement RPC using RabbitMQ and AMQP.
 
-For our purposes we need a server that will get the job requests from a queue. That queue must be bound to an exchange where our client will send the job requests. So far, this is what we are used to do with RabbitMQ. Then we need a _reply queue_. A place where the responses from the server will go so they can reach our client. Since we can have many clients sending requests to the server, we can't prevent in advance the name of those queues, so we will let RabbitMQ assign those names. We also want that once the client is disconnected the queue is removed to keep the server status clean. We don't want to end with thousands of idle queues in the server. To achieve this we can declare an anonymous queue as we did in the [previous](http://videlalvaro.github.com/2010/09/haskell-and-rabbitmq.html) blog post. We need to get the queue name that RabbitMQ assigned to our client and then see someway to tell the server that we want the replies into that queue. How?
+For our purposes we need a server that will get the job requests from a queue. That queue must be bound to an exchange where our client will send the job requests. So far, this is what we are used to do with RabbitMQ. Then we need a _reply queue_. A place where the responses from the server will go so they can reach our client. Since we can have many clients sending requests to the server, we can't know in advance the name of those queues, so we will let RabbitMQ assign those names. We also want that once the client is disconnected the queue is removed to keep the server status clean –we don't want to end with thousands of idle queues in the server–. To achieve this we can declare an anonymous queue as we did in the [previous](http://videlalvaro.github.com/2010/09/haskell-and-rabbitmq.html) blog post. We need to get the queue name that RabbitMQ assigned to our client and then see how to tell the server that we want the replies into that queue.
+
+This seems like a lot of work… Well, not really if we use the power of AMQP.
 
 According to the AMQP spec there's a direct exchange with no public name to which every queue must be bound by default using the queue name as routing key. Our server has to use this exchange to reply to its clients, publishing the messages with said routing key. The next piece in our puzzle is the _reply-to_ property from AMQP messages. When our client publishes a request, it will send the queue name via the _reply-to_ property. Once the request is published it will wait and listen into its own anonymous queue. Once the RPC server gets the reply ready, it will send it to the exchange and it will finally arrive to our client. Easy…
 
@@ -17,7 +19,7 @@ Here's an image to further illustrate the point:
 
 ![RPC Over RabbitMQ](/images/RPC-OverRMQ.png)
 
-So, let's see the code now, which is written in Haskell as in the previous post. In this case we will have a server that will hold a Map of users to their surnames. We will query the server for the users surnames, so our request will be the user name that we will input as a parameter when we invoke our client. 
+So, let's see the code now, which is written in Haskell as in the previous post. In this case we will have a server that will hold a _Map_ of users to their surnames. We will query the server for the users _surnames_, so our request will be the user _name_ that we will input as a parameter when we invoke our client.
 
 Here's the Code for the client:
 
@@ -100,10 +102,15 @@ rpcServer chan (msg, env) = do
   ackEnv env
 
   where
+		-- extract routing key
     routingKey = fromJust $ msgReplyTo msg
+		-- build reply
     reply  = (newMsg {msgBody = (BL.pack (findSurname name))})
+		--extract user name
     name = BL.unpack $ msgBody msg
+		-- fake users database
     users = M.fromList([("Some","Guy"), ("Another","Dude"), ("John","Doe")])
+		-- lookup user surname in the Map
     findSurname name = 
       case M.lookup name users of
         Just v  -> v
