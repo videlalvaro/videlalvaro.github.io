@@ -136,4 +136,4 @@ User Surname is: Doe
 
 And that's it!
 
-I know this example is pretty simple, but I think is enough to illustrate how easy is to implement several kind of messaging patterns using RabbitMQ and AMQP.
+I know this example is pretty simple, but I think is enough to illustrate how easy is to implement several kinds of messaging patterns using RabbitMQ and AMQP.
