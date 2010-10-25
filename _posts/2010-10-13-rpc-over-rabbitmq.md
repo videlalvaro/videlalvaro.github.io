@@ -5,7 +5,7 @@ title: RPC over RabbitMQ
 
 # {{page.title}} #
 
-<span class="meta">September 09 2010</span>
+<span class="meta">October 13 2010</span>
 
 In this post I would like to address a question that I see often in the RabbitMQ mailing list and IRC channel. How to reply to a client request with RabbitMQ? I think this question can be quite tricky for new users when we are not familiar with AMQP. The big deal here is to know about the options that we can use to call _exchange.declare_ and _queue.declare_. So let's see how to implement RPC using RabbitMQ and AMQP.
 
