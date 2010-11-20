@@ -13,7 +13,7 @@ In his blog he explains some of the advantages of using a functional programming
 
 > As we continue to add more screens, more protocols, and more data aggregation services, and frankly more data we need to be able use all cores in the server and the cluster. As Guy Steele implied at Strange Loop. The single processor programming model is going the way of the punch card.
 
-What I understand from this paragraph is that if we want to do multicore programming, then we have to use something else, not PHP, to get the full advantage of today's CPUs. He then goes an suggests Scala as the solution. I've done something similar in the past, suggesting Erlang as the super cool functional programming language that will relieve all your multicore programming pains. Back in June this year I realized how wrong I was.
+What I understand from that paragraph is that if we want to do multicore programming, then we have to use something else, not PHP, to get the full advantage of today's CPUs. He then goes an suggests Scala as the solution. I've done something similar in the past, suggesting Erlang as the super cool functional programming language that will relieve all your multicore programming pains. Back in June this year I realized how wrong I was.
 
 I was at the IPC Spring Edition conference in Berlin presenting my talk "Integrating Erlang with PHP". I started by talking about all the wonders that Erlang promises such as:
 
