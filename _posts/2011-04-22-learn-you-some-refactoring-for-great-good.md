@@ -5,7 +5,7 @@ title: Lear You Some Refactoring For Great Good
 
 # {{page.title}} #
 
-<span class="meta">April 21 2011</span>
+<span class="meta">April 22 2011</span>
 
 The last few days I had to refactor a class of 3600+ LoC… I don't want to go into the details of how painful is to accomplish such thing with a language like PHP that lacks a type system ala Haskell. What I would like to talk about are some coding *practices* I've found that I thought they where part of the past.
 
