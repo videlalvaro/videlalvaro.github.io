@@ -68,7 +68,7 @@ class SomeClass {
 
 Why do I have to be tracking down what `$this->quux` and `$this->baz['key']` could be at run time to see what this function is going to do? Also imagine that the method `someMethod` was our `sendMail` method from the example above and you would like to refactor it out to a new class that you want to use as a composite. You will have to see what `$this->quux` and `$this->baz['key']` mean for the entirety of the code that uses `SomeClass` to be able to refactor it. That's not nice. That's not easy to do, and is pretty hard to get it right. Even more with a language like PHP that is dynamically typed.
 
-Take a look at [Referential Transparency](http://en.wikipedia.org/wiki/Referential_transparency_\(computer_science\)). If you want your code to be *unit-testable*, then separating your stateful computations from those that don't depend on state (AKA pure code) will really help you to achieve such goal.
+Take a look at [Referential Transparency](http://bit.ly/fuzaUw). If you want your code to be *unit-testable*, then separating your stateful computations from those that don't depend on state (AKA pure code) will really help you to achieve such goal.
 
 As it is said many times, you don't need to be coding in Haskell to use its concepts in your daily language.
 
