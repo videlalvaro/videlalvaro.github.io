@@ -249,6 +249,7 @@ blockquote {
   width: 130px;
 
 }
-.book p{
-  margin: 1px;
+
+#book-container {
+  display: inline-block;
 }
