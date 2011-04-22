@@ -10,12 +10,18 @@ title: Alvaro Videla
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
-  
+
   <h1>Books:</h1>
   <ul class="posts">
+    <div class="book">
+        <a href="http://bit.ly/rabbitmq">
+            <img border="0" src="/images/rmqia_cover_small.png" />
+            <p>Buy this now!</p>
+        </a>
+    </div>
     <li><a href="http://bit.ly/rabbitmq">RabbitMQ in Action</a></li>
   </ul>
-  
+
   <h1>Projects</h1>
   <ul class="posts">
     <li><a href="http://github.com/videlalvaro/Thumper">Thumper</a>: RabbitMQ library for PHP</li>

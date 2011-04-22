@@ -34,7 +34,7 @@ body {
   background-color: #D1EAEF;
   font: 13.34px "helvetica neue", helvetica, arial, clean, sans-serif;
   *font-size: small;
-  text-align: center; 
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,7 +116,7 @@ ul.posts {
     font-size: 4em;
     margin-left: -.5em;
   }
-  
+
   .site .title a:hover {
     color: #33CFCC;
   }
@@ -126,7 +126,7 @@ ul.posts {
     text-decoration: none;
     margin-left: 1em;
   }
-  
+
   .site .title a.extra:hover {
     color: black;
   }
@@ -143,26 +143,26 @@ ul.posts {
     margin-top: 2em;
     overflow: hidden;
   }
-  
+
     .site .footer .contact {
       float: left;
       margin-right: 3em;
     }
-    
+
       .site .footer .contact a {
         color: #8085C1;
       }
-    
+
     .site .footer .rss {
       margin-top: 1.1em;
       margin-right: -.2em;
       float: right;
     }
-    
+
       .site .footer .rss img {
         border: 0;
       }
-    
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -170,38 +170,38 @@ ul.posts {
 /*****************************************************************************/
 
 #post {
-  
+
 }
 
   /* standard */
-  
+
   #post pre {
     padding: 0 .4em;
     border: none;
   }
-  
+
   #post code {
     background-color: #eef;
     font-size: 95%;
     padding: 0 .2em;
   }
-  
+
     #post pre code {
       border: none;
     }
-    
+
   /* terminal */
-  
+
   #post pre.terminal {
     border: 1px solid black;
     background-color: #333;
     color: white;
   }
-  
+
   #post pre.terminal code {
     background-color: #333;
   }
-  
+
   #post ul {
     margin-left: 1em;
   }
@@ -234,4 +234,21 @@ blockquote {
   color: #999;
   border-left: 2px solid #999;
   padding-left: 1em;
+}
+
+.book{
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+
+}
+.book img{
+  border: 1px solid #ccc;
+  display: block;
+  height: 180px;
+  width: 130px;
+
+}
+.book p{
+  margin: 1px;
 }
