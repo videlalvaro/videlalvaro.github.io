@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lear You Some Refactoring For Great Good
+title: Learn You Some Refactoring For Great Good
 ---
 
 # {{page.title}} #
