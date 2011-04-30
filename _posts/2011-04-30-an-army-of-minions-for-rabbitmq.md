@@ -9,13 +9,13 @@ title: An Army of Zombie Minions for RabbitMQ
 
 Imagine that you spawn a bunch of RabbitMQ consumers and let them in a zombie state waiting for orders to start performing some sort of work, like counting words occurrences in text files. Then from the secret chamber where you orchestrate things you will send a message to all those zombies and the will start working on what you tell them to. The sequence will be something like this:
 
-1) Launch 10 consumers.
-2) They do nothing, just wait for orders.
-3) Send an AMQP message: "Become a count words server".
-4) The 10 consumers will start consuming from a queue that will feed them text via AMQP messages.
-5) Send AMQP message: "Become a reverse words server".
-6) The 10 consumers will start consuming from a queue that will feed them text to reverse via AMQP messages.
-7) Laugh like a mad scientist (rainy night with thunderstorm required).
+1. Launch 10 consumers.
+2. They do nothing, just wait for orders.
+3. Send an AMQP message: "Become a count words server".
+4. The 10 consumers will start consuming from a queue that will feed them text via AMQP messages.
+5. Send AMQP message: "Become a reverse words server".
+6. The 10 consumers will start consuming from a queue that will feed them text to reverse via AMQP messages.
+7. Laugh like a mad scientist (rainy night with thunderstorm required).
 
 To achieve such scenario using RabbitMQ we will need the following:
 
