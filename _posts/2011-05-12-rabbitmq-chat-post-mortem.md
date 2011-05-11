@@ -9,7 +9,7 @@ title: RabbitMQ Chat Post Mortem
 
 ## Background ##
 
-Last week I started preparing a chapter for the [book](http://bit.ly/rabbitmq+) I'm writting so I had to come up with an example on how to extend RabbitMQ. I was looking for something fairly simple to implement that at the same time proved of value for the reader. Since recently [some](https://github.com/jbrisbin/riak-exchange) [custom](https://github.com/squaremo/rabbitmq-lvc-plugin) [exchanges](https://github.com/jbrisbin/random-exchange) had appeared on the mailing list, I saw this could be a nice example to implemenet, so I went for it.
+Last week I started preparing a chapter for the [book](http://bit.ly/rabbitmq+) I'm writting so I had to come up with an example on how to extend [RabbitMQ](http://www.rabbitmq.com/). I was looking for something fairly simple to implement that at the same time proved of value for the reader. Since recently [some](https://github.com/jbrisbin/riak-exchange) [custom](https://github.com/squaremo/rabbitmq-lvc-plugin) [exchanges](https://github.com/jbrisbin/random-exchange) had appeared on the mailing list, I saw this could be a nice example to implemenet, so I went for it.
 
 In case you don't know what [RabbitMQ](http://www.rabbitmq.com/) is, I'll explain it briefly here. RabbitMQ is a messaging server that as such you use it to pass messages around in your applications. You can send event notifications through it; enqueue tasks for background processing; collect logs from many sources and filter them; etc. Considering all that, creating a Chat where RabbitMQ is used as the message router doesn't sound so _crazy_.
 
