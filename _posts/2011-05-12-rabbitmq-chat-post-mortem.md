@@ -61,13 +61,13 @@ Once I've got the chat up and running. I've showed it to some friends on Twitter
 
 Then Reddit users started to do some nasty things against the poor ol' little server. Some guy ran Apache Benchmark against it. Here are the [results](http://pastebin.com/ecVX7xtv): 100000 requests in 43~ seconds. I would say that's not bad for such a simple and _smalish_ setup.
 
-Besides from all the obscenity that you can get when you leave the internet without moderation, some funny messages passed around, like:
-
-> whats rabbitmq anyway, some weird language bindings to zmq?
-
 Not happy with that another developer –[@danopia](http://twitter.com/#!/danopia)– created some Ruby [gists](https://gist.github.com/5c4769f21486a3c34d6a/442139759a20ed79ec2f9d805de156f2d2216cec) to act as bots that were constantly posting messages to chat.
 
 [@michaelklishin](http://twitter.com/#!/michaelklishin) further developed the concept and created some bots that opened hundreds of idle websockets connections to the server. They weren't sending messages, but they triggered the creation of their own queues on the server which added more workload to RabbitMQ. All these scripts now have their own [Github repository](https://github.com/michaelklishin/rmq-chat-load-testing-scripts).
+
+Besides from all the obscenity that you can get when you leave the internet without moderation, some funny messages passed around, like:
+
+> whats rabbitmq anyway, some weird language bindings to zmq?
 
 After some hours it reached __350~__ users and the server crashed. There was no flow control… no throttle, no nothing… the internet… free to take down a poor web chat baby.
 
