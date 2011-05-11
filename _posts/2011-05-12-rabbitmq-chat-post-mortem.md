@@ -41,6 +41,8 @@ And that was basically it.
 
 Some people raised valid complains about the chat interface having some CSS problems. Also I was too lazy to implement a rooster kind of feature. The goal of the chat was to test the proof of concept that was the Recent History Exchange. Just that, nothing more. It wasn't meant to become a full blown chat. Perhaps in the future I could try to build a more interesting chat, but not in this case.
 
+Also keep in mind that this __was not made to compete with other solutions__ like the [APE server](http://www.ape-project.org/wiki/index.php/Setup) or [Node JS](http://nodejs.org/).
+
 ## The Setup ##
 
 To deploy the server I've got a __vps200__ from [Servergrove](http://www.servergrove.com/vps): 1 GB of RAM and 2 cores. I asked for a bare bones installation of Ubuntu 10.4 on it. The account set up was really easy and their admin panel is pretty slick.
