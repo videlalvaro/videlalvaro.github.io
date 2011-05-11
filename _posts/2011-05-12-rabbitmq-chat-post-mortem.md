@@ -45,11 +45,7 @@ Some people raised valid complains about the chat interface having some CSS prob
 
 To deploy the server I've got a __vps200__ from [Servergrove](http://www.servergrove.com/vps): 1 GB of RAM and 2 cores. I asked for a bare bones installation of Ubuntu 10.4 on it. The account set up was really easy and their admin panel is pretty slick.
 
-Once I've got the login details I ssh'ed into the server and compiled Erlang from source. From there it was a matter of __20 seconds to get RabbitMQ up and running__. I used the latest [Generic Unix Distribution](http://www.rabbitmq.com/releases/rabbitmq-server/v2.4.1/rabbitmq-server-generic-unix-2.4.1.tar.gz) to get it installed.
-
-
-<iframe src="http://player.vimeo.com/video/10254034?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/10254034">Installing RabbitMQ</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.
-
+Once I've got the login details I ssh'ed into the server and compiled Erlang from source. From there it was a matter of [20 seconds to get RabbitMQ up and running](http://vimeo.com/10254034). I used the latest [Generic Unix Distribution](http://www.rabbitmq.com/releases/rabbitmq-server/v2.4.1/rabbitmq-server-generic-unix-2.4.1.tar.gz) to get it installed.
 
 After I've got the server installed, I've added the Recent History Exchange and the [Management Plugin](http://www.rabbitmq.com/plugins.html#rabbitmq-management). The latter so I could easily monitor the status of the server directly from the web.
 
@@ -89,13 +85,7 @@ It uses the `rabbitmqctl` script to list the queues, it `greps` the queues whose
 
 As you can see there, the server was routing more than __5000 messages__ per second using __86MB of RAM__.
 
-As the time passed I started to get tired since it was around 4:00AM, Sunday morning. I took some screenshots of the current broker status, made a small screen cast out of what was happening and went to bed.
-
-This was the video showcasing the server _load average_, number of routed messages, channels opened to the broker and queues:
-
-
-<iframe src="http://player.vimeo.com/video/23424752?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/23424752">RabbitMQ Chat</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.
-
+As the time passed I started to get tired since it was around 4:00AM, Sunday morning. I took some screenshots of the current broker status, made a small screen cast out of what was happening and went to bed. [This is the video showcasing the server](http://vimeo.com/23424752) _load average_, number of routed messages, channels opened to the broker and queues.
 
 The load average was pretty low. The same can be said of the memory used by the broker. It seems I was really cheating by using Erlang :D
 
