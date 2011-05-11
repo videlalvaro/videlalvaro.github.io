@@ -47,7 +47,9 @@ To deploy the server I've got a __vps200__ from [Servergrove](http://www.serverg
 
 Once I've got the login details I ssh'ed into the server and compiled Erlang from source. From there it was a matter of __20 seconds to get RabbitMQ up and running__. I used the latest [Generic Unix Distribution](http://www.rabbitmq.com/releases/rabbitmq-server/v2.4.1/rabbitmq-server-generic-unix-2.4.1.tar.gz) to get it installed.
 
-<iframe src="http://player.vimeo.com/video/10254034?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/10254034">Installing RabbitMQ</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
+<iframe src="http://player.vimeo.com/video/10254034?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/10254034">Installing RabbitMQ</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.
+
 
 After I've got the server installed, I've added the Recent History Exchange and the [Management Plugin](http://www.rabbitmq.com/plugins.html#rabbitmq-management). The latter so I could easily monitor the status of the server directly from the web.
 
