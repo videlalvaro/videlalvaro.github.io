@@ -91,7 +91,9 @@ As the time passed I started to get tired since it was around 4:00AM, Sunday mor
 
 This was the video showcasing the server _load average_, number of routed messages, channels opened to the broker and queues:
 
-<iframe src="http://player.vimeo.com/video/23424752?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/23424752">RabbitMQ Chat</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
+<iframe src="http://player.vimeo.com/video/23424752?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/23424752">RabbitMQ Chat</a> from <a href="http://vimeo.com/user1169087">Alvaro Videla</a> on <a href="http://vimeo.com">Vimeo</a>.
+
 
 The load average was pretty low. The same can be said of the memory used by the broker. It seems I was really cheating by using Erlang :D
 
