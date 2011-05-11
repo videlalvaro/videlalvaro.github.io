@@ -9,9 +9,9 @@ title: RabbitMQ Chat Post Mortem
 
 ## Background ##
 
-Last week I started preparing a chapter for the [book](http://bit.ly/rabbitmq+) I'm writting so I had to come up with an example on how to extend [RabbitMQ](http://www.rabbitmq.com/). I was looking for something fairly simple to implement that at the same time proved of value for the reader. Since recently [some](https://github.com/jbrisbin/riak-exchange) [custom](https://github.com/squaremo/rabbitmq-lvc-plugin) [exchanges](https://github.com/jbrisbin/random-exchange) had appeared on the mailing list, I saw this could be a nice example to implemenet, so I went for it.
+Last week I started preparing a chapter for the [book](http://bit.ly/rabbitmq+) I'm writing so I had to come up with an example on how to extend [RabbitMQ](http://www.rabbitmq.com/). I was looking for something fairly simple to implement that at the same time proved of value for the reader. Since recently [some](https://github.com/jbrisbin/riak-exchange) [custom](https://github.com/squaremo/rabbitmq-lvc-plugin) [exchanges](https://github.com/jbrisbin/random-exchange) had appeared on the mailing list, I thought that creating a custom exchange could be a nice example to implement, so I went for it.
 
-In case you don't know what [RabbitMQ](http://www.rabbitmq.com/) is, I'll explain it briefly here. RabbitMQ is a messaging server that as such you use it to pass messages around in your applications. You can send event notifications through it; enqueue tasks for background processing; collect logs from many sources and filter them; etc. Considering all that, creating a Chat where RabbitMQ is used as the message router doesn't sound so _crazy_.
+In case you don't know what [RabbitMQ](http://www.rabbitmq.com/) is, I'll explain it briefly here. RabbitMQ is a messaging server that as such you use it to pass messages around in your applications. You can send event notifications through it; enqueue tasks for background processing; collect logs from many sources and filter them; and so on. Taking all that into account, creating a Chat where RabbitMQ is used as the message router doesn't sound so _crazy_.
 
 For that purpose I created the [Recent History Exchange](https://github.com/videlalvaro/rabbitmq-recent-history-exchange). The purpose of having such custom exchange was to provide the user that joined the chat room with a minimal context of the last 20 messages that passed through the chat room.
 
@@ -59,7 +59,7 @@ To get the Chat up and running I didn't do anything special. Erlang compiled wit
 
 Once I've got the chat up and running. I've showed it to some friends on Twitter to be sure it wasn't broken. The next day I decided to ask [Reddit](http://www.reddit.com/r/programming/comments/h6aai/hey_reddit_i_wrote_a_chat_app_using_rabbitmq_and/) to try to take down the chat. There the fun started.
 
-Then Reddit users started to do some nasty things against the poor ol' little server. Some guy ran Apache Benchmark against it. Here are the [results](http://pastebin.com/ecVX7xtv): 100000 requests in 43~ seconds. I would say that's not bad for such a simple and _smalish_ setup.
+Then Reddit users started to do some nasty things against the poor ol' little server. Some guy ran Apache Benchmark against it. Here are the [results](http://pastebin.com/ecVX7xtv): 100000 requests in 43~ seconds. I would say that's not bad for such a simple and _smallish_ setup.
 
 Not happy with that another developer –[@danopia](http://twitter.com/#!/danopia)– created some Ruby [gists](https://gist.github.com/5c4769f21486a3c34d6a/442139759a20ed79ec2f9d805de156f2d2216cec) to act as bots that were constantly posting messages to chat.
 
