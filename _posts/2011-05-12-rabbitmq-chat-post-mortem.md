@@ -77,7 +77,7 @@ Besides from all the obscenity that you can get when you leave the internet with
 
 After some hours it reached __350~__ users and the server crashed. Of course you can prevent yourself from that happening as we will discuss later. In this case there was no flow control… no throttle, no nothing… just the internet free to take down a poor web chat baby.
 
-## Preventing RabbitMQ from Crashing ##
+## Hardening your Crash Proof Bunny ##
 
 On detail that we have to keep into account when running RabbitMQ is that it is actually running on top of the Erlang Virtual Machine. This means that the issues that can make Erlang crash, can also crash RabbitMQ, or for that matter any system that you develop with Erlang.
 
