@@ -7,6 +7,8 @@ title: RabbitMQ Chat Post Mortem
 
 <span class="meta">May 12 2011</span>
 
+> NOTE: I'm preparing a post update to clarify some questions that I'm getting here and on Reddit. Also I'm creating some test scripts to try to easily reproduce the messaging bits so other people can test this scenario. So far I'm failing to kill RabbitMQ on my machine with 1000 consumers, 1 queue and 1 channel per consumer. I've got a loop publishing 50 bytes messages. I hope to publish this later in the afternoon.
+
 ## Background ##
 
 Last week I started preparing a chapter for the [book](http://bit.ly/rabbitmq+) I'm writing so I had to come up with an example on how to extend [RabbitMQ](http://www.rabbitmq.com/). I was looking for something fairly simple to implement that at the same time proved of value for the reader. Since recently [some](https://github.com/jbrisbin/riak-exchange) [custom](https://github.com/squaremo/rabbitmq-lvc-plugin) [exchanges](https://github.com/jbrisbin/random-exchange) had appeared on the mailing list, I thought that creating a custom exchange could be a nice example to implement, so I went for it.
@@ -33,7 +35,7 @@ What happened when a user connects to the chat is this:
 
 3) All queues where bound to the custom Recent History Exchange. As I said before, every user that connected to the chat got the last 20 messages thanks to this exchange. This exchange acted like a single chat room where every user was logged in.
 
-4) Every time a user sent a message to the server, that message got __fanout'ed to every queue bound to the exchange__. Depending on the amount of queues created on the server, this pattern of message distribution can get very very slow. When the chat got __500~ users online__ and __10~__ messages published per second, that mean the server was routing each of those then messages to each of the __500~ queues__.
+4) Every time a user sent a message to the server, that message got __fanout'ed to every queue bound to the exchange__. Depending on the amount of queues created on the server, this pattern of message distribution can get very very slow. When the chat got __500~ users online__ and __10~__ messages published per second, that meant the server was routing each of those then messages to each of the __500~ queues__.
 
 5) Once the broker delivered the message to the private queue, the consumer took care of sending it back to the Websocket process that started it, and from there it was sent to the browser.
 
