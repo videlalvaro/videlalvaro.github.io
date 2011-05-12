@@ -75,7 +75,7 @@ Besides from all the obscenity that you can get when you leave the internet with
 
 > whats rabbitmq anyway, some weird language bindings to zmq?
 
-After some hours it reached __350~__ users and the server crashed. Of course you can prevent yourself from that happening as we will discuss later. In this case there was no flow control… no throttle, no nothing… just the internet free to take down a poor web chat baby.
+It took more than __350__ users and __2000__+ messages/second to exhaust my the little VPS memory to crash the server. This can be prevented of course, as we will discuss later. In this case there was no flow control… no throttle, no nothing… just the internet free to take down a poor web chat baby. So what happened?
 
 ## Hardening your Crash Proof Bunny ##
 
