@@ -49,7 +49,7 @@ Also keep in mind that this __was not made to compete with other solutions__ lik
 
 ## The Setup ##
 
-To deploy the server I've got a __vps200__ from [Servergrove](http://www.servergrove.com/vps): 1 GB of RAM and 2 cores. I asked for a bare bones installation of Ubuntu 10.4 on it. The account set up was really easy and their admin panel is pretty slick.
+To deploy the server I've got a __vps200__ from [Servergrove](http://www.servergrove.com/vps): 1 GB of RAM and 2 cores. I asked for a bare bones installation of Ubuntu 10.04 on it. The account set up was really easy and their admin panel is pretty slick.
 
 Once I've got the login details I ssh'ed into the server and compiled Erlang from source. From there it was a matter of [20 seconds to get RabbitMQ up and running](http://vimeo.com/10254034). I used the latest [Generic Unix Distribution](http://www.rabbitmq.com/releases/rabbitmq-server/v2.4.1/rabbitmq-server-generic-unix-2.4.1.tar.gz) to get it installed.
 
