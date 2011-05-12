@@ -7,7 +7,9 @@ title: RabbitMQ Chat Post Mortem
 
 <span class="meta">May 12 2011</span>
 
-> NOTE: I'm preparing a post update to clarify some questions that I'm getting here and on Reddit. Also I'm creating some test scripts to try to easily reproduce the messaging bits so other people can test this scenario. So far I'm failing to kill RabbitMQ on my machine with 1000 consumers, 1 queue and 1 channel per consumer. I've got a loop publishing 50 bytes messages. I hope to publish this later in the afternoon.
+> NOTE 1: I'm preparing a post update to clarify some questions that I'm getting here and on Reddit. Also I'm creating some test scripts to try to easily reproduce the messaging bits so other people can test this scenario. So far I'm failing to kill RabbitMQ on my machine with 1000 consumers, 1 queue and 1 channel per consumer. I've got a loop publishing 50 bytes messages. I hope to publish this later in the afternoon.
+
+> NOTE 2: Since this blog is just a git repository on Github, you can track the changes transparently [here](https://github.com/videlalvaro/videlalvaro.github.com):
 
 ## Background ##
 
@@ -35,9 +37,9 @@ What happened when a user connects to the chat is this:
 
 3) All queues where bound to the custom Recent History Exchange. As I said before, every user that connected to the chat got the last 20 messages thanks to this exchange. This exchange acted like a single chat room where every user was logged in.
 
-4) Every time a user sent a message to the server, that message got __fanout'ed to every queue bound to the exchange__. Depending on the amount of queues created on the server, this pattern of message distribution can get very very slow. When the chat got __500~ users online__ and __10~__ messages published per second, that meant the server was routing each of those then messages to each of the __500~ queues__.
+4) Every time a user sent a message to the server, that message got __fanout'ed to every queue bound to the exchange__. Depending on the amount of queues created on the server, this pattern of message distribution can get very very slow. When the chat got __500~ users online__ and __10~__ messages published per second, that meant the server was routing each of those ten messages to each of the __500~ queues__.
 
-5) Once the broker delivered the message to the private queue, the consumer took care of sending it back to the Websocket process that started it, and from there it was sent to the browser.
+5) Once the broker delivered the message to the private queue, the consumer took care of sending it back to the Websocket process that started it, and from there it was sent to the browser. The messages where transient, kept in memory by the broker while they were getting delivered to the consumers.
 
 And that was basically it.
 
@@ -59,7 +61,7 @@ To deploy the code I used Github to get the source code for the application. Whe
 
 ## Going Live ##
 
-To get the Chat up and running I didn't do anything special. Erlang compiled with default options. RabbitMQ started with default options. Nothing fancy. There was no clustering set up or any kind of failover.
+To get the Chat up and running I didn't do anything special. Erlang compiled with default options. RabbitMQ started with default options. Nothing fancy. There was no clustering set up or any kind of failover. As you see, this was a pretty minimalistic setup. No load balancers, no heartbeats to check system health, etc.
 
 Once I've got the chat up and running. I've showed it to some friends on Twitter to be sure it wasn't broken. The next day I decided to ask [Reddit](http://www.reddit.com/r/programming/comments/h6aai/hey_reddit_i_wrote_a_chat_app_using_rabbitmq_and/) to try to take down the chat. There the fun started.
 
@@ -73,11 +75,23 @@ Besides from all the obscenity that you can get when you leave the internet with
 
 > whats rabbitmq anyway, some weird language bindings to zmq?
 
-After some hours it reached __350~__ users and the server crashed. There was no flow control… no throttle, no nothing… the internet… free to take down a poor web chat baby.
+After some hours it reached __350~__ users and the server crashed. Of course you can prevent yourself from that happening as we will discuss later. In this case there was no flow control… no throttle, no nothing… just the internet free to take down a poor web chat baby.
 
-I took a look at the Erlang crash dump and found out that the server somehow ran out of memory. [@michaelklishin](http://twitter.com/#!/michaelklishin) suggested to change the RabbitMQ `memory_high_watermark` settings. The server was using __400MB__ top. The new settings allowed the server to go up to __800MB__ if needed.
+## Preventing RabbitMQ from Crashing ##
 
-From that point it kept running pretty smoothly and I went to sleep when there were 530~ users online. How did I knew that… pretty simple. I used a simple shell command to count the number of private queues on the broker:
+On detail that we have to keep into account when running RabbitMQ is that it is actually running on top of the Erlang Virtual Machine. This means that the issues that can make Erlang crash, can also crash RabbitMQ, or for that matter any system that you develop with Erlang.
+
+In this particular case, after I took a look at the Erlang crash dump, I could find that the server somehow ran out of memory. What the Erlang Virtual Machine does when it runs out of memory is to exit the process. As simple as that.
+
+A particular setting for RabbitMQ that can help in this case is the __memory\_high\_watermark__ parameter that you can specify in your RabbitMQ configuration file. [@michaelklishin](http://twitter.com/#!/michaelklishin) suggested me to change it. The server was using __400MB__ top, that is about a 40% of the available memory that Erlang can detect from the machine. I changed that value to 80% so the new settings allowed the server to go up to __800MB__ if needed.
+
+As I said before, the chat server didn't implemented any kind of throttling. So as long as the websockets connection could get opened, then a new AMPQ Channel and a new Queue would be declared for that user. For the purposes of a proof of concept project or a prototype like this web chat it might be OK to run a system like in this way but if you do some serious production deployment of a RabbitMQ system, you will look at ways of preventing the server from getting flowed by connections, messages and hyper active producers.
+
+There is much more you can do here to optimize your RabbitMQ server, like configure the number of Erlang Processes the server can spawn for example. You can see the description of the arguments accepted by the `erl` command [here](http://erlang.org/doc/man/erl.html) and the RabbitMQ configuration details [here](http://www.rabbitmq.com/configure.html).
+
+## Running Smoothly ##
+
+From that point it kept running pretty smoothly and I went to sleep when there were __530~__ users online. How did I knew that… pretty simple. I used a simple shell command to count the number of private queues on the broker:
 
 {% highlight sh %}
 while true; do ./rabbitmqctl list_queues | grep amq. | wc -l; uptime; sleep 5s; done
@@ -103,13 +117,13 @@ On Monday I decided to take the chat offline since the test was finished and peo
 
 ## What I've learned ##
 
-Apart that I've used RabbitMQ in production before, this scenario showed again that is a pretty robust software. Used with the default settings it crashed only because the memory allocated to it was reduced. It's worth noting here that is the Erlang Virtual Machine what crashed when it runs out of memory.
+Apart that I've used RabbitMQ in production before, this scenario showed again that is a __pretty robust software__. Used with the default settings it crashed only because the memory allocated to it was reduced. It's worth noting here that is the Erlang Virtual Machine what crashed when it runs out of memory.
 
 Another point is that Erlang has some serious tools to keep a system alive. Apart from all the cool OTP behaviors like `supervisors` and `gen_servers`, you get for free tools like:
 
 - Standard report logger
 - Report browser, with filters by date, regex. etc. That makes it simple to browse through logs.
-- Etop. Is like the unix top command but for Erlang Virtual Machines.
+- Etop. Is like the unix `top` command but for Erlang Virtual Machines.
 
 Also it has things like and embedded database: [Mnesia](http://www.erlang.org/doc/apps/mnesia/index.html). Having a database that understand the language you are building your applications with simplifies the process a lot.
 
