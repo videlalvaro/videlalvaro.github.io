@@ -19,13 +19,13 @@ So, how does a Map/Reduce request looks like in this case? Based on the examples
 curl -X POST -H "content-type: application/json" \
 http://localhost:8098/mapred --data @-
 {"inputs":[["alice","p1"],["alice","p2"],["alice","p5"]],"query":
-[{"map":{"language":"clojure","source":"(fn [data]  (let [words 
-(re-seq #\"\\w+\" data)] (map (fn [v] (closerl/otp-tuple 
+[{"map":{"language":"clojure","source":"(fn [data]  (let [words
+(re-seq #\"\\w+\" data)] (map (fn [v] (closerl/otp-tuple
 (closerl/otp-binary v) (closerl/otp-long 1))) words)))"}},
-{"reduce":{"language":"clojure","source":"(fn [vs] (let [v1 
-(remove-struct (remove-not-found vs)) v2 (apply concat v1) 
-v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) 
-(second v)))) {} v2)] (as-proplist v3 closerl/otp-binary 
+{"reduce":{"language":"clojure","source":"(fn [vs] (let [v1
+(remove-struct (remove-not-found vs)) v2 (apply concat v1)
+v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0)
+(second v)))) {} v2)] (as-proplist v3 closerl/otp-binary
 closerl/otp-long)))"}}]}
 {% endhighlight %}
 
@@ -33,24 +33,24 @@ From all this mess let's extract the map function:
 
 {% highlight clj %}
 (fn [data]
-  (let [words (re-seq #\"\\w+\" data)] 
+  (let [words (re-seq #\"\\w+\" data)]
   (map (fn [v] (closerl/otp-tuple (closerl/otp-binary v) (closerl/otp-long 1))) words)))
 {% endhighlight %}
 
 And the reduce function:
 
 {% highlight clj %}
-(fn [vs] 
-  (let [v1 (remove-struct (remove-not-found vs)) 
-        v2 (apply concat v1) 
-        v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) (second v)))) {} v2)] 
+(fn [vs]
+  (let [v1 (remove-struct (remove-not-found vs))
+        v2 (apply concat v1)
+        v3 (reduce (fn [m v] (assoc m (first v) (+ (get m (first v) 0) (second v)))) {} v2)]
   (as-proplist v3 closerl/otp-binary closerl/otp-long)))
 {% endhighlight %}
 
 What we have here are a couple of anonymous functions that have access to some Clojure libraries for processing the data. For example in the reduce example we want to return a data structure like:
 
     [{<<"word1">>, Count1}, {<<"word2">>, Count2}, ...]
-    
+
 To do that we call the helper *as-proplist*  to accomplish that. It will iterate the map of key value pairs passed to it and then wrap them in the Erlang types passed as second and third parameters.
 
 At this point you are probably asking yourself about how advanced is this POC, is it stable, can I use it in production tomorrow, etc. I will try to address those points now.
@@ -80,21 +80,21 @@ How can I get to play with it?
 1) Get Riak's code:
 
     git clone http://github.com/basho/riak.git
-    
+
 2) Get riak_kv code from my fork:
 
     git clone http://github.com/videlalvaro/riak_kv.git
-    
+
 3) Get Closerl code:
 
     git clone http://github.com/videlalvaro/closerl.git
-    
+
 4) Modify Riak's code:
 
 In *rebar.config* point the dependency on *riak_kv* to your copy of the fork that you just've cloned:
 
   {riak_kv, "0.12.0", {git, "/path/to/riak_kv", "HEAD"}}
-  
+
 In *rel/files/vm.args change the Erlang parameters from *name* to *sname*
 
 In *rel/vars.config* change the node name from *riak@127.0.0.1* to *riak*
@@ -107,14 +107,14 @@ Once you did that then cd into the riak folder and run:
 ./rebar generate
 rel/riak/bin/riak console
 {% endhighlight %}
-  
-You are half done by now. Next step is to cd into the Closerl folder and run the following commands [1]:
+
+You are half done by now. Next step is to cd into the Closerl folder and run the following commands \[1\]:
 
 {% highlight sh %}
 lein deps
 lein run run.clj
 {% endhighlight %}
-  
+
 That will start the map-reduce server. You should see some output like:
 
 {% highlight clj %}
