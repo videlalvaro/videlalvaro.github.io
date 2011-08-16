@@ -27,7 +27,7 @@ Regarding _running on all the cores_… well, normally you spawn many PHP thread
 
 What about _shared state_? When you call a PHP script it will load into memory all the configuration and things that make up the process state –extensions for example–, will process the request and then will cleanup and shutdown. Of course there's shared state in the programming model of PHP, but each PHP script running on the server has no idea that there are many –probably dozens– of other PHP scripts serving requests at the same time.
 
-This seems that we are comparing apples to some weird asian fruit that I don't even know the name but I know that it smells bad… and that raises the question of "ok do I need Scala, Erlang or [cool FP lang here]?" I'd venture to say yes, and here I'll negate all what I said before, bear with me.
+This seems that we are comparing apples to some weird asian fruit that I don't even know the name but I know that it smells bad… and that raises the question of "ok do I need Scala, Erlang or \[cool FP lang here\]?" I'd venture to say yes, and here I'll negate all what I said before, bear with me.
 
 I talked about code reload without stoping the server kind of worked by default with PHP. The thing is PHP is no server, PHP *is* served :). So your PHP script code *is reloaded* with every execution –unless you use APC– therefore updating the results of its executing right after you modifying the script, so comparing this to Erlang's way is –you guessed right– cheating. Now say you want to do a long running process with PHP and introduce changes latter, then yes, you'll have to restart that script. As you may guess, Erlang has an advantage here. Of course the average PHP user that is using the language for creating web pages won't care.
 
