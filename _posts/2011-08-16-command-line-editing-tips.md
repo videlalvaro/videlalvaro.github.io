@@ -31,3 +31,17 @@ And you want to move to the begging of the line. The you can do so by pressing `
 
 Now, there's a typo there, the folder shouldn't be _soem_ but _some_. How can you quickly jump to the _soem_ and edit that word? Press `C-a` to go to the begging of the line. Then press `M-f` to jump **f**orward from word to word. You can also do `M-b` to jump **b**ackwards. If instead of doing `M-f` you try `C-f` or `C-b` then the cursor will move character by character but in my case I'm used to just using the arrow keys for that.
 
+If you are at the beginning of the word _soem_ you can press `M-d` to **d**elete it and then you can type the corrected version.
+
+After you edited the line in both places you have something like this:
+
+{% highlight sh %}
+  $ mv ./path/to/some/file.txt ./path/to/some/file_1.txt
+{% endhighlight %}
+
+Now we realize that we want to swap source an destination since we made a mistake there. How can we do that without typing everything again? First place the cursor at the beginning of the second argument and type `C-k` to _kill_ everything till the end of the line. You will end with something like:
+
+{% highlight sh %}
+  $ mv ./path/to/soem/file.txt
+{% endhighlight %}
+
