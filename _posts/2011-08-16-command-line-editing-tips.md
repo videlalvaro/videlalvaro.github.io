@@ -79,12 +79,12 @@ I know this has been working like this since ages but somehow I felt the need to
 
 ## Summary ##
 
-`C-a`: jumps to the beginning of the line.
-`C-e`: jumps to the end of the line.
-`M-f`: moves forward word by word.
-`M-b`: moves backwards word by word.
-`C-k`: kills text till the end of the line.
-`C-y`: yanks previously killed text.
-`M-y`: cycles through the _kill ring_.
+- `C-a`: jumps to the beginning of the line.
+- `C-e`: jumps to the end of the line.
+- `M-f`: moves forward word by word.
+- `M-b`: moves backwards word by word.
+- `C-k`: kills text till the end of the line.
+- `C-y`: yanks previously killed text.
+- `M-y`: cycles through the _kill ring_.
 
 I hope this results in improved command line editing for your future CLI usage.
