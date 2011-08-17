@@ -67,3 +67,24 @@ Now type `M-d` to delete the `open` command, and type `rm` and that's it. Pretty
 
 An interesting feature is the _kill ring_ where all (well almost all) the text that you have killed before in the session is available. So after you _yank_ some text you can then press `M-y` to cycle through that text.
 
+What's cool about these keyboard bindings is that if you use Emacs you already know them because they are some sort of standard in \*nix software. Start for example a `mysql` console and enter the following query:
+
+{highlight sql %}
+SELECT a b c FORM the_table WHERE a=1;
+{% endhighlight %}
+
+Try using the keyboard shortcuts to fix the mistyped `FROM`: It just works! It will also work with your Erlang REPL and Haskell GHCi.
+
+I know this has been working like this since ages but somehow I felt the need to document it. You can also try some of these key bindings on most native text boxes on the Mac.
+
+## Summary ##
+
+`C-a`: jumps to the beginning of the line.
+`C-e`: jumps to the end of the line.
+`M-f`: moves forward word by word.
+`M-b`: moves backwards word by word.
+`C-k`: kills text till the end of the line.
+`C-y`: yanks previously killed text.
+`M-y`: cycles through the _kill ring_.
+
+I hope this results in improved command line editing for your future CLI usage.
