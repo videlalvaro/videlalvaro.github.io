@@ -69,3 +69,7 @@ An interesting feature is the _kill ring_ where all (well almost all) the text t
 
 What's cool about these keyboard bindings is that if you use Emacs you already know them because they are some sort of standard in \*nix software. Start for example a `mysql` console and enter the following query:
 
+{highlight sql %}
+SELECT a b c FORM the_table WHERE a=1;
+{% endhighlight %}
+
