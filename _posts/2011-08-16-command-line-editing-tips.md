@@ -17,7 +17,7 @@ In this post I want to show you how to edit the text that you entered on the CLI
 
 If you are working on the mac Terminal the first thing you should do is set it up properly so it can understand the _Meta Key_ or _Alt_. As you know the _Alt_ key is used in the Mac to enter special characters. In the Terminal that's not so useful so you can convert it to be the _Meta_ key. Press `command+,` or simply go to _Preferences_ and check the _Use option as meta key_ checkbox at the bottom of the _Keyboard_ tab. Once you got that you are ready to go.
 
-![RPC Over RabbitMQ](/images/meta-key.png)
+![RPC Over RabbitMQ](/images/meta_key.png)
 
 As a convention the _ctrl_ key is always abbreviated _C_ and the _alt_ or _Meta_ key is always abbreviated _M_ so the combination of pressing ctrl and `e` together will be: `C-e`.
 
