@@ -57,3 +57,19 @@ Let's open the file to see its contents:
   $ open ./path/to/some/file.txt
 {% endhighlight %}
 
+Once we see the content is irrelevant and that we can delete the file we can do so by going to the previous command in the history using `C-p` for example so we see again:
+
+{% highlight sh %}
+  $ open ./path/to/some/file.txt
+{% endhighlight %}
+
+Now type `M-d` to delete the `open` command, and type `rm` and that's it. Pretty basic but there we go another way of using these key bindings so we don't have to type all over again.
+
+An interesting feature is the _kill ring_ where all (well almost all) the text that you have killed before in the session is available. So after you _yank_ some text you can then press `M-y` to cycle through that text.
+
+What's cool about these keyboard bindings is that if you use Emacs you already know them because they are some sort of standard in *nix software. Start for example a `mysql` console and enter the following query:
+
+{highlight sql %}
+SELECT a b c FORM the_table WHERE a=1;
+{% endhighlight %}
+
