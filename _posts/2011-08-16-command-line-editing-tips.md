@@ -45,3 +45,15 @@ Now we realize that we want to swap source an destination since we made a mistak
   $ mv ./path/to/soem/file.txt
 {% endhighlight %}
 
+Then press `C-a` to go to the beginning of the line followed by `M-f` to move forward from the `mv` command and after pressing `SPACE` type `C-y` to **y**ank (paste) the text that you killed before. You should end with something like:
+
+{% highlight sh %}
+  $ mv ./path/to/some/file_1.txt ./path/to/some/file.txt
+{% endhighlight %}
+
+Let's open the file to see its contents:
+
+{% highlight sh %}
+  $ open ./path/to/some/file.txt
+{% endhighlight %}
+
