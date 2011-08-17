@@ -65,3 +65,5 @@ Once we see the content is irrelevant and that we can delete the file we can do 
 
 Now type `M-d` to delete the `open` command, and type `rm` and that's it. Pretty basic but there we go another way of using these key bindings so we don't have to type all over again.
 
+An interesting feature is the _kill ring_ where all (well almost all) the text that you have killed before in the session is available. So after you _yank_ some text you can then press `M-y` to cycle through that text.
+
