@@ -23,3 +23,11 @@ As a convention the _ctrl_ key is always abbreviated _C_ and the _alt_ or _Meta_
 
 I think the most well know Emacs shortcuts probably are those to go to the beginning or the end of the line. So say you typed the following command:
 
+{% highlight sh %}
+  $ mv ./path/to/soem/file.txt ./path/to/soem/file_1.txt
+{% endhighlight %}
+
+And you want to move to the begging of the line. The you can do so by pressing `C-a`. If you want to return to the end of the line just press `C-e`. Pretty easy.
+
+Now, there's a typo there, the folder shouldn't be _soem_ but _some_. How can you quickly jump to the _soem_ and edit that word? Press `C-a` to go to the begging of the line. Then press `M-f` to jump **f**orward from word to word. You can also do `M-b` to jump **b**ackwards. If instead of doing `M-f` you try `C-f` or `C-b` then the cursor will move character by character but in my case I'm used to just using the arrow keys for that.
+
