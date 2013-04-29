@@ -13,11 +13,11 @@ With a future release of RabbitMQ that we can already test on the [nightlies web
 
 The tarball is called `rabbitmq-server-mac-standalone-3.0.4.XYZ.tar.gz` where XYZ is the current build version. At the time of this writing this is the current tarball [http://www.rabbitmq.com/nightlies/rabbitmq-server/current/rabbitmq-server-mac-standalone-3.0.4.40426.tar.gz](http://www.rabbitmq.com/nightlies/rabbitmq-server/current/rabbitmq-server-mac-standalone-3.0.4.40426.tar.gz).
 
-The cool thing about that tarball is that we can use it as a very cheap setup to run our RabbitMQ tests against. We can download the tarball and then keep it in a known location in our machine. Then every time we run our test suit we can uncompress it, start the broker, run the tests and then stop the broker and erase the folder contents. Pretty easy.
+The cool thing about that tarball is that we can use it as a very cheap setup to run our RabbitMQ tests against. We can download the tarball and then keep it in a known location in our machine. Then every time we run our test suite we can uncompress it, start the broker, run the tests and then stop the broker and erase the folder contents. Pretty easy.
 
 I've implemented that using PHPUnit but I'm sure you can implement it with your favorite unit testing framework.
 
-PHPUnit has a concept of test listeners that you can attach to your test suits. They will be invoked whenever the test suit runs and you can use them to do several stuff, in our case, we are going to start/stop RabbitMQ.
+PHPUnit has a concept of test listeners that you can attach to your test suites. They will be invoked whenever the test suite runs and you can use them to do several stuff, in our case, we are going to start/stop RabbitMQ.
 
 Here's how we set up a test listener in our XML configuration file:
 
@@ -33,7 +33,7 @@ Here's how we set up a test listener in our XML configuration file:
 
 There we specify our listener class, it's location in relation to the `phpunit.xml` file and we pass an argument to the listener with the location of the RabbitMQ tarball.
 
-Our `RabbitMQListener` will take care of finding the tarball and uncompressing it into a temporary folder. Then it will start the broker and once it is started it will let the test suit continue running tests. For each test, it will reset the broker state so there are no queues or exchanges leftovers between tests. Finally, when the test suite is over, it will shut down the broker and will proceed to delete the temporary folder contents.
+Our `RabbitMQListener` will take care of finding the tarball and uncompressing it into a temporary folder. Then it will start the broker and once it is started it will let the test suite continue running tests. For each test, it will reset the broker state so there are no queues or exchanges leftovers between tests. Finally, when the test suite is over, it will shut down the broker and will proceed to delete the temporary folder contents.
 
 Once we add the listener configuration to PHPUnit and we specify the right path to the new RabbitMQ tarball, we can run our tests by simply calling `phpunit` as we used to do.
 
