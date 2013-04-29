@@ -21,7 +21,7 @@ PHPUnit has a concept of test listeners that you can attach to your test suits. 
 
 Here's how we set up a test listener in our XML configuration file:
 
-```xml
+{% highlight xml %}
 <listeners>
     <listener class="RabbitMQListener" file="PhpAmqpLib/Tests/RabbitMQListener.php">
         <arguments>
@@ -29,7 +29,7 @@ Here's how we set up a test listener in our XML configuration file:
         </arguments>
     </listener>
 </listeners>
-```
+{% endhighlight %}
 
 There we specify our listener class, it's location in relation to the `phpunit.xml` file and we pass an argument to the listener with the location of the RabbitMQ tarball.
 
@@ -39,7 +39,7 @@ Once we add the listener configuration to PHPUnit and we specify the right path 
 
 The code for the listener class can be found here:
 
-```php
+{% highlight php %}
 <?php
 
 class RabbitMQListener implements PHPUnit_Framework_TestListener 
@@ -48,76 +48,76 @@ class RabbitMQListener implements PHPUnit_Framework_TestListener
     protected $rabbit_base;
     protected $rabbit_tar;
     protected $rabbit_pid;
-    
+
     public function __construct($rabbit_tar) 
     {
         $this->rabbit_tar = $rabbit_tar;
         $this->tmp_dir = sys_get_temp_dir();
-        
+
         $this->extractRabbitMQ($this->rabbit_tar, $this->tmp_dir);
-        
+
         $rabbit_dir = $this->getRabbitMQDir($this->rabbit_tar);
-        
+
         if (strlen($rabbit_dir) > 0) {
             $this->rabbit_base = $this->tmp_dir . '/' . $rabbit_dir;
         } else {
             exit(1);
         }
-        
+
         $this->rabbit_pid = $this->rabbit_base . 'var/lib/rabbitmq/rabbitmq.pid';
-        
+
         $this->createRabbitConf($this->rabbit_base, $this->rabbit_pid);
-        
+
         $this->startRabbitMQ($this->rabbit_base);
-        
+
         if (!$this->isRabbitMQRunning($this->rabbit_base, $this->rabbit_pid)) {
             exit(1);
         }
     }
-    
+
     public function __destruct()
     {
         $this->stopRabbitMQ($this->rabbit_base, $this->rabbit_pid);
         $this->clearRabbitMQDir($this->rabbit_base);
-        
+
         $this->maybeStopEpmd($this->rabbit_base);
     }
-    
+
     protected function maybeStopEpmd($rabbit_base)
     {
         exec('ps ax | grep epmd | grep -v grep', $out);
-        
+
         if (isset($out[0]) && strstr($out[0], $rabbit_base)) {
             exec('epmd -kill');
         }
     }
-    
+
     public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
     {
         $this->resetRabbitMQ($this->rabbit_base);
     }
-    
+
     protected function resetRabbitMQ($rabbit_base)
     {
         exec($rabbit_base . 'sbin/rabbitmqctl stop_app');
         exec($rabbit_base . 'sbin/rabbitmqctl reset');
         exec($rabbit_base . 'sbin/rabbitmqctl start_app');
     }
-    
+
     protected function extractRabbitMQ($rabbit_tar, $tmp_dir)
     {
         $tar_extract_cmd = 'tar -xzf ' . $rabbit_tar . ' -C ' . $tmp_dir;
         exec($tar_extract_cmd);
     }
-    
+
     protected function getRabbitMQDir($rabbit_tar)
     {
         $tar_dir_cmd = 'tar --exclude="*/*/*" -tf ' . $rabbit_tar;
         exec($tar_dir_cmd, $dir_out);
-        
+
         return isset($dir_out[0]) ? $dir_out[0] : "";
     }
-    
+
     protected function createRabbitConf($rabbit_base, $rabbit_pid)
     {
         $rabbit_conf_dir = $rabbit_base . 'etc/rabbitmq/';
@@ -126,60 +126,60 @@ class RabbitMQListener implements PHPUnit_Framework_TestListener
 
         file_put_contents($rabbit_conf, $conf);
     }
-    
+
     protected function startRabbitMQ($rabbit_base)
     {
         exec($rabbit_base . 'sbin/rabbitmq-server > /dev/null 2>&1 &');
     }
-    
+
     protected function waitForRabbitMQ($rabbit_base, $rabbit_pid)
     {
         exec($rabbit_base . 'sbin/rabbitmqctl wait ' . $rabbit_pid, $output, $return_val);
         return $return_val;
     }
-    
+
     protected function isRabbitMQRunning($rabbit_base, $rabbit_pid)
     {
         return $this->waitForRabbitMQ($rabbit_base, $rabbit_pid) === 0;
     }
-    
+
     protected function stopRabbitMQ($rabbit_base, $rabbit_pid)
     {
         exec($rabbit_base . 'sbin/rabbitmqctl stop ' . $rabbit_pid);
     }
-    
+
     protected function removePid($rabbit_pid)
     {
         exec('rm ' . $rabbit_pid);
     }
-    
+
     protected function clearRabbitMQDir($rabbit_base)
     {
         exec('rm -rf ' . $rabbit_base);
     }
-    
+
     public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
     {}
-    
+
     public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
     {}
-        
+
     public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
     {}
-    
+
     public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {}
-    
+
     public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
     {}
-    
+
     public function startTest(PHPUnit_Framework_Test $test)
     {}
-    
+
     public function endTest(PHPUnit_Framework_Test $test, $time)
     {}
 }
-```
+{% endhighlight %}
 
 For the purposes of this blog post the whole listener code sits in one class, but I think one smart thing to do with that code would be to move the bits that manage RabbitMQ to a separate utils like class.
 
