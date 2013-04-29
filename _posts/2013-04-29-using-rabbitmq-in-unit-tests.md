@@ -186,3 +186,5 @@ For the purposes of this blog post the whole listener code sits in one class, bu
 I hope this can be useful to you and let me know about any improvements you'd like to see. Maybe once we can get this into a more generic class we can add it to `php-amqplib`. One interesting change to add will be the possibility to run the broker in a different port, and also a way to pass our test user credentials to the listener class so RabbitMQ can use those instead of the default `guest:guest`.
 
 So go here and check out what's being cooked at the RabbitMQ labs: [http://www.rabbitmq.com/nightlies/rabbitmq-server/current/](http://www.rabbitmq.com/nightlies/rabbitmq-server/current/).
+
+NOTE: If you have Erlang installed you can do the same by using the [generic-unix tarball](http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server-generic-unix-3.0.4.tar.gz).
