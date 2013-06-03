@@ -11,7 +11,7 @@ RabbitMQ is a very extensible message broker, allowing its users to extend the s
 
 ## Elixir
 
-In the last couple of months I've been paying attention to a new programming language called [_Elixir_](http://elixir-lang.org) that targets the EVM and in the last week it became immensely popular inside the Erlang community (and outer circles) since [Joe Armstrong](https://twitter.com/joeerl), the father of Erlang, [tried the language](http://elixir-lang.org), and liked it very much. So I said, OK, lets give it a try.
+In the last couple of months I've been paying attention to a new programming language called [_Elixir_](http://elixir-lang.org) that targets the EVM and in the last week it became immensely popular inside the Erlang community (and outer circles) since [Joe Armstrong](https://twitter.com/joeerl), the father of Erlang, [tried the language](http://joearms.github.io/2013/05/31/a-week-with-elixir.html), and liked it very much. So I said, OK, lets give it a try.
 
 I don't want to spend much time describing that Elixir is, it's better if you read its website or Joe Armstrong blog post about it. For me it brings ideas from the Ruby Language into the Erlang platform. We can basically write Erlang programs with an arguable better syntax, for some definition of better syntax.
 
