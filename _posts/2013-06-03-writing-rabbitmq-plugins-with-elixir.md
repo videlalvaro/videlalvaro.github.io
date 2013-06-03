@@ -52,7 +52,7 @@ The code for the new exchange can be found on github: [RabbitMQ Recent History E
 
 The code for the new exchange type lives inside the file `lib/rabbit_exchange_type_recent_history.ex`, where we implement the `rabbit_exchange_type` behaviour. The overridden methods are: `route/2`, `delete/3` and `add_binding`. What this exchange does is to cache the last 20 messages while they are routed to queues. Whenever a new queue is bound to the exchange, then we deliver those last 20 messages to it. Finally whenever the exchange is deleted we remove its entries from the database. When is this useful? Say you implement a chat with RabbitMQ and you want that people that join the room get the last messages sent to the room. This is a simple way to accomplish that.
 
-While you could understand most of the code there if you first follow an [Elixir Tutorial](http://elixir-lang.org/getting_started/1.html) there are some points worth noting since for me it was not so clear on how to port them into Elixir. To take a look at what was the original project I was porting from Erlang take look at the project [here](http://elixir-lang.org/getting_started/1.html).
+While you could understand most of the code there if you first follow an [Elixir Tutorial](http://elixir-lang.org/getting_started/1.html) there are some points worth noting since for me it was not so clear on how to port them into Elixir. To take a look at what was the original project I was porting from Erlang take look at the project [here](https://github.com/videlalvaro/rabbitmq-recent-history-exchange).
 
 ### Module Attributes
 
@@ -113,7 +113,7 @@ The first is called `Makefile` and it includes just one line:
 include ../umbrella.mk
 {% endhighlight %}
 
-The second one is a bit more involved. Here we specify the dependencies of our project and we tell the rabbitmq build system how to compile our Elixir code.
+The second one is a bit more involved. Here we specify the dependencies of our project and we tell the RabbitMQ build system how to compile our Elixir code.
 
 {% highlight make %}
 DEPS:=rabbitmq-server rabbitmq-erlang-client elixir_wrapper
@@ -147,7 +147,7 @@ I won't explain this code line by line, but just the remarkable bits. On the fir
 
 Then we define some make targets to compile our plugin and package it inside an `.ez` file. (RabbitMQ plugins are shipped as .ez files). The `mix-compile` target will as the name says, build our Elixir code. As you might have noticed it sets the `ERL_LIBS` variable our plugin `./deps` folder. For that to work we first need to have the dependencies unpacked there, therefore the make rule `$(PACKAGE_DIR)/deps/.done`, which will unpack into that folder the previously built dependencies.
 
-Finally our `define construct_app_commands` will copy our `.beam` files into the destination folder so the rabbitmq build system will be able to find them and ship them inside our plugin `.ez` file.
+Finally our `define construct_app_commands` will copy our `.beam` files into the destination folder so the RabbitMQ build system will be able to find them and ship them inside our plugin `.ez` file.
 
 Once we have everything in place it's time to actually build our plugin. We can do so by simply calling `make` inside the plugin folder.
 
