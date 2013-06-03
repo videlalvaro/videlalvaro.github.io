@@ -166,7 +166,7 @@ Copy the files `rabbitmq_recent_history_exchange_elixir-0.1-rmq3.3.1.ez` and `el
 
 Once we start the broker we can see in the management interface that we can add exchanges of the type `x-recent-history`.
 
-![More than 7000~ visits in one day](/images/rh_exchange.png)
+![Recent History Exchange](/images/rh_exchange.png)
 
 ## Coda
 
