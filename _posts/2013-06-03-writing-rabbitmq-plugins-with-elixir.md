@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Writing RabbitMQ Plugins With Elixig
+title: Writing RabbitMQ Plugins With Elixir
 ---
 
 # {{page.title}}
