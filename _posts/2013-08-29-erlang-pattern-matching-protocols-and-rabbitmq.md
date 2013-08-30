@@ -9,7 +9,7 @@ title: Erlang Pattern Matching, Protocols and RabbitMQ
 
 Here's a very simple example from [RabbitMQ](https://www.rabbitmq.com)'s source code on how easy it's to implement a protocol calls with Erlang.
 
-While RabbitMQ supports many protocols, internally mostly everything is handled via AMQP. In AMQP there's the concept of a _Channel_, which is just a way to subdivide connections. Most of the commands send to the server, whether to publish or consume messages, or to create queues, are done over the channel. To be able to use a channel, first we have to open one, by calling _[channel.open](https://www.rabbitmq.com/amqp-0-9-1-quickref.html#channel.open)_. Let's see how RabbitMQ handles these calls by taking advantage of Erlang's pattern matching.
+While RabbitMQ supports many [protocols](http://www.rabbitmq.com/protocols.html), internally mostly everything is handled via AMQP. In AMQP there's the concept of a _Channel_, which is just a way to subdivide connections. Most of the commands send to the server, whether to publish or consume messages, or to create queues, are done over the channel. To be able to use a channel, first we have to open one, by calling _[channel.open](https://www.rabbitmq.com/amqp-0-9-1-quickref.html#channel.open)_. Let's see how RabbitMQ handles these calls by taking advantage of Erlang's pattern matching.
 
 {% highlight erlang %}
 ...
