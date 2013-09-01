@@ -47,7 +47,7 @@ On the second case we have this special way that Erlang does pattern matching th
 
 In Erlang, when you first use a variable, it is said that the variable is "unbound", so in our case when the variable is _equaled_ to the value of the `user_id` property from the `#P_basic` record what happens is that the variable takes the value stored there. Why? Because in Erlang the equals sign `=` is not used for setting variables, but for pattern matching. Every time we use `=` in Erlang what we are doing is pattern matching what's on the _right_ of the equals sign with what's on the left. If the values don't match, then Erlang will produce an error. In this case since the variable is unbound what happens is that it gets set to whatever was on the `user_id` field. So far so good.
 
-The second time the variable `Username` is used on that function header, it is not unbound anymore, it holds a value in it, so when Erlang extracts the `username` value and pattern-matches it against it then, well, it has to match. If it doesn't match then the function clause is skipped and Erlang moves onto the third header. Here's the code:
+The second time the variable `Username` is used on that function header, it is not unbound anymore, it holds a value in it, so when Erlang extracts the `username` value and pattern-matches it against the `Username` variable then, well, it has to match. If it doesn't match then the function clause is skipped and Erlang moves onto the third header. Here's the code:
 
 {% highlight erlang %}
 ...
