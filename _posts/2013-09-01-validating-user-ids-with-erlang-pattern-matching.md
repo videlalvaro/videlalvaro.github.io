@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RabbitMQ: Validating User IDs with Erlang Pattern Matching
+title: RabbitMQ - Validating User IDs with Erlang Pattern Matching
 ---
 
 # {{page.title}} #
