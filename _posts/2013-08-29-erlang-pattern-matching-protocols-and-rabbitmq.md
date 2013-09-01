@@ -60,4 +60,4 @@ handle_method(_Method, _, #ch{state = starting}) ->
 
 As you can see on those examples, with a few basic rules expressed via Erlang's powerful pattern matching we can handle all these tiny detail of protocol negotiation. While these examples might seem trivial, I hope to dive deeper into RabbitMQ's source code and present more advanced examples.
 
-In case you are interested in reading more, here's the code from where these examples were extracted: [rabbit_channel.erl](https://github.com/rabbitmq/rabbitmq-server/blob/master/src/rabbit_channel.erl#L593)
+In case you are interested in reading more, here's the code from where these examples were extracted: [rabbit_channel.erl](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_channel.erl#l593)
