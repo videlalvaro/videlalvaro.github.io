@@ -37,7 +37,6 @@ When an exchange type implementation is created, for example in the module `rabb
 ...
 internal_binary_to_type(TypeBin) when is_binary(TypeBin) ->
     list_to_atom(binary_to_list(TypeBin)).
-
 ...
 {% endhighlight %}
 
