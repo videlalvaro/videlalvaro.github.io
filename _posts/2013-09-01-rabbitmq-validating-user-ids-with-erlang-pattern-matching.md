@@ -9,7 +9,7 @@ title: RabbitMQ - Validating User IDs with Erlang Pattern Matching
 
 In the [previous blog post](http://videlalvaro.github.io/2013/08/erlang-pattern-matching-protocols-and-rabbitmq.html) on this series on [RabbitMQ](https://www.rabbitmq.com) internals we saw how Erlang's pattern matching can be used to process protocol calls, in this one we are going to see how RabbitMQ handles the validation of user ids by using pattern matching, one of Erlang most powerful features.
 
-User IDs ca be used in AMQP to tell a consumer that a certain message was published by a certain user. To do that we just set the `user_id` property of a message whenever we publish one. Now, I could login as Bob and set the `user_id` property of my messages as `"Alice"`and nobody would suspect I tainted my messages. How could we prevent that?
+User IDs can be used in AMQP to tell a consumer that a certain message was published by a certain user. To do that we just set the `user_id` property of a message whenever we publish one. Now, I could login as Bob and set the `user_id` property of my messages as `"Alice"`and nobody would suspect I tainted my messages. How could we prevent that?
 
 Enter [validated user ids](http://www.rabbitmq.com/validated-user-id.html). What this feature does is that RabbitMQ will make sure the user id set on the message property field is the same one as the user that's logged-in and publishing messages to RabbitMQ. The way this is implemented uses a feature of Erlang pattern matching that's more similar to Prolog's logical variables than to pattern matching in languages like Haskell, F# or Clojure.
 
