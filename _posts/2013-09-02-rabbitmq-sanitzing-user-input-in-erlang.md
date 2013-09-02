@@ -44,6 +44,7 @@ With this simple technique RabbitMQ can translate back and forth from user suppl
 
 In the next blog post we are going to explore how RabbitMQ ensures that a new exchange type provided by a plugin is in fact an implementation of the `rabbit_exchange_type` behaviour, or that an authentication mechanism exposed by a plugin is an implementation of `rabbit_auth_mechanism`.
 
-`rabbit_registry:binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l62).
+To see the full source code go here:
 
-`rabbit_registry:internal_binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l81).
+- `rabbit_registry:binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l62).
+- `rabbit_registry:internal_binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l81).
