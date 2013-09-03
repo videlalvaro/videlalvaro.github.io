@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RabbitMQ - Validating User IDs with Erlang Pattern Matching
+category: "rabbitmq-internals"
 ---
 
 # {{page.title}} #
@@ -76,3 +77,5 @@ check_user_id_header(#'P_basic'{user_id = Claimed},
 We can argue that this is rather simple code, and for me it's the simplicity of this use case that makes Erlang so great. When I see that second function header I can easily notice that the `user_id` passed when publishing the message has to match the one set channel state `username` field. As simple as that.
 
 In case you are interested in reading more, here's the code from where these examples were extracted: [rabbit_channel.erl](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_channel.erl#l491)
+
+{% include rabbitmq_internals.html %}

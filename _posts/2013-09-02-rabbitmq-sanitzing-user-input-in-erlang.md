@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RabbitMQ - Sanitizing user input in Erlang
+category: "rabbitmq-internals"
 ---
 
 # {{page.title}} #
@@ -48,3 +49,5 @@ To see the full source code go here:
 
 - `rabbit_registry:binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l62).
 - `rabbit_registry:internal_binary_to_type/1` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/fe3f446ab083/src/rabbit_registry.erl#l81).
+
+{% include rabbitmq_internals.html %}
