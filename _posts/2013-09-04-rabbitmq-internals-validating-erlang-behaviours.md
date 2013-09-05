@@ -57,3 +57,5 @@ The takeaway here is that if you are going to allow your users to extend your Er
 To see the full source code go here:
 
 - `rabbit_registry:sanity_check_module/2` [source code](http://hg.rabbitmq.com/rabbitmq-server/file/dd70b629351f/src/rabbit_registry.erl#l117)
+
+{% include rabbitmq_internals.html %}
