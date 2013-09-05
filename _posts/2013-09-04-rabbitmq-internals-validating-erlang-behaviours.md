@@ -28,6 +28,7 @@ RabbitMQ has an architecture that supports plugins that could modify the broker 
 ...
 class_module(exchange)           -> rabbit_exchange_type;
 class_module(auth_mechanism)     -> rabbit_auth_mechanism;
+...
 {% endhighlight %}
 
 there's a map definition that says the class `exchange` is implemented via the `rabbit_exchange_type` behaviour and the `auth_mechanism` class is implemented via the `rabbit_auth_mechanism` behaviour.
@@ -47,7 +48,7 @@ sanity_check_module(ClassModule, Module) ->
         false                 -> {error, {not_type, ClassModule}};
         true                  -> ok
     end.
-    ...
+...
 {% endhighlight %}
 
 This function grabs the attributes of our module by calling `Module:module_info(attributes)` and then inspects their declared behaviours to see if they implement the required one for the `exchange` class, in this case `rabbit_exchange_type`. Note also the error handling here. RabbitMQ takes into account the fact that we could provide a non existing module.
