@@ -8,7 +8,7 @@ category: "rabbitmq-internals"
 
 <span class="meta">September 04 2013</span>
 
-RabbitMQ implements several routing algorithms in the form of exchanges, therefore we say that each exchange has a _type_. By default RabbitMQ comes with four exchange types: _direct_, _fanout_, _topic_ and _headers_ and allows the user to add new exchange types via plugins. For example there's the `[rabbitmq-consistent-hash-exchange](http://hg.rabbitmq.com/rabbitmq-consistent-hash-exchange/file/rabbitmq_v3_1_5/README.md)` which adds consistent hash routing to RabbitMQ. 
+RabbitMQ implements several routing algorithms in the form of exchanges, therefore we say that each exchange has a _type_. By default RabbitMQ comes with four exchange types: _direct_, _fanout_, _topic_ and _headers_ and allows the user to add new exchange types via plugins. For example there's the [`rabbitmq-consistent-hash-exchange`](http://hg.rabbitmq.com/rabbitmq-consistent-hash-exchange/file/rabbitmq_v3_1_5/README.md) which adds consistent hash routing to RabbitMQ. 
 
 Now, how does RabbitMQ makes sure that an user provided exchange type is in fact an implementation of the `rabbit_exchange_type` behaviour? It doesn't make sense for RabbitMQ to register a new exchange type that's unable to `route/2` messages.
 
@@ -52,7 +52,7 @@ sanity_check_module(ClassModule, Module) ->
 
 This function grabs the attributes of our module by calling `Module:module_info(attributes)` and then inspects their declared behaviours to see if they implement the required one for the `exchange` class, in this case `rabbit_exchange_type`. Note also the error handling here. RabbitMQ takes into account the fact that we could provide a non existing module.
 
-The takeaway here is that if you are going to allow your users to extend your Erlang application, first your application needs to expose behaviours that have to be implemented by the user. From there, we can resort to inspecting the attributes of the module provided by the user to see if the expected behaviours are present. While this technique might seem rather simple, it's good to remember that we can add our own attributes to our Erlang modules and then later retrieve them to do interesting things with them, see the `[rabbit_boot](https://github.com/videlalvaro/rabbit-internals/blob/master/rabbit_boot_process.md)` system for an advanced example of this technique.
+The takeaway here is that if you are going to allow your users to extend your Erlang application, first your application needs to expose behaviours that have to be implemented by the user. From there, we can resort to inspecting the attributes of the module provided by the user to see if the expected behaviours are present. While this technique might seem rather simple, it's good to remember that we can add our own attributes to our Erlang modules and then later retrieve them to do interesting things with them, see the [`rabbit_boot`](https://github.com/videlalvaro/rabbit-internals/blob/master/rabbit_boot_process.md) system for an advanced example of this technique.
 
 To see the full source code go here:
 
