@@ -121,3 +121,5 @@ The credit flow mechanism also handles the case of a peer process going down. Ke
 When we have systems that have queues of any kind, we need to be aware that if our producers outpace our consumers, then those queues will grow infinitely. In the case of Erlang, each process will have it's own mailbox and if a process can't keep up with the amount of messages is receiving, at some point everything will break havoc. By having a system like the `credit_flow` in place, as used by RabbitMQ, we can prevent those scenarios and react accordingly.
 
 PS: If you wonder how the `?UPDATE` macro works, take a look at its implementation [here](http://hg.rabbitmq.com/rabbitmq-server/file/f3f18609e649/src/credit_flow.erl#l57). I leave it as an exercise to the reader to understand how that work and I'll explain it in a future blog post.
+
+{% include rabbitmq_internals.html %}
