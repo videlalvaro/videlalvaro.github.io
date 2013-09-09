@@ -48,7 +48,7 @@ As we can see from the code, the `rabbit_reader` will call `rabbit_channel:do_fl
 
 ![Process dictionary](/images/credit_flow_process_dict.png)
 
-The key used to store that information is like this `{credit_from, From}`, where `From` is the Pid of the message receiver, in this case the channel (The previous image shows all the dictionary keys used by the credit flow mechanism). If the information stored in the `{credit_from, From}` key reaches _0_ then the process that owns that dictionary will get blocked, in our example that process would be the `rabbit_reader` process. Here's the implementation of `credit_flow:send`:
+The key used to store that information is like this `{credit_from, From}`, where `From` is the Pid of the message receiver, in this case the channel (The previous image shows all the dictionary keys used by the credit flow mechanism). If the information stored in the `{credit_from, From}` key reaches __0__ then the process that owns that dictionary will get blocked, in our example that process would be the `rabbit_reader` process. Here's the implementation of `credit_flow:send`:
 
 {% highlight erlang %}
 send(From, {InitialCredit, _MoreCreditAfter}) ->
