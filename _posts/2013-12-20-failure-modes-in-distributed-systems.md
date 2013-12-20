@@ -40,7 +40,7 @@ In this type of failure, the server only exhibits _crash failures_, but at the s
 
 ##  Relations between failure modes ##
 
-These failure modes, having byzantine failures as the more severe and fail-stop failures as the less severe, show what kind of assumptions we can make about a server. With byzantine failures we can't make no assumptions at all. Which server failed, which server is correct? Who knows. With `fail-stop failures` we know that server S has failed. With that in mind we can say that severe failures _contain_ less severe failures. So if we know a set of servers might show _performance failures_, then we can assume the servers will also show _omission failures_. More formally: Byzantine failures ⊃ authentification detectable byzantine failures ⊃ performance failures ⊃ omission failures ⊃ crash failures ⊃ fail-stop failures.
+These failure modes, having byzantine failures as the more severe and fail-stop failures as the less severe, show what kind of assumptions we can make about a server. With byzantine failures we can't make no assumptions at all. Which server failed, which server is correct? Who knows? With `fail-stop failures` we know that server S has failed. With that in mind we can say that severe failures _contain_ or _cover_ less severe failures. So if we know a set of servers might show _performance failures_, then we can assume the servers will also show _omission failures_. More formally: Byzantine failures ⊃ authentification detectable byzantine failures ⊃ performance failures ⊃ omission failures ⊃ crash failures ⊃ fail-stop failures.
 
 The aforementioned failure modes can be divided in _Value failures_ and _Timing failures_. The byzantine failure modes are value failures, while the others are timing failures.
 
