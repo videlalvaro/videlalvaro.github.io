@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Failure modes in distributed systems
-categories: ["books-commentary", "distributed-systems", "yellow-book"]
+categories: ['books-commentary', 'distributed-systems', 'yellow-book']
 ---
 
 # {{page.title}} #
