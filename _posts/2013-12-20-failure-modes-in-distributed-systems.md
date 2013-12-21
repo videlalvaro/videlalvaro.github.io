@@ -55,3 +55,5 @@ The previous distinctions between failure modes bring us to something that for m
 So if a server S1 is said to have "crash failure semantics", then the possibility of having, say, byzantine failure should be very low. With this in mind, a service user of the previous server S1 only needs to consider that S1 will only fail with "crash failure semantics". 
 
 For me the interesting part of thinking about failure semantics are in say, a system like RabbitMQ that internally is made of many Erlang processes that talk to each others. What are the failure semantics of those subsystems? How do other processes using those subsystems behaving on the presence of failures? What's the role for the Erlang supervision tree here? All these are interesting question that I've plan to answer soon.
+
+{% include yellow_book.html %}
