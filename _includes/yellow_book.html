@@ -3,9 +3,9 @@
 <br >
 <p>More articles on the <em>Yellow Book</em> series:</p>
 <ul class="posts">
-    {% for related in site.posts %}
-        {% if page.id != related.id and related.categories.include? "yellow-book" %}
-            <li><span>{{ related.date | date_to_string }}</span> &raquo; <a href="{{related.url}}">{{related.title}}</a></li>
-        {% endif %}
+    {% for related in site.categories["yellow-book"] %}
+      {% if page.id != related.id %}
+          <li><span>{{ related.date | date_to_string }}</span> &raquo; <a href="{{related.url}}">{{related.title}}</a></li>
+      {% endif %}
     {% endfor %}
 </ul>
