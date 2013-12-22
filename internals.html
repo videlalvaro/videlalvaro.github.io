@@ -3,18 +3,18 @@ layout: default
 title: Alvaro Videla - RabbitMQ Internal Architecture
 ---
 
-<div id="home">
-  <h1>RabbitMQ Internal Architecture</h1>
+<article id="home">
+  <h2>RabbitMQ Internal Architecture</h2>
   <p>
     The following are a series of blogposts discussing the internal architecture of RabbitMQ.
   </p>
   <div>
       <ul class="posts">
           {% for related in site.posts %}
-              {% if page.id != related.id and related.category == "rabbitmq-internals" %}
-                  <li><span>{{ related.date | date_to_string }}</span> &raquo; <a href="{{related.url}}">{{related.title}}</a></li>
-              {% endif %}
+            {% if page.id != related.id and related.category == "rabbitmq-internals" %}
+              <li><span>{{ related.date | date_to_string }}</span> <a href="{{related.url}}">{{related.title}}</a></li>
+            {% endif %}
           {% endfor %}
       </ul>
   </div>
-</div>
+</article>

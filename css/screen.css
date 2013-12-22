@@ -1,256 +1,952 @@
-
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-
-* {
+/* SCSS Variables */
+/*SCSS Mixins */
+/* css reset */
+html, body, logo a span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-img {
   border: 0;
-}
+  font: inherit;
+  vertical-align: baseline; }
 
-img.floatright {
-  float: right;
-  margin-left: 10px;
-}
-
-img.floatleft {
-  float: left;
-  margin-right: 10px;
-}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
 
 body {
-  background-color: #D1EAEF;
-  font: 13.34px "helvetica neue", helvetica, arial, clean, sans-serif;
-  *font-size: small;
-  text-align: center;
-}
+  line-height: 1; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
+ol, ul {
+  list-style: none; }
 
-h1 {
-  font-size: 2.1em;
-  margin: 1.5em 0 1em -.5em;
-  line-height: initial;
-}
+blockquote, q {
+  quotes: none; }
 
-p {
-  margin: 1em 0;
-}
-
-a:link,
-a:visited {
-  color: #006A7F;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #33CFCC;
-}
-
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
 
 table {
-  font-size: inherit;
-  font: 100%;
-}
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
+/* @end */
+/* @group global styles */
+* {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  -webkit-font-smoothing: antialiased !important; }
 
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading p, .wf-loading li, .wf-loading code, .wf-loading blockquote, .wf-loading span {
+  visibility: hidden; }
 
-  ul.posts li {
-    line-height: 1.75em;
-  }
+.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active p, .wf-active li, .wf-active code, .wf-active blockquote, .wf-active span, .wf-inactive h1, .wf-inactive h2, .wf-inactive h3, .wf-inactive h4, .wf-inactive h5, .wf-inactive p, .wf-inactive li, .wf-inactive code, .wf-inactive blockquote, .wf-inactive span {
+  visibility: visible; }
 
-  ul.posts span{
-    color: #666;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-style: italic;
-  }
+html {
+  font-size: 62.5%; }
 
+body {
+  font-family: 'Merriweather', 'Hoefler Text', 'Georgia', 'Times New Roman', 'Serif';
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: #222222;
+  background: #fff;
+  font-weight: 400;
+  /* 400, 700, 900 */
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased !important; }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 110%;
-  text-align: left;
-  width: 40em;
-  margin: 3em auto 2em auto;
-  line-height: 1.5em;
-}
-
-.title {
-  color: #a00;
-  font-weight: bold;
-  margin-bottom: 2em;
-}
-
-  .site .title a:link,
-  .site .title a:visited {
-    color: #006A7F;
+header {
+  text-align: center; }
+  header a {
+    font-family: 'Open Sans Condensed', 'Sans-Serif';
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: 4em;
-    margin-left: -.5em;
-  }
+    font-size: 4.2rem;
+    line-height: 4.2rem;
+    padding: 40px 0; }
+    @media only screen and (min-width: 620px) {
+      header a {
+        font-size: 6.8rem;
+        line-height: 6.8rem;
+        padding: 60px 0; } }
+    @media only screen and (min-width: 1050px) {
+      header a {
+        font-size: 8.8rem;
+        line-height: 8.8rem;
+        padding: 80px 0; } }
+    @media only screen and (min-width: 1800px) {
+      header a {
+        font-size: 11.2rem;
+        line-height: 11.2rem;
+        padding: 120px 0; } }
+    header a:hover {
+      color: #29547c; }
 
-  .site .title a:hover {
-    color: #33CFCC;
-  }
-
-  .site .title a.extra {
-    color: #aaa;
-    text-decoration: none;
-    margin-left: 1em;
-  }
-
-  .site .title a.extra:hover {
-    color: black;
-  }
-
-  .site .meta {
-    color: #666;
-    font-style: italic;
-  }
-
-  .site .footer {
-    font-size: 80%;
-    color: #666;
-    border-top: 4px solid #eee;
-    margin-top: 2em;
-    overflow: hidden;
-  }
-
-    .site .footer .contact {
-      float: left;
-      margin-right: 3em;
-    }
-
-      .site .footer .contact a {
-        color: #8085C1;
-      }
-
-    .site .footer .rss {
-      margin-top: 1.1em;
-      margin-right: -.2em;
-      float: right;
-    }
-
-      .site .footer .rss img {
-        border: 0;
-      }
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-#post {
-
-}
-
-  /* standard */
-
-  #post pre {
-    padding: 0 .4em;
-    border: none;
-  }
-
-  #post code {
-    background-color: #eef;
-    font-size: 95%;
-    padding: 0 .2em;
-  }
-
-    #post pre code {
-      border: none;
-    }
-
-  /* terminal */
-
-  #post pre.terminal {
-    border: 1px solid black;
-    background-color: #333;
-    color: white;
-  }
-
-  #post pre.terminal code {
-    background-color: #333;
-  }
-
-  #post ul {
-    margin-left: 1em;
-  }
-
-#related {
-  margin-top: 2em;
-}
-
-  #related h2 {
-    margin-bottom: 1em;
-  }
-
-#elsewhere {
-	width: 340px;
-}
-
-#github-badge {
-	width: 200px;
-	float: right;
-	clear: right;
-	margin-right: 1em;
-}
+.page article {
+  padding: 20px 0; }
 
 img {
-  max-width: 40em;
-}
+  max-width: 100%;
+  display: block; }
+  @media only screen and (min-width: 620px) {
+    img {
+      max-width: 94%;
+      margin: 0 auto; } }
 
-blockquote {
-  margin: 1em 3em;
-  color: #999;
-  border-left: 2px solid #999;
-  padding-left: 1em;
-}
+.theimg img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block; }
+  @media only screen and (min-width: 620px) {
+    .theimg img {
+      max-width: 94%;
+      max-height: 94%;
+      margin: 0 auto; } }
 
-.book{
-  float: left;
-  margin-right: 20px;
-  text-align: center;
+@media only screen and (min-width: 480px) {
+  .size-25width {
+    max-width: 25%; } }
 
-}
-.book img{
-  border: 1px solid #ccc;
+@media only screen and (min-width: 480px) {
+  .size-50width {
+    max-width: 49%; } }
+
+.alignnone {
+  clear: both; }
+
+@media only screen and (min-width: 480px) {
+  .alignright {
+    float: right;
+    margin-left: 1%; } }
+@media only screen and (min-width: 1050px) {
+  .alignright {
+    float: right;
+    margin-left: 1%; } }
+
+@media only screen and (min-width: 480px) {
+  .alignleft {
+    float: left;
+    margin-right: 1%; } }
+@media only screen and (min-width: 1050px) {
+  .alignleft {
+    float: left;
+    margin-right: 1%; } }
+
+@media only screen and (min-width: 480px) {
+  p .alignleft {
+    float: left;
+    margin-right: 20px; } }
+@media only screen and (min-width: 1050px) {
+  p .alignleft {
+    margin-right: 25px; } }
+
+@media only screen and (min-width: 480px) {
+  p .alignright {
+    float: right;
+    margin-left: 20px; } }
+@media only screen and (min-width: 1050px) {
+  p .alignright {
+    margin-left: 25px; } }
+
+strong, b {
+  font-weight: 900; }
+
+em, i {
+  font-style: italic; }
+
+small {
+  font-size: 75%;
+  color: #888888; }
+
+a {
+  color: #222222; }
+  a:hover {
+    color: #29547c; }
+
+.center {
+  text-align: center; }
+
+article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 520px;
+  padding-left: 12px;
+  padding-right: 12px; }
+  @media only screen and (min-width: 620px) {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+      max-width: 640px; } }
+  @media only screen and (min-width: 1050px) {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+      max-width: 720px; } }
+  @media only screen and (min-width: 1800px) {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+      max-width: 880px; } }
+article div {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media only screen and (min-width: 1050px) {
+    article div {
+      width: 94%; } }
+article div.item, article div.txt {
+  max-width: 100%; }
+article .meta {
+  font-family: 'Lato', 'Sans-Serif';
+  font-weight: 400;
   display: block;
-  height: 180px;
-  width: 130px;
+  color: #888888;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px 0 0;
+  text-transform: uppercase; }
+  @media only screen and (min-width: 620px) {
+    article .meta {
+      font-size: 1.2rem;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      position: relative;
+      left: 2px; } }
+  @media only screen and (min-width: 1050px) {
+    article .meta {
+      font-size: 1.3rem;
+      left: 3px; } }
+  @media only screen and (min-width: 1800px) {
+    article .meta {
+      font-size: 1.4rem;
+      left: 2px; } }
+  article .meta span {
+    white-space: nowrap; }
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  font-family: 'Open Sans Condensed', 'Sans-Serif';
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 25px 12px 5px;
+  clear: both; }
+  @media only screen and (min-width: 620px) {
+    article h1, article h2, article h3, article h4, article h5, article h6 {
+      padding-bottom: 10px; } }
+article h4, article h5, article h6 {
+  padding: 25px 12px 0; }
+article h1.mt {
+  padding-top: 14px; }
+  @media only screen and (min-width: 620px) {
+    article h1.mt {
+      padding-top: 10px;
+      padding-bottom: 14px; } }
+  @media only screen and (min-width: 1050px) {
+    article h1.mt {
+      padding-top: 18px;
+      padding-bottom: 20px; } }
+  @media only screen and (min-width: 1800px) {
+    article h1.mt {
+      padding-top: 20px;
+      padding-bottom: 25px; } }
+article h1, article h2 {
+  font-size: 3.6rem;
+  line-height: 3.6rem; }
+  @media only screen and (min-width: 620px) {
+    article h1, article h2 {
+      font-size: 5.6rem;
+      line-height: 5.6rem; } }
+  @media only screen and (min-width: 1050px) {
+    article h1, article h2 {
+      font-size: 6.8rem;
+      line-height: 6.8rem; } }
+  @media only screen and (min-width: 1800px) {
+    article h1, article h2 {
+      font-size: 7.2rem;
+      line-height: 7.2rem; } }
+article h2s {
+  font-size: 3.3rem;
+  line-height: 3.3rem; }
+  @media only screen and (min-width: 620px) {
+    article h2s {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media only screen and (min-width: 1050px) {
+    article h2s {
+      font-size: 5.6rem;
+      line-height: 5.6rem; } }
+  @media only screen and (min-width: 1800px) {
+    article h2s {
+      font-size: 6.8rem;
+      line-height: 6.8rem; } }
+article h3 {
+  font-size: 2.8rem;
+  line-height: 2.8rem; }
+  @media only screen and (min-width: 620px) {
+    article h3 {
+      font-size: 4.2rem;
+      line-height: 4.2rem; } }
+  @media only screen and (min-width: 1050px) {
+    article h3 {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media only screen and (min-width: 1800px) {
+    article h3 {
+      font-size: 5.6rem;
+      line-height: 5.6rem; } }
+article h4 {
+  font-family: 'Merriweather', 'Hoefler Text', 'Georgia', 'Times New Roman', 'Serif';
+  font-weight: 900;
+  font-style: italic;
+  text-transform: none;
+  font-size: 2.4rem;
+  line-height: 3rem; }
+  @media only screen and (min-width: 620px) {
+    article h4 {
+      font-size: 3.6rem;
+      line-height: 4.6rem; } }
+  @media only screen and (min-width: 1050px) {
+    article h4 {
+      font-size: 4.2rem;
+      line-height: 5.4rem; } }
+  @media only screen and (min-width: 1800px) {
+    article h4 {
+      font-size: 4.8rem;
+      line-height: 6rem; } }
+article h5, article h6 {
+  font-family: 'Merriweather', 'Hoefler Text', 'Georgia', 'Times New Roman', 'Serif';
+  font-weight: 900;
+  font-style: italic;
+  text-transform: none;
+  font-size: 2rem;
+  line-height: 2.7rem; }
+  @media only screen and (min-width: 620px) {
+    article h5, article h6 {
+      font-size: 2.8rem;
+      line-height: 3.6rem; } }
+  @media only screen and (min-width: 1050px) {
+    article h5, article h6 {
+      font-size: 3.4rem;
+      line-height: 4.8rem; } }
+  @media only screen and (min-width: 1800px) {
+    article h5, article h6 {
+      font-size: 3.8rem;
+      line-height: 5.2rem; } }
+article .txtbox img {
+  margin-bottom: 16px; }
+  @media only screen and (min-width: 620px) {
+    article .txtbox img {
+      margin-bottom: 16px; } }
+  @media only screen and (min-width: 1050px) {
+    article .txtbox img {
+      margin-bottom: 20px; } }
+  @media only screen and (min-width: 1800px) {
+    article .txtbox img {
+      margin-bottom: 20px; } }
+article .txtbox a {
+  font-weight: 900;
+  font-style: italic; }
+article p, article blockquote, article li, article address, article code, article input, article textarea {
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
+  @media only screen and (min-width: 620px) {
+    article p, article blockquote, article li, article address, article code, article input, article textarea {
+      font-size: 1.8rem;
+      line-height: 2.8rem; } }
+  @media only screen and (min-width: 1500px) {
+    article p, article blockquote, article li, article address, article code, article input, article textarea {
+      font-size: 2rem;
+      line-height: 3.2rem; } }
+  @media only screen and (min-width: 1800px) {
+    article p, article blockquote, article li, article address, article code, article input, article textarea {
+      font-size: 2.2rem;
+      line-height: 3.6rem; } }
+article .lead {
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 2.5rem; }
+  @media only screen and (min-width: 620px) {
+    article .lead {
+      font-size: 2.2rem;
+      line-height: 3.1rem; } }
+  @media only screen and (min-width: 1050px) {
+    article .lead {
+      font-size: 2.4rem;
+      line-height: 3.3rem; } }
+  @media only screen and (min-width: 1800px) {
+    article .lead {
+      font-size: 2.8rem;
+      line-height: 3.8rem; } }
+article p, article address {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  @media only screen and (min-width: 620px) {
+    article p, article address {
+      padding-top: 14px;
+      padding-bottom: 14px; } }
+  @media only screen and (min-width: 1050px) {
+    article p, article address {
+      padding-top: 16px;
+      padding-bottom: 16px; } }
+  @media only screen and (min-width: 1800px) {
+    article p, article address {
+      padding-top: 20px;
+      padding-bottom: 20px; } }
+article blockquote, article pre code {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 1px 0;
+  position: relative; }
+  @media only screen and (min-width: 620px) {
+    article blockquote, article pre code {
+      margin-top: 25px;
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 1050px) {
+    article blockquote, article pre code {
+      margin-top: 30px;
+      margin-bottom: 30px; } }
+  @media only screen and (min-width: 1800px) {
+    article blockquote, article pre code {
+      margin-top: 35px;
+      margin-bottom: 35px; } }
+  article blockquote p, article pre code p {
+    font-size: 110%; }
+article code {
+  font-family: monospace;
+  background-color: #eeeeee;
+  border: 1px solid #bbbbbb;
+  padding: .2rem .4rem; }
+article pre code {
+  padding: 1rem; }
+article blockquote {
+  font-style: italic; }
+  @media only screen and (min-width: 620px) {
+    article blockquote {
+      padding-left: 10px;
+      padding-right: 10px; } }
+  @media only screen and (min-width: 1050px) {
+    article blockquote {
+      padding-left: 30px;
+      padding-right: 30px; } }
+  @media only screen and (min-width: 1800px) {
+    article blockquote {
+      padding-left: 40px;
+      padding-right: 40px; } }
+article blockquote:before {
+  content: '\201D';
+  color: #29547c;
+  font-size: 3rem;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  font-weight: 700; }
+  @media only screen and (min-width: 620px) {
+    article blockquote:before {
+      font-size: 4.8rem;
+      top: 10px;
+      left: 6px; } }
+  @media only screen and (min-width: 900px) {
+    article blockquote:before {
+      font-size: 5.6rem;
+      left: 5px;
+      top: 14px; } }
+  @media only screen and (min-width: 1050px) {
+    article blockquote:before {
+      font-size: 6rem;
+      top: 16px;
+      left: 7px; } }
+  @media only screen and (min-width: 1800px) {
+    article blockquote:before {
+      font-size: 7rem;
+      top: 20px;
+      left: 9px; } }
+article ul, article ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0; }
+  @media only screen and (min-width: 620px) {
+    article ul, article ol {
+      margin-top: 25px;
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 1050px) {
+    article ul, article ol {
+      margin-top: 30px;
+      margin-bottom: 30px; } }
+  @media only screen and (min-width: 1800px) {
+    article ul, article ol {
+      margin-top: 35px;
+      margin-bottom: 35px; } }
+  article ul li, article ol li {
+    margin: 4px 0 0 25px;
+    padding: 0;
+    list-style: disc; }
+    @media only screen and (min-width: 620px) {
+      article ul li, article ol li {
+        margin: 8px 0 0 0px;
+        padding: 0 0 0 5px; } }
+article ul li {
+  list-style: disc; }
+article ol li {
+  list-style: decimal; }
+article blockquote, article code, article ul, article ol {
+  max-width: 480px; }
+  @media only screen and (min-width: 620px) {
+    article blockquote, article code, article ul, article ol {
+      max-width: 560px; } }
+  @media only screen and (min-width: 1050px) {
+    article blockquote, article code, article ul, article ol {
+      max-width: 700px; } }
+  @media only screen and (min-width: 1800px) {
+    article blockquote, article code, article ul, article ol {
+      max-width: 800px; } }
+article .txtbox a {
+  font-weight: 900;
+  font-style: italic; }
+article hr {
+  width: 50%;
+  margin: 25px auto 21px;
+  background: #bbbbbb;
+  border: 0;
+  height: 3px; }
+  @media only screen and (min-width: 620px) {
+    article hr {
+      margin: 35px auto 31px; } }
+  @media only screen and (min-width: 1050px) {
+    article hr {
+      margin: 45px auto 41px; } }
+  @media only screen and (min-width: 1800px) {
+    article hr {
+      margin: 60px auto 60px; } }
+article .boxthing {
+  clear: both;
+  padding: 20px 10px;
+  width: auto;
+  overflow: hidden;
+  position: relative; }
+  @media only screen and (min-width: 620px) {
+    article .boxthing {
+      padding: 40px 0; } }
+  @media only screen and (min-width: 1800px) {
+    article .boxthing {
+      padding: 60px 0;
+      position: relative; } }
+  article .boxthing .biggie {
+    padding: 0; }
+    @media only screen and (min-width: 620px) {
+      article .boxthing .biggie {
+        margin: 5px 5px 0 0;
+        float: left;
+        width: 80%; } }
+    @media only screen and (min-width: 1050px) {
+      article .boxthing .biggie {
+        margin: 8px 5px 0 0;
+        width: 80%; } }
+    @media only screen and (min-width: 1800px) {
+      article .boxthing .biggie {
+        margin: 10px 5px 0 0;
+        width: 80%; } }
+  article .boxthing .smalls {
+    border-top: 1px solid #bbbbbb;
+    padding: 14px 10px 0; }
+    @media only screen and (min-width: 620px) {
+      article .boxthing .smalls {
+        border-top: 0;
+        border-left: 1px solid #bbbbbb;
+        position: absolute;
+        width: 20%;
+        top: 13px;
+        right: 0;
+        padding: 5px 10px 10px 20px; } }
+    @media only screen and (min-width: 1050px) {
+      article .boxthing .smalls {
+        width: 17%;
+        top: 18px;
+        padding: 5px 10px 10px 20px; } }
+    @media only screen and (min-width: 1800px) {
+      article .boxthing .smalls {
+        width: 17%;
+        top: 38px; } }
+  article .boxthing span {
+    display: block; }
+article .cboxbox {
+  text-align: center;
+  display: table;
+  margin: 10px 4%; }
+  @media only screen and (min-width: 620px) {
+    article .cboxbox {
+      margin: 10px auto;
+      max-width: 640px; } }
+  @media only screen and (min-width: 900px) {
+    article .cboxbox {
+      max-width: 720px; } }
+article .cbox {
+  /* custom taxonomy and custom field for photo pages */
+  display: table-cell;
+  width: 20%;
+  max-width: 180px;
+  text-align: left;
+  border-left: 1px solid #bbbbbb; }
+  article .cbox:last-child {
+    border-right: 1px solid #bbbbbb; }
+  article .cbox .title {
+    display: block;
+    font-family: 'Open Sans Condensed', 'Sans-Serif';
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    color: #888888;
+    padding: 0 5px; }
+    @media only screen and (min-width: 620px) {
+      article .cbox .title {
+        padding: 5px 10px 0; } }
+  article .cbox .value {
+    display: block;
+    font-family: 'Merriweather', 'Hoefler Text', 'Georgia', 'Times New Roman', 'Serif';
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #888888;
+    font-style: italic;
+    padding: 0 5px 5px; }
+    @media only screen and (min-width: 620px) {
+      article .cbox .value {
+        padding: 0 10px 10px; } }
+    article .cbox .value a {
+      color: grey; }
+article .catshare .cbox {
+  position: relative;
+  top: 25px;
+  display: inherit;
+  width: auto; }
+  @media only screen and (min-width: 620px) {
+    article .catshare .cbox {
+      float: left;
+      margin-top: 25px; } }
+  @media only screen and (min-width: 620px) {
+    article .catshare .cbox {
+      margin-top: 0; } }
+article #metabox {
+  margin-top: 40px; }
+  article #metabox p {
+    font-family: 'Merriweather', 'Hoefler Text', 'Georgia', 'Times New Roman', 'Serif';
+    font-style: italic;
+    color: #888888;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+    line-height: 1.2rem; }
+    article #metabox p a {
+      font-family: 'Lato', 'Sans-Serif';
+      font-weight: 400;
+      font-style: normal;
+      display: inline-block;
+      color: #888888;
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      padding-left: 4px;
+      text-transform: uppercase;
+      text-decoration: none; }
+      article #metabox p a:hover {
+        text-decoration: underline; }
+  article #metabox .datebox {
+    margin: 20px 0 0; }
+    article #metabox .datebox span {
+      font-family: 'Lato', 'Sans-Serif';
+      font-weight: 400;
+      display: inline-block;
+      color: #888888;
+      font-size: 1.1rem;
+      line-height: 1.2rem;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      text-transform: uppercase; }
+      @media only screen and (min-width: 1800px) {
+        article #metabox .datebox span {
+          font-size: 1.3rem;
+          line-height: 1.4rem; } }
+    article #metabox .datebox strong {
+      font-family: 'Open Sans Condensed', 'Sans-Serif';
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #888888;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      display: inline-block;
+      width: 36%; }
+      @media only screen and (min-width: 620px) {
+        article #metabox .datebox strong {
+          display: block;
+          width: auto;
+          margin: 10px 0 3px; } }
+      @media only screen and (min-width: 1800px) {
+        article #metabox .datebox strong {
+          font-size: 1.4rem;
+          line-height: 1.5rem; } }
+article .prevnext {
+  font-family: 'Open Sans Condensed', 'Sans-Serif';
+  text-transform: uppercase;
+  font-weight: 700;
+  clear: both;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  margin-top: 50px;
+  position: relative;
+  display: table;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 2rem; }
+  @media only screen and (min-width: 620px) {
+    article .prevnext {
+      margin-top: 60px;
+      font-size: 1.7rem;
+      line-height: 2.4rem;
+      max-width: 660px; } }
+  @media only screen and (min-width: 1050px) {
+    article .prevnext {
+      margin-top: 80px;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      max-width: 820px; } }
+  @media only screen and (min-width: 1800px) {
+    article .prevnext {
+      margin-top: 100px;
+      max-width: 900px; } }
+  article .prevnext .readmore {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    margin: 0 0 0 -45px;
+    padding: 5px 0 3px;
+    width: 90px;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: #888888;
+    background: white;
+    border: 1px solid #bbbbbb; }
+  article .prevnext div {
+    display: table-cell;
+    width: 50%; }
+  article .prevnext .next {
+    border-right: 1px solid #bbbbbb;
+    display: table-cell;
+    vertical-align: middle; }
+    article .prevnext .next a {
+      display: block;
+      padding: 0 8% 0 20%;
+      text-align: right;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-style: normal; }
+      @media only screen and (min-width: 620px) {
+        article .prevnext .next a {
+          padding-top: 40px;
+          padding-bottom: 37px; } }
+      @media only screen and (min-width: 1050px) {
+        article .prevnext .next a {
+          padding-top: 50px;
+          padding-bottom: 47px; } }
+      @media only screen and (min-width: 1800px) {
+        article .prevnext .next a {
+          padding-top: 60px;
+          padding-bottom: 57px; } }
+    article .prevnext .next span {
+      left: 0; }
+      @media only screen and (min-width: 900px) {
+        article .prevnext .next span {
+          left: 10px; } }
+  article .prevnext .prev {
+    display: table-cell;
+    vertical-align: middle; }
+    article .prevnext .prev a {
+      display: block;
+      padding: 0 20% 0 8%;
+      text-align: left;
+      padding-top: 25px;
+      padding-bottom: 25px; }
+      @media only screen and (min-width: 620px) {
+        article .prevnext .prev a {
+          padding-top: 40px;
+          padding-bottom: 37px; } }
+      @media only screen and (min-width: 1050px) {
+        article .prevnext .prev a {
+          padding-top: 50px;
+          padding-bottom: 47px; } }
+      @media only screen and (min-width: 1800px) {
+        article .prevnext .prev a {
+          padding-top: 60px;
+          padding-bottom: 57px; } }
+    article .prevnext .prev span {
+      right: 0; }
+      @media only screen and (min-width: 900px) {
+        article .prevnext .prev span {
+          right: 10px; } }
+  article .prevnext a {
+    font-weight: 400;
+    text-decoration: none; }
+    article .prevnext a:hover {
+      background: rgba(0, 0, 0, 0.05); }
+  article .prevnext span {
+    font-weight: 300;
+    position: absolute;
+    font-size: 6rem;
+    color: #bbbbbb;
+    top: 50%;
+    margin-top: -18px; }
+article footer {
+  padding: 0 3% 0 0;
+  border-top: 0;
+  text-align: right; }
+  article footer br {
+    display: none; }
 
-}
+/* home */
+article .homelist {
+  max-width: none;
+  max-width: 520px; }
+  @media only screen and (min-width: 620px) {
+    article .homelist {
+      max-width: 640px; } }
+  @media only screen and (min-width: 1050px) {
+    article .homelist {
+      max-width: 720px; } }
+  @media only screen and (min-width: 1800px) {
+    article .homelist {
+      max-width: 880px; } }
+  article .homelist li {
+    list-style: none;
+    width: auto;
+    overflow: hidden;
+    margin: 6px 12px; }
+article .posts {
+  padding-bottom: 20px; }
+  @media only screen and (min-width: 620px) {
+    article .posts {
+      padding-bottom: 40px; } }
+  article .posts li {
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 20px; }
+    @media only screen and (min-width: 620px) {
+      article .posts li {
+        margin-bottom: 30px; } }
+    article .posts li span {
+      font-family: 'Lato', 'Sans-Serif';
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      display: table-cell;
+      width: 19%;
+      padding: 8px 3%;
+      border-top: 1px solid #bbbbbb;
+      color: #888888;
+      text-align: center;
+      vertical-align: middle; }
+      @media only screen and (min-width: 620px) {
+        article .posts li span {
+          width: 120px;
+          font-size: 1.5rem;
+          padding: 20px 3%; } }
+    article .posts li a {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 8px 1% 8px 3%;
+      text-decoration: none;
+      font-weight: 900; }
+      @media only screen and (min-width: 620px) {
+        article .posts li a {
+          padding: 20px 1% 20px 3%; } }
+article .books .book h5 {
+  padding: 0 0 20px; }
+  article .books .book h5 a {
+    text-decoration: none; }
+    article .books .book h5 a:hover {
+      text-decoration: underline; }
+article .books .book img {
+  margin: 0; }
+article .talks {
+  border-top: 1px solid #eeeeee; }
+  article .talks li {
+    border-bottom: 1px solid #eeeeee;
+    padding: 10px 0; }
+    article .talks li a {
+      font-weight: 900; }
+article .projects {
+  border-top: 1px solid #eeeeee; }
+  article .projects li {
+    border-bottom: 1px solid #eeeeee;
+    padding: 5px 0; }
+    article .projects li a {
+      font-weight: 900; }
+article .thepast a {
+  font-weight: 900; }
 
-#book-container {
-  display: inline-block;
-}
+/* mini gird */
+.gridbox {
+  clear: both;
+  width: auto;
+  overflow: hidden;
+  border-top: 1px solid #eeeeee; }
+  @media only screen and (min-width: 900px) {
+    .gridbox .w50 {
+      width: 49%;
+      padding: 20px 2%; }
+      .gridbox .w50:nth-child(odd) {
+        float: left; }
+      .gridbox .w50:nth-child(even) {
+        float: right; } }
+
+footer {
+  border-top: 1px solid #eeeeee;
+  margin-top: 40px;
+  padding: 30px 0;
+  text-align: center; }
+  @media only screen and (min-width: 900px) {
+    footer {
+      margin-top: 60px;
+      padding: 50px 0; } }
+  footer ul li {
+    display: inline-block; }
+    footer ul li a {
+      font-family: 'Lato', 'Sans-Serif';
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 14px;
+      font-size: 2rem;
+      line-height: 2.8rem; }
+      @media only screen and (min-width: 900px) {
+        footer ul li a {
+          font-size: 2.4rem; } }
+      @media only screen and (min-width: 1050px) {
+        footer ul li a {
+          font-size: 2.8rem; } }

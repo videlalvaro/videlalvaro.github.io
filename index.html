@@ -3,28 +3,40 @@ layout: default
 title: Alvaro Videla
 ---
 
-<div id="home">
-  <h1>Posts</h1>
-  <ul class="posts">
+<article id="home">
+  <h2>Posts</h2>
+  <ul class="homelist posts">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 
-  <div id="book-container">
-    <h1>Books:</h1>
-    <ul class="posts">
-      <li><a href="http://bit.ly/rabbitmq">RabbitMQ in Action</a></li>
-      <li class="book">
+  <div class="gridbox">
+    <div class="w50">
+      <h2>Books:</h2>
+      <ul class="homelist books">
+        <li class="book">
+          <h5><a href="http://bit.ly/rabbitmq">RabbitMQ in Action</a></h5>
           <a href="http://bit.ly/rabbitmq">
-              <img border="0" src="/images/rmqia_cover_small.png" />
+            <img border="0" src="http://videlalvaro.github.io/images/rmqia_cover_small.png" />
           </a>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="w50">
+      <h2>Talks</h2>
+      <ul class="homelist talks">
+        <li><a href="http://www.slideshare.net/old_sound/scaling-webappswithrabbitmq">Scaling Web Apps With RabbitMQ</a>: ECUG - Beijing</li>
+        <li><a href="http://www.slideshare.net/old_sound/integrating-erlang-with-php">Integrating Erlang with PHP</a>: IPC Spring Edition, June 2010 - Berlin and Erlang Factory London 2010</li>
+        <li><a href="http://www.slideshare.net/old_sound/integrating-rabbitmq-with-php">Integrating RabbitMQ with PHP</a>: IPC Spring Edition, June 2010 - Berlin</li>
+        <li><a href="http://www.slideshare.net/old_sound/debugging-and-profiling-symfony-apps">Debugging and Profiling Symfony Apps</a>: Symfony Live, February 2010 - Paris</li>
+      </ul>
+    </div>
   </div>
 
-  <h1>Projects</h1>
-  <ul class="posts">
+  <h4>Projects</h4>
+  <ul class="homelist projects">
     <li><a href="http://github.com/videlalvaro/Thumper">Thumper</a>: RabbitMQ library for PHP</li>
     <li><a href="http://github.com/tnc/rac/">RAC</a>: RabbitMQ Administration Console</li>
     <li><a href="http://code.google.com/p/mypeb/">PEB</a>: PHP Erlang Bridge</li>
@@ -34,16 +46,10 @@ title: Alvaro Videla
     <li><a href="http://github.com/videlalvaro/InspectorD">InspectorD</a>: A Python server to inspect PHP Sessions</li>
   </ul>
 
-  <h1>Talks</h1>
-  <ul class="posts">
-    <li><a href="http://www.slideshare.net/old_sound/scaling-webappswithrabbitmq">Scaling Web Apps With RabbitMQ</a>: ECUG - Beijing</li>
-    <li><a href="http://www.slideshare.net/old_sound/integrating-erlang-with-php">Integrating Erlang with PHP</a>: IPC Spring Edition, June 2010 - Berlin and Erlang Factory London 2010</li>
-    <li><a href="http://www.slideshare.net/old_sound/integrating-rabbitmq-with-php">Integrating RabbitMQ with PHP</a>: IPC Spring Edition, June 2010 - Berlin</li>
-    <li><a href="http://www.slideshare.net/old_sound/debugging-and-profiling-symfony-apps">Debugging and Profiling Symfony Apps</a>: Symfony Live, February 2010 - Paris</li>
-  </ul>
-  <h1>Past</h1>
-  <p>
+
+  <h5>Past</h5>
+  <p class="thepast">
     Before having this blog I used to write about Symfony, XMPP, Erlang, Haskell, Firebug and more at this blog:
     <a href="http://obvioushints.blogspot.com/">ObviousHints</a>
   </p>
-</div>
+</article>
