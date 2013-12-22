@@ -121,15 +121,15 @@ header {
     @media only screen and (min-width: 620px) {
       header span {
         font-size: 1.4rem;
-        padding: 0 30px 60px; } }
+        padding: 4px 30px 60px; } }
     @media only screen and (min-width: 1050px) {
       header span {
         font-size: 1.5rem;
-        padding: 0 40px 80px; } }
+        padding: 6px 40px 80px; } }
     @media only screen and (min-width: 1800px) {
       header span {
         font-size: 1.6rem;
-        padding: 0 60px 120px; } }
+        padding: 8px 60px 120px; } }
 
 .page article {
   padding: 20px 0; }
@@ -215,20 +215,20 @@ a {
 .center {
   text-align: center; }
 
-article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare {
   margin-right: auto;
   margin-left: auto;
   max-width: 520px;
   padding-left: 12px;
   padding-right: 12px; }
   @media only screen and (min-width: 620px) {
-    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare {
       max-width: 640px; } }
   @media only screen and (min-width: 1050px) {
-    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare {
       max-width: 720px; } }
   @media only screen and (min-width: 1800px) {
-    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare, article #disqus_thread {
+    article .meta, article h1.mt, article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li, article address, article code, article input, article textarea, article ul, article ol, article .boxthing, article .catshare {
       max-width: 880px; } }
 article div {
   max-width: 1200px;
@@ -949,7 +949,20 @@ article .thepast a {
 
 /* disqus */
 #disqus_thread {
-  position: relative; }
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 520px;
+  padding-left: 12px;
+  padding-right: 12px; }
+  @media only screen and (min-width: 620px) {
+    #disqus_thread {
+      max-width: 640px; } }
+  @media only screen and (min-width: 1050px) {
+    #disqus_thread {
+      max-width: 720px; } }
+  @media only screen and (min-width: 1800px) {
+    #disqus_thread {
+      max-width: 880px; } }
 
 footer {
   border-top: 1px solid #eeeeee;
