@@ -464,7 +464,8 @@ article code {
   font-family: monospace;
   background-color: #eeeeee;
   border: 1px solid #bbbbbb;
-  padding: .2rem .4rem; }
+  padding: .2rem .4rem;
+  overflow-x: scroll; }
 article pre code {
   padding: 1rem; }
 article blockquote {
@@ -871,10 +872,10 @@ article .homelist {
     overflow: hidden;
     margin: 6px 12px; }
 article .posts {
-  padding-bottom: 20px; }
+  padding-bottom: 10px; }
   @media only screen and (min-width: 620px) {
     article .posts {
-      padding-bottom: 40px; } }
+      padding-bottom: 20px; } }
   article .posts li {
     border-bottom: 1px solid #eeeeee;
     margin-bottom: 20px; }
@@ -907,6 +908,11 @@ article .posts {
       @media only screen and (min-width: 620px) {
         article .posts li a {
           padding: 20px 1% 20px 3%; } }
+article h4.center {
+  margin: -40px auto;
+  padding-bottom: 100px; }
+  article h4.center a {
+    text-decoration: none; }
 article .books .book h5 {
   padding: 0 0 20px; }
   article .books .book h5 a {
