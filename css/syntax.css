@@ -1,13 +1,5 @@
 .highlight{ 
-background: #eeeeff; 
 overflow: auto;
-width: 600px;
-padding: 3px;
-border: 3px solid #D1DDDF;
-}
-
-.highlight:hover{
-  border: 3px solid #9BC6CF;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */
