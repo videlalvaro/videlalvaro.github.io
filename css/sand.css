@@ -1,16 +1,16 @@
-.shiftand {
+article .shiftand {
     overflow: visible;
     max-width: 720px;
     margin: 0 auto;
 }
-form {
+article .shiftand form {
     background: #eee;
     padding: 10px 0 20px;
     text-align: center;
     max-width: 720px;
     margin: 0 auto;
 }
-.shiftand h5 {
+article .shiftand h5 {
     font-size: 11px;
     font-family: Arial, sans-serif;
     letter-spacing: 1px;
@@ -19,22 +19,22 @@ form {
     margin: 0;
     padding: 10px 0 5px;
 }
-label, input, textarea {    
+article label, article input, article textarea {    
     margin: 5px 10px;
     padding: 0.3em;
     text-align: left;
 }
 
-label {
+article label {
     display: block;
     padding: 0.3em 0.6em;
 }
-input, textarea {
+article input, article textarea {
     padding: 0.3em;
     width: 88%;
     margin: 0 4%;
 }
-input[type=submit] {
+article input[type=submit] {
     background: #444;
     color: #fff;
     margin-top: 5px;
@@ -44,33 +44,34 @@ input[type=submit] {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border: 0;
+    text-align: center;
 }
-input[type=submit]:focus {
+article input[type=submit]:focus {
     background: #41983d;
     color: #fff;
     outline: none;
 }
-div {
+article .shiftand div {
     margin: 10px;
 }
-#vis_container {
+article #vis_container {
 }
-span.outer {
+article span.outer {
     display: inline-block;
     width: 1.6em;
     text-align: center;
 }
-span.inner {
+article span.inner {
     margin: 0.1em;
     border: 1px solid #ddd;
     padding: 0.1em 0;
     display: block;
 }
 
-.table, pre {
+article .table, article pre {
     font-family: monospace;
 }
-.table span {
+article .table span {
     display: inline-block;
     margin-right: 0.4em;
     border: 1px solid #ddd;
@@ -78,30 +79,30 @@ span.inner {
     width: 1.6em;
     text-align: center;
 }
-#text_blocks {
+article #text_blocks {
     width: auto;
     height: auto;
     overflow: visible;
     padding-top: 10px;
     max-width: 720px;
 }
-#the-haystack {
+article #the-haystack {
     position: relative;
 }
-#the-needle {
+article #the-needle {
     position: relative;
 }
-#bitrun {
+article #bitrun {
     width: auto;
     overflow: auto;
     margin-top: 60px;
     padding-top: 10px;
 }
-#bitrun ul {
+article #bitrun ul {
     margin: 0;
     padding: 0;
 }
-#bitmask {
+article #bitmask {
     float: left;
     width: 50%;
     min-width: 30%;
@@ -109,25 +110,24 @@ span.inner {
     margin-right: 30px;
 }
 
-#match-run {
+article #match-run {
     float: left;
 }
 
-#text_blocks {
+article #text_blocks {
 }
 
-ul {
+article .shiftand ul {
     list-style-type: none;
 }
 
-li {
+article .shiftand li {
     margin: 6px 1px;
 }
 
-li span {
+article .shiftand li span {
     margin-right:0;
 }
-
-.hidden {
+article .shiftand .hidden {
     display: none;
 }
