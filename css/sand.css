@@ -1,0 +1,120 @@
+.shiftand, #vis_container {
+    width: 450px;
+    overflow: visible;
+}
+form {
+    background: #eee;
+    padding: 10px 0 20px;
+}
+.shiftand h5 {
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0;
+    padding: 10px 0 5px;
+}
+label, input, textarea {    
+    margin: 5px 10px;
+    padding: 0.3em;
+}
+
+label {
+    display: block;
+    padding: 0.3em 0.6em;
+}
+input, textarea {
+    padding: 0.3em;
+    width: 88%;
+    margin: 0 4%;
+}
+input[type=submit] {
+    background: #444;
+    color: #fff;
+    margin-top: 5px;
+    padding: 10px 0 8px 0;
+    width: 90%;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 0;
+}
+input[type=submit]:focus {
+    background: #41983d;
+    color: #fff;
+    outline: none;
+}
+div {
+    margin: 10px;
+    position: relative;
+}
+span.outer {
+    display: inline-block;
+    width: 1.6em;
+    text-align: center;
+}
+span.inner {
+    margin: 0.1em;
+    border: 1px solid #ddd;
+    padding: 0.1em 0;
+    display: block;
+}
+
+.table {
+    font-family: monospace;
+    width: 100px;
+}
+.table span {
+    display: inline-block;
+    margin-right: 0.4em;
+    border: 1px solid #ddd;
+    padding: 0.1em 0;
+    width: 1.6em;
+    text-align: center;
+}
+#text_blocks {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding-top: 10px;
+}
+#the-needle {
+    position: absolute;
+}
+#bitrun {
+    margin-top: 60px;
+    padding-top: 10px;
+}
+#bitrun ul {
+    margin: 0;
+    padding: 0;
+}
+#bitmask {
+    float: left;
+    margin-right: 30px;
+}
+
+#match-run {
+    float: left;
+}
+
+#text_blocks {
+    height: 3em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 6px 1px;
+}
+
+li span {
+    margin-right:0;
+}
+
+.hidden {
+    display: none;
+}
