@@ -88,7 +88,13 @@ And now to the interesting part, the visual simulation:
 
 ## Shift-And visual simulation ##
 
+Let me briefly explain what's going on here. First we have a form, where you can enter the pattern to search, and the text where to search it for. That's easy.
 
+Once hit `start`, the visualization will display the text and bellow it the pattern you are searching for. Beneath them, there will be the `b table` and next to it, the results of each step will be reported. 
+
+For example, we will see the initial value of D, then it will be `(D << 1) | 1`. Then we read a character from the text, and we get the value from the table, `AND'ing` it to the value of `D` and getting the result below, and so on.
+
+I hope the colors are pretty self explanatory (I'm colorblind so don't trust me on this one).
 
 <link rel="stylesheet" href="/css/sand.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 <div class="shiftand">
@@ -135,3 +141,4 @@ And now to the interesting part, the visual simulation:
 
 I hope this post has made justice to what I think is one of the most elegant algorithms that I know of. If you are interesting in learning more about Pattern Matching in Strings, then I would recommend you get a copy of the book [Flexible Pattern Matching in Strings](http://www.amazon.com/Flexible-Pattern-Matching-Strings-Algorithms/dp/0521039932) since it's really worth every penny.
 
+I would like to mention also Mr. [@sicher](https://twitter.com/sicher) who basically single handedly fixed the mess of HTML and CSS that I had created. So if you enjoyed the visual styles, then send him some props on twitter.
