@@ -172,10 +172,9 @@ function vis_shift_and(p, text) {
 
     //build bitmask table;
     for (var i = 0; i < l; i++) {
-        b[p.charAt(i)] = b[p.charAt(i)] | Math.pow(2, i);
+        b[p.charAt(i)] = b[p.charAt(i)] | (1 << i);
     }
 
-    //log table TODO: build the table as DOM elements instead of logging
     for (var i = 0; i < alphabet.length; i++) {
         var padded = pad_num(l, b[alphabet[i]].toString(2));
         display_mask(alphabet[i], padded);
