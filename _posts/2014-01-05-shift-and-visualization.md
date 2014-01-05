@@ -71,7 +71,7 @@ function shift_and(p, text) {
         b[p.charAt(i)] = b[p.charAt(i)] | (1 << i);
     }
  
-    d = 0;
+    var d = 0;
     var matchMask = 1 << l-1;
     for (var i = 0; i < tl; i++) {
         d = ((d << 1) | 1) & (b[text.charAt(i)] | 0);
