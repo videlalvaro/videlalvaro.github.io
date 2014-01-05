@@ -27,7 +27,9 @@ article label, article input, article textarea {
 
 article label {
     display: block;
-    padding: 0.3em 0.6em;
+    padding: 0.3em 1em;
+    width: 88%;
+    margin: 0 4%;
 }
 article input, article textarea {
     padding: 0.3em;
@@ -104,14 +106,15 @@ article #bitrun ul {
 }
 article #bitmask {
     float: left;
-    width: 50%;
+    width: 45%;
     min-width: 30%;
     max-width: 50%;
     margin-right: 30px;
 }
-
 article #match-run {
     float: left;
+    width: 45%;
+    font-size: 14px;
 }
 
 article #text_blocks {
