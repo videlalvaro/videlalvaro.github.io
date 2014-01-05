@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shift And Visualization
+title: Shift-And Visualization
 ---
 
 # {{page.title}} #
