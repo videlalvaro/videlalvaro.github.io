@@ -98,7 +98,6 @@ article #the-needle {
 article #bitrun {
     width: auto;
     overflow: auto;
-    margin-top: 60px;
     padding-top: 10px;
 }
 article #bitrun ul {
@@ -111,6 +110,8 @@ article #bitmask {
     min-width: 30%;
     max-width: 50%;
     margin-right: 30px;
+    
+    font-size: 14px;
 }
 article #match-run {
     float: left;
@@ -127,6 +128,7 @@ article .shiftand ul {
 
 article .shiftand li {
     margin: 6px 1px;
+    font-size: 14px;
 }
 
 article .shiftand li span {
