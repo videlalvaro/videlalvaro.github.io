@@ -142,6 +142,8 @@ So, click __start__ and enjoy the show.
   
 </script>
 
-I hope this post has made justice to what I think is one of the most elegant algorithms that I know of. If you are interesting in learning more about Pattern Matching in Strings, then I would recommend you get a copy of the book [Flexible Pattern Matching in Strings](http://www.amazon.com/Flexible-Pattern-Matching-Strings-Algorithms/dp/0521039932) since it's really worth every penny.
+I hope this post has made justice to what I think is one of the most elegant algorithms that I know of. If there was a book called _"Algorithms from the Book"_ similar to [this](http://www.amazon.com/Proofs-THE-BOOK-Martin-Aigner/dp/3642008550), I'm sure this algorithm would make it.
+
+If you are interested in learning more about Pattern Matching in Strings, then I would recommend you get a copy of the book [Flexible Pattern Matching in Strings](http://www.amazon.com/Flexible-Pattern-Matching-Strings-Algorithms/dp/0521039932) since it's really worth every penny.
 
 I would like to mention also Mr. [@sicher](https://twitter.com/sicher) who basically single handedly fixed the mess of HTML and CSS that I had created. So if you enjoyed the visual styles, then send him some props on twitter.
