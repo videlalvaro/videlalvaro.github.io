@@ -1,3 +1,11 @@
+/**
+ * THIS CODE PROBABLY HAS THE WORST USE OF JQUERY PROMISES
+ * YOU'VE BEEN WARNED!!
+ *
+ * FOR A CLEANER IMPLEMENTATION SEE: https://gist.github.com/videlalvaro/8105837
+ *
+ **/
+
 function add_to_alphabet(alphabet, ch) {
     if (alphabet.indexOf(ch) == -1) {
         alphabet.push(ch);
