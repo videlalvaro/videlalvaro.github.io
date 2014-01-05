@@ -1,5 +1,3 @@
-/* SCSS Variables */
-/*SCSS Mixins */
 /* css reset */
 html, body, logo a span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -937,7 +935,18 @@ article .projects {
       font-weight: 900; }
 article .thepast a {
   font-weight: 900; }
-
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 /* mini gird */
 .gridbox {
   clear: both;
@@ -969,7 +978,10 @@ article .thepast a {
   @media only screen and (min-width: 1800px) {
     #disqus_thread {
       max-width: 880px; } }
-
+.dsq-brlink {
+	display: block;
+	text-align: center;
+}
 footer {
   border-top: 1px solid #eeeeee;
   margin-top: 40px;
