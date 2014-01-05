@@ -23,7 +23,7 @@ for (var i = 0; i < l; i++) {
     b[p.charAt(i)] = 0;
 }
 
-//build bit mask table;
+// build bit mask table;
 for (var i = 0; i < l; i++) {
     b[p.charAt(i)] = b[p.charAt(i)] | (1 << i);
 }
@@ -43,7 +43,7 @@ var B = {
 }
 {% endhighlight %}
 
-Of course we will have the actual numbers, not those bit masks., with the padding and os on. We also added an `*` entry in the table. That's because whenever a read character from the text doesn't matches, then the bit mask used will be `0`.
+Of course we will have the actual numbers, not those bit masks, with the padding and so on. We also added an `*` entry in the table. That's because whenever a read character from the text doesn't match, then the bit mask used will be `0`.
 
 Once we have the table built, we start searching for the pattern in the text. First we set `D` to `0`, and then we start reading from the text, character by character. Let's say we read an `a`, so we search for the `a` bit mask in our table, it will return `00000001`. To calculate the new `D` we first shift it `1` to the left, and we `OR` a `1` to it : `(D << 1) | 1`. That value gets `AND'ed` to the mask we retrieved from the table, so this would be the complete line: `D <- ((D << 1) | 1) & B[current-char]`.
 
@@ -90,7 +90,7 @@ And now to the interesting part, the visual simulation:
 
 Let me briefly explain what's going on here. First we have a form, where you can enter the pattern to search, and the text where to search it for. That's easy.
 
-Once hit `start`, the visualization will display the text and bellow it the pattern you are searching for. Beneath them, there will be the `b table` and next to it, the results of each step will be reported. 
+Once hit `start`, the visualization will display the text and bellow it the pattern you are searching for. Beneath them, there will be the `b table` and next to it, the results for each step will be reported. 
 
 For example, we will see the initial value of D, then it will be `(D << 1) | 1`. Then we read a character from the text, and we get the value from the table, `AND'ing` it to the value of `D` and getting the result below, and so on.
 
