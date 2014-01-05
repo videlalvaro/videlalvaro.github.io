@@ -9,7 +9,7 @@ title: Shift-And Visualization
 
 In this article I would like to describe the Shift-And algorithm for pattern matching, based on the book [Flexible Pattern Matching in Strings](http://www.amazon.com/Flexible-Pattern-Matching-Strings-Algorithms/dp/0521039932). Apart from the actual description, you can scroll down for a demonstration of how the algorithm works.
 
-Shift-And is categorized as a prefix-based algorithm, similar to KMP, but what Shift-And does is to keep a set of all prefixes `p` that matches a suffix of the text read so far. Keep in mind that is the suffix of the text read _so far_, not a suffix of the whole text.
+Shift-And is categorized as a prefix-based algorithm, similar to <abbr title="Knuth-Morris-Pratt">KMP</abbr>, but what Shift-And does is to keep a set of all prefixes `p` that matches a suffix of the text read so far. Keep in mind that is the suffix of the text read _so far_, not a suffix of the whole text.
 
 The set of prefixes is updated using __bit-parallelism__, that is, the set of prefixes is kept in a bit mask called `D`. `D` is defined as: d<sub>m</sub> ... d<sub>1</sub>, where `m` is the canonical way of referring to the pattern length. For example, if we have a six character pattern, and so far our first character matches against the text, then `D` would be `000001`. 
 
