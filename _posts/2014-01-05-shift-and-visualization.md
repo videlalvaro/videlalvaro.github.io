@@ -96,9 +96,12 @@ For example, we will see the initial value of D, then it will be `(D << 1) | 1`.
 
 I hope the colors are pretty self explanatory (I'm colorblind so don't trust me on this one).
 
+So, click __start__ and enjoy the show.
+
 <link rel="stylesheet" href="/css/sand.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 <div class="shiftand">
 <form id="shiftand">
+    <h4>Shift-And</h4>
     <label for="pattern">Pattern:</label>
     <input id="pattern" type="text" name="pattern" value="announce" size="70" />
     <label for="text">Text:</label>
