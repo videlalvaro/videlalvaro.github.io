@@ -104,8 +104,8 @@ function highlight_pad_from_table() {
 }
 
 function highlight_pattern_letter(def, pat_letter_index, color) {
-    var let = "#pattern-letter-" + pat_letter_index;
-    $.when(flash_colors(let, color, '#ffffff', 500)).done(function () {
+    var lettter = "#pattern-letter-" + pat_letter_index;
+    $.when(flash_colors(lettter, color, '#ffffff', 500)).done(function () {
         def.resolve();
     });
 }
