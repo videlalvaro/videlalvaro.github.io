@@ -36,6 +36,8 @@ article input, article textarea {
     padding: 0.3em;
     width: 88%;
     margin: 0 4%;
+    font-size: 14px;
+    line-height: 18px;
 }
 article input[type=submit] {
     background: #444;
@@ -110,7 +112,6 @@ article #bitmask {
     min-width: 30%;
     max-width: 50%;
     margin-right: 30px;
-    
     font-size: 14px;
 }
 article #match-run {
