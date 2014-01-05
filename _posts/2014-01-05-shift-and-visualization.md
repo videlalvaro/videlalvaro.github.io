@@ -29,7 +29,7 @@ for (var i = 0; i < l; i++) {
 }
 {% endhighlight %}
 
-So the bit mask table for the word announce will end up looking like this:
+So the bit mask table for the word `announce` will end up looking like this:
 
 {% highlight javascript %}
 var B = {
