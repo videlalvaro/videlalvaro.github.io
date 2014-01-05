@@ -49,6 +49,47 @@ Once we have the table built, we start searching for the pattern in the text. Fi
 
 We keep iterating over the text until we find a match. How do we find a match? We need to check if the bit d<sub>m</sub> is active. To do that we have to run the following operation: `D & (1 << m-1)`. We create the following bit mask `10000000` and we `AND` it to `D`. If this is not `0`, then we have a match.
 
+Here's the complete algorithm in a vanilla implementation using Javascript:
+
+{% highlight javascript %}
+/**
+  * string p: pattern to search (needle);
+  * string text: haystack
+**/
+function shift_and(p, text) {
+    var b = {};
+    var l = p.length;
+    var tl = text.length;
+ 
+    // init the table
+    for (var i = 0; i < l; i++) {
+        b[p.charAt(i)] = 0;
+    }
+
+    //build bit mask table;
+    for (var i = 0; i < l; i++) {
+        b[p.charAt(i)] = b[p.charAt(i)] | (1 << i);
+    }
+ 
+    d = 0;
+    var matchMask = 1 << l-1;
+    for (var i = 0; i < tl; i++) {
+        d = ((d << 1) | 1) & (b[text.charAt(i)] | 0);
+        var matched = (d & matchMask);
+        if (matched != 0) {
+            return i - l + 1;
+        }
+    }
+    return -1;
+}
+{% endhighlight %}
+
+And now to the interesting part, the visual simulation:
+
+## Shift-And visual simulation ##
+
+
+
 <link rel="stylesheet" href="/css/sand.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 <div class="shiftand">
 <form id="shiftand">
@@ -92,5 +133,5 @@ We keep iterating over the text until we find a match. How do we find a match? W
   
 </script>
 
-Proin id vulputate leo. Phasellus dapibus est nulla, nec blandit tortor adipiscing eu. Sed posuere dignissim urna at rutrum. Quisque porttitor tristique suscipit. Morbi quam erat, condimentum at risus vel, accumsan auctor libero. Sed ante ligula, scelerisque eget semper ac, malesuada eu tellus. Quisque aliquam mattis enim, non pellentesque felis. In nec est condimentum, lacinia lacus in, aliquet orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla faucibus urna et metus interdum rhoncus. Nam cursus nulla ut sollicitudin consectetur. Duis non imperdiet turpis, ut dapibus est. Nunc vitae consectetur dolor.
+I hope this post has made justice to what I think is one of the most elegant algorithms that I know of. If you are interesting in learning more about Pattern Matching in Strings, then I would recommend you get a copy of the book [Flexible Pattern Matching in Strings](http://www.amazon.com/Flexible-Pattern-Matching-Strings-Algorithms/dp/0521039932) since it's really worth every penny.
 
