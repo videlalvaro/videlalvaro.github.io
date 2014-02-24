@@ -92,13 +92,13 @@ Some resources for Learning Erlang:
 
 I've learnt Erlang from this book: [Programming Erlang: Software for a Concurrent World](http://pragprog.com/book/jaerlang/programming-erlang).
 
-From that book I went directly to the this guide from the official docs: [OTP Design Principles](http://www.erlang.org/doc/design_principles/des_princ.html).
+From that book I went directly to this guide from the official docs: [OTP Design Principles](http://www.erlang.org/doc/design_principles/des_princ.html).
 
 I've learnt about Mnesia (the Erlang database) from here: [Mnesia User's Guide](http://www.erlang.org/doc/apps/mnesia/Mnesia_chap1.html).
 
 Then the book [Erlang and OTP in Action](http://www.manning.com/logan/) will teach you a lot about building reliable apps with Erlang.
 
-As a project to learn Erlang, I tried to create a Redis clone in Erlang. I've never published that project, but I've learnt a lot.
+As a project to learn Erlang, I tried to create a Redis clone in Erlang. I've never published that project, but I've learnt a lot from it.
 
 Finally I've got hooked with RabbitMQ so from time to time I would read the source code just to learn more about Erlang. You can read some of those adventures [here](http://videlalvaro.github.io/internals.html)
 and [here](https://github.com/videlalvaro/rabbit-internals), and some slides [here](http://www.slideshare.net/old_sound/dissecting-the-rabbit).
