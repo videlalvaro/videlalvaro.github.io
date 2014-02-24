@@ -86,6 +86,23 @@ There's a lot of complaining about Erlang Syntax. Well, yes, if you come from th
 new, I think Erlang syntax is there to remind you "Hey! I don't think that thing means what you think it means", all the time. For a language that comes with a complete new paradigm like
 concurrent programming, I think a rather different syntax is also interesting.
 
+## Books ##
+
+Some resources for Learning Erlang:
+
+I've learnt Erlang from this book: [Programming Erlang: Software for a Concurrent World](http://pragprog.com/book/jaerlang/programming-erlang).
+
+From that book I went directly to the this guide from the official docs: [OTP Design Principles](http://www.erlang.org/doc/design_principles/des_princ.html).
+
+I've learnt about Mnesia (the Erlang database) from here: [Mnesia User's Guide](http://www.erlang.org/doc/apps/mnesia/Mnesia_chap1.html).
+
+Then the book [Erlang and OTP in Action](http://www.manning.com/logan/) will teach you a lot about building reliable apps with Erlang.
+
+As a project to learn Erlang, I tried to create a Redis clone in Erlang. I've never published that project, but I've learnt a lot.
+
+Finally I've got hooked with RabbitMQ so from time to time I would read the source code just to learn more about Erlang. You can read some of those adventures [here](http://videlalvaro.github.io/internals.html)
+and [here](https://github.com/videlalvaro/rabbit-internals), and some slides [here](http://www.slideshare.net/old_sound/dissecting-the-rabbit).
+
 ## Conclusion ##
 
 To sum it up, why you should learn Erlang? It will make you more aware of all the places were your code is modifying state, and perhaps there's a cleaner implementation that doesn't need that. 
