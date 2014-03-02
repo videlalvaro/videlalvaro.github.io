@@ -105,9 +105,9 @@ On October of the same year, the NIST announced that Rijndael would become the n
 the announcement, saying about Rijndael:
 
 >Rijndael appears to be consistently a very good performer in both hardware and software across a wide range of computing environments regardless of its use in feedback or non- feedback modes. 
-Its key setup time is excellent, and its key agility is good. Rijndael’s very low memory requirements make it very well suited for restricted-space environments, in which it also demonstrates excellent performance. 
-Rijndael’s operations are among the easiest to defend against power and timing attacks. Additionally, it appears that some defense can be provided against such attacks without significantly impacting Rijndael’s 
-performance. Rijndael is designed with some flexibility in terms of block and key sizes, and the algorithm can accommodate alterations in the number of rounds, although these features would require further study and are not being considered at this time.
+>Its key setup time is excellent, and its key agility is good. Rijndael’s very low memory requirements make it very well suited for restricted-space environments, in which it also demonstrates excellent performance. 
+>Rijndael’s operations are among the easiest to defend against power and timing attacks. Additionally, it appears that some defense can be provided against such attacks without significantly impacting Rijndael’s 
+>performance. Rijndael is designed with some flexibility in terms of block and key sizes, and the algorithm can accommodate alterations in the number of rounds, although these features would require further study and are not being considered at this time.
 >
 >Finally, Rijndael’s internal round structure appears to have good potential to benefit from instruction-level parallelism.
 
