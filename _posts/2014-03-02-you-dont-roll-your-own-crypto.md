@@ -16,7 +16,8 @@ The book [The Design of Rijndael](http://www.amazon.com/The-Design-RijndaeL-Info
 process proposed by the NIST to chose the new AES, from which I would like to share here some facts that are quite interesting. 
 They prove, that [you don't roll your own crypto](http://security.stackexchange.com/a/18198).
 
-Note that I don't claim to know the stuff I'm presenting here. I'm learning about this topic and I thought it would be interesting to share this story. 
+Note that I don't claim to know the stuff I'm presenting here, or be an expert in cryptography, I'm just learning about this topic and I thought it would be interesting to share this story. I've also
+added a list of books at the bottom, that are the ones I've been using to learn about it.
 
 ## The selection process ##
 
