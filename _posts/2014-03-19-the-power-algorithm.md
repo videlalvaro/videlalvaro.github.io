@@ -105,7 +105,7 @@ change a couple of things.
 
 On the current implementation we set `$y` to the identity element of
 multiplication, namely `1`. If we want to use the algorithm for
-addition, then we need to set $y to `0`. So we could just pass the
+addition, then we need to set `$y` to `0`. So we could just pass the
 value of our identity element to the function.
 
 The second step would be to provide a function to our algorithm that
