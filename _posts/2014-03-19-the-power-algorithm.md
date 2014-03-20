@@ -64,7 +64,7 @@ the power of `$n`.
 First it sets an auxiliary variable `$y` to `1` which is the identity
 of the multiplication.
 
-Then function scans the binary representation of `$n` on each
+Then the function scans the binary representation of `$n` on each
 iteration of the loop. If it finds a `1` then it multiplies by
 `$x`. On every step of the loop it squares `$x`.
 
