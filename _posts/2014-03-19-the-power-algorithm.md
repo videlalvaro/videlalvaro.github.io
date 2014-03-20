@@ -235,7 +235,8 @@ array.
 
 ## Further Reading ##
 
-The power algorithm as implemented here is based on TAOCP, Vol II,
+The power algorithm as implemented here is based on
+[TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Vol II,
 section 4.6.3.
 
 The whole explanation of how this works can be found in TAOCP or in
