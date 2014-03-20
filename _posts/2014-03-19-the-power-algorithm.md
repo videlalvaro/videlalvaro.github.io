@@ -36,6 +36,7 @@ A simple implementation of _Algorithm A_ from section _4.6.3_ of TAOCP
 is as follow:
 
 {% highlight php %}
+<?php
 function power1($x, $n) {
     $y = 1;
 
@@ -123,6 +124,7 @@ algorithm.
 Here's the new implementation of the algorithm:
 
 {% highlight php %}
+<?php
 function power2($x, $n, $id, $f) {
     $y = $id;
 
