@@ -13,8 +13,7 @@ abstractions like Semigroups and Monoids.
 
 There's a very well known algorithm for calculation powers, that is _x
 to the power of n_ or simply: `x^n`. Donald Knuth presents the
-algorithm in section 4.6.3 of TAOCP under the section _Evaluation of
-Powers_.
+algorithm in section 4.6.3 _Evaluation of Powers_ of TAOCP.
 
 The naïve way to implement this algorithm would be to multiply `x` by
 itself `n` times, but of course the idea is to provide an algorithm
