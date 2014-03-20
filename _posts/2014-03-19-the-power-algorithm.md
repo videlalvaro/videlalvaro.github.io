@@ -273,7 +273,7 @@ language of your choice.
 ## Did you just say Haskell? ##
 
 Since I've mentioned a Haskell book, here's an implementation of the
-power algorithm, using a recursive algorithm based on the book
+power algorithm in Haskell, using a recursive algorithm based on the book
 [Prime Numbers: A Computational Perspective](http://www.amazon.com/Prime-Numbers-Computational-Richard-Crandall/dp/0387252827/).
 
 {% highlight haskell %}
