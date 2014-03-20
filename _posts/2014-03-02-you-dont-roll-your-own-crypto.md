@@ -120,7 +120,7 @@ secure enough according to the selection criteria. Also, the eyes and scrutiny o
 As they say on TV: don't try this at home, kids.
 
 As I said before, this is based on Chapter 1 from the book [The Design of Rijndael](http://www.amazon.com/The-Design-RijndaeL-Information-Cryptography/dp/3540425802). It's a quite small book that describes
-the mathematical background behind AES, it's design and implementation.
+the mathematical background behind AES, its design and implementation.
 
 ## Books ##
 
