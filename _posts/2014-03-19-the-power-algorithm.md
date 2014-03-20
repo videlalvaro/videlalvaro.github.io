@@ -78,7 +78,7 @@ return the value of `$y`.
 The function `power` can be called like this:
 
 {% highlight php %}
-1024 == power(2, 10);
+1024 == power1(2, 10);
 => true
 {% endhighlight  %}
 
