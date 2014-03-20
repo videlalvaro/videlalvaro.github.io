@@ -194,6 +194,7 @@ would give use similar results as above. If we wanted to _repeat_ a
 string `n` times, we could create the following function:
 
 {% highlight php %}
+<?php
 function repeat($s, $n) {
     return power2($s, $n, "", function ($a, $b) {
                return $a . $b;
@@ -214,6 +215,7 @@ array_ is the identity element, and in the case of PHP _array\_merge_
 would be our binary operation.
 
 {% highlight php %}
+<?php
 function repeat_el($el, $n) {
     return power2(array($el), $n, array(), function ($a, $b) {
             return array_merge($a, $b);
