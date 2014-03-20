@@ -82,7 +82,7 @@ The function `power` can be called like this:
 => true
 {% endhighlight  %}
 
-At this point I imagine you being like the guy in this gif:
+At this point I imagine you being like the guy on this gif:
 
 ![CSB](/images/csb.gif)
 
