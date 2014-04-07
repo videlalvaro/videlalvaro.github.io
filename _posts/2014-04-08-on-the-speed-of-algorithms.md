@@ -35,13 +35,12 @@ complexities:
 | A4        | n^3             |
 | A5        | 2^n             |
 
-
 Where time complexity is the number of steps required to process some
 input of size _n_, and one unit of time equals one millisecond.
 
 Then they present the maximum problem size for each algorithm. For
-example A1 would be able to process a problem size of 1000 in one
-second, or 3.6 x 10^6 in one hour. Compare that with A5, which can
+example **A1** would be able to process a problem size of 1000 in one
+second, or 3.6 x 10^6 in one hour. Compare that with **A5**, which can
 process 9 elements per second, or a maximum of 21 in one hour.
 
 
@@ -57,7 +56,7 @@ now. Here's the speedup comparison table the authors provide:
 | A4           | n^3             | S4                                | 2.15 * S4                        |
 | A5           | 2^n             | S5                                | S5 + 3.3                         |
 
-As we can see, algorithm A5 could only increase the size of the
+As we can see, algorithm **A5** could only increase the size of the
 problem by **3**.
 
 So does the speed of a computer affects the speed of an algorithms,
