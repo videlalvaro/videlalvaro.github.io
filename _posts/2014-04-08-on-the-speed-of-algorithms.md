@@ -9,7 +9,7 @@ title: On the speed of Algorithms and Faster Hardware
 
 Today I've read on Twitter a half-joke saying that basically we can
 just implement our code and then wait for faster computers to improve
-the speed of our programs. As many might now, that's not actually the
+the speed of our programs. As many might know, that's not actually the
 case, but instead of trying to explain this, I'd prefer to let the
 authors of
 [The Design and Analysis of Computer Algorithms](http://www.amazon.com/The-Design-Analysis-Computer-Algorithms/dp/0201000296/)
