@@ -38,8 +38,9 @@ q:before, q:after {
   content: none; }
 
 table {
-  width: 50%;
-  margin: 10px auto;
+  width: 100%;
+  max-width: 740px;
+  margin: 20px auto;
   border-collapse: collapse;
   border-spacing: 0; }
 
