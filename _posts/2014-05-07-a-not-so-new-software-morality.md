@@ -95,3 +95,7 @@ board out there:
 At this point I'd like to imagine that
 [Boris Beizer](http://en.wikipedia.org/wiki/Boris_Beizer) dropped the
 mic and walked out of stage.
+
+### Sources ###
+
+- Beizer, Boris. 1990. SOFTWARE TESTING TECHNIQUES. New York: Van Nostrand.
