@@ -42,10 +42,13 @@ full:
 It's quite interesting how he contrasts the _hacker_ mentality vs. the
 _software-engineer-you-are-part-of-a-bigger-project_ mentality.
 
+Then he goes one and gives a list of six points that makes this new 
+"morality":
+
 >1.  Test —If you can’t test it, don’t build it. If you don’t test it,
 >rip it out.
 
-I can almost read this paragraph with the voice of my friend
+I can almost read this previous paragraph with the voice of my friend
 [Chris Hartjes](https://twitter.com/grmpyprogrammer), Mr. Grumpy
 Testing.
 
@@ -61,7 +64,7 @@ TDD anyone?
 >do “test” it, who’ll understand?
 
 For the young people in the audience, you might have heard about this
-being referred as YAGNI.
+previous concept being referred as YAGNI.
 
 >4.  Don’t Put in Private Hooks —Hooks for future enhancements and
 >functionality are architectural issues. Your hooks won’t be
