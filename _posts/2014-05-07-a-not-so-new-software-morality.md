@@ -42,7 +42,7 @@ full:
 It's quite interesting how he contrasts the _hacker_ mentality vs. the
 _software-engineer-you-are-part-of-a-bigger-project_ mentality.
 
-Then he goes one and gives a list of six points that makes this new 
+Then he goes on and gives a list of six points on what makes this new 
 "morality":
 
 >1.  Test —If you can’t test it, don’t build it. If you don’t test it,
