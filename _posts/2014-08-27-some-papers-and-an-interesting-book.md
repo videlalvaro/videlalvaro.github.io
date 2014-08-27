@@ -151,7 +151,7 @@ example, let's see this use case or their solution:
 >functioning almost as if it were constantly connected.
 
 So there it is, the past showing us the future. Smart individuals way
-before us faced some of the same problems that appear _novel_ today,
+before us faced some of the same problems that appear _novel_ today.
 The buzzwords have changed, but the problems remained the same.
 
 _nihil sub sole novum_.
