@@ -7,7 +7,7 @@ title: "Replication Techniques: some papers and an interesting book."
 
 <span class="meta">August 27 2014</span>
 
-In this post I would lake to share some papers I've found this week,
+In this post I would like to share some papers I've found this week,
 along with a book on database replication techniques.
 
 This week I started doing some research about replication in
