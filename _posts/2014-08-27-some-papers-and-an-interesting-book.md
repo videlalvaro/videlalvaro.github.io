@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Replication Techniques - some papers and an interesting book.
+title: "Replication Techniques: some papers and an interesting book."
 ---
 
 # {{page.title}} #
@@ -76,7 +76,7 @@ replication on distributed systems, putting an emphasis that
 ## Related Papers ##
 
 While reading the first chapters from the book I had the _Depth First
-Search_ that this XKCD comic clearly demonstrates:
+Search_ problem that this XKCD comic clearly demonstrates:
 
 ![DFS](http://imgs.xkcd.com/comics/dfs.png)
 
