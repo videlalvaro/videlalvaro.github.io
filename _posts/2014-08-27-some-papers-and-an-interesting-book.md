@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Replication Techniques: some papers and an interesting book.
+title: Replication Techniques - some papers and an interesting book.
 ---
 
 # {{page.title}} #
