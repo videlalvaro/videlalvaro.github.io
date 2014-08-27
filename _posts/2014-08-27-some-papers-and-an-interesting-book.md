@@ -139,7 +139,7 @@ first paper there sounded a bit, familiar.
 
 This paper basically presents what we today call "Offline First" but
 with the terminology used back in the '90s, 1992 to be precise. For
-example, let's see this use case or their solution:
+example, let's see this use case of their solution:
 
 >Home Use: Imagine having a machine at home which replicates most of
 >the environment you use in the office. When you commute, your machine
