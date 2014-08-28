@@ -5,7 +5,7 @@ title: On Contributing to Open Source
 
 # {{page.title}} #
 
-<span class="meta">April 08 2014</span>
+<span class="meta">August 29 2014</span>
 
 The other day I was reading
 [a blog post in Spanish](http://symfony.es/noticias/2014/07/24/los-errores-de-la-pagina-28/)
