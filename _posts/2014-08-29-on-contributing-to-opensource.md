@@ -107,7 +107,7 @@ blog posts. You spent a day trying to figure out how to run RabbitMQ
 on EC2? Why not write about it? Why not share it back with the
 community? You don't have a blog of your own? Well, why not ask the
 project maintainers to publish your guide in their blog. I remember
-sending articles to Fabien Potencier about Symfony that the kindly
+sending articles to Fabien Potencier about Symfony that he kindly
 published in the framework's official blog. At the same time, some
 people might engage with our blog posts, even correcting our mistakes,
 or showing us better ways of doing things, and we will all benefit
