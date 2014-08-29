@@ -45,7 +45,7 @@ code. __you\_dont\_say.gif__. This of course requires that we know
 about the internals of the project where we are trying to contribute,
 so perhaps fixing a little bug can turn into a big challenge. At the
 same time this presents a great opportunity for us for learning about
-technology X in more detail, so there are to sides to the
+technology X in more detail, so there are two sides to the
 story. Another problem this might have are projects that have very high
 requirements in order to send some code back. For example, Erlang has
 a very
