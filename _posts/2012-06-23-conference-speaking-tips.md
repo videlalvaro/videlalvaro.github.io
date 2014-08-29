@@ -33,7 +33,7 @@ This one is so obvious that it hurts, but yes. Most of the time we speakers have
 
 ## Looking at the whole audience ##
 
-Always try to look at the whole audince, don't give the talk to that one guy that for some reason catches your attention. Try to explain your ideas to the whole crowd. This will help to keep them involved.
+Always try to look at the whole audience, don't give the talk to that one guy that for some reason catches your attention. Try to explain your ideas to the whole crowd. This will help to keep them involved.
 
 ## Don't depend on Internet Connection ##
 

@@ -55,7 +55,7 @@ Server started with Pid: <0.53.0>
 {ok,<0.53.0>}
 {% endhighlight %}
 
-As we said before, we will use the __contol__ process to send messages to a group of zombies and then make them start working for us. What we want to do is to send messages containing sentences to an exchange called __my_exchange__ and see how many words they had. Something pretty simple for the purposes of this demo. So let's send a message with an English sentence to see how many words it has. Let's do this in the same console where we are running our __control__ process.
+As we said before, we will use the __control__ process to send messages to a group of zombies and then make them start working for us. What we want to do is to send messages containing sentences to an exchange called __my_exchange__ and see how many words they had. Something pretty simple for the purposes of this demo. So let's send a message with an English sentence to see how many words it has. Let's do this in the same console where we are running our __control__ process.
 
 {% highlight erlang %}
 2> amqp_utils:send_msg(<<"my_exchange">>, <<"I can't explain myself, I'm afraid, Sir, because I'm not myself you see.">>, <<"consumer.key">>).
