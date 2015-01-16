@@ -466,7 +466,8 @@ article code {
   background-color: #eeeeee;
   border: 1px solid #bbbbbb;
   padding: .2rem .4rem;
-  overflow-x: scroll; }
+  overflow-x: scroll;
+  word-wrap: break-word;}
 article pre code {
   padding: 1rem; }
 article blockquote {
