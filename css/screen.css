@@ -467,7 +467,12 @@ article code {
   border: 1px solid #bbbbbb;
   padding: .2rem .4rem;
   overflow-x: scroll;
-  white-space:nowrap;}
+  -ms-word-break: keep-all;
+  word-break: keep-all;
+  word-break: keep-word;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;}
 article pre code {
   padding: 1rem; }
 article blockquote {
