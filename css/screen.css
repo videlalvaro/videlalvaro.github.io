@@ -467,7 +467,7 @@ article code {
   border: 1px solid #bbbbbb;
   padding: .2rem .4rem;
   overflow-x: scroll;
-  word-wrap: break-word;}
+  white-space:nowrap;}
 article pre code {
   padding: 1rem; }
 article blockquote {
