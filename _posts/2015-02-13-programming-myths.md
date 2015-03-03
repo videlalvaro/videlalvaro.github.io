@@ -187,7 +187,7 @@ Then the paper starts the first of its main sections: "Elimination of
 go to statements". Here Knuth presents a variety of algorithms that
 involve either for loops, or while loops that use GOTO statements here
 and there and then Knuth proceed to discuss how to remove them. What's
-interesting here besides the programs themselves, is that are made
+interesting here besides the programs themselves, is that they are made
 only of the most basic program constructs, like `for` and `while`,
 there are no procedures for example, let alone classes. So I started
 to wonder, in what era of programming are we in while we read this
