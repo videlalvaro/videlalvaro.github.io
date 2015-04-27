@@ -466,6 +466,7 @@ article code {
   background-color: #eeeeee;
   border: 1px solid #bbbbbb;
   padding: .2rem .4rem;
+  line-height: 150%;
   overflow-x: scroll;
   -ms-word-break: keep-all;
   word-break: keep-all;
