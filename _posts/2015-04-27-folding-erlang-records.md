@@ -5,6 +5,8 @@ title: Folding Erlang Records
 
 # {{page.title}} #
 
+![Fold Your Hands Child](/images/2283737150_4b7a1775a9_z.jpg)
+
 <span class="meta">April 27 2015</span>
 
 When developing the new
@@ -147,3 +149,7 @@ BTW, looks an awful lot like composition in the Maybe Monad.
 
 Here's a gist with the code examples:
 [fold_example.erl](https://gist.github.com/videlalvaro/e38b990126b0abdae2d5).
+
+## Credits ##
+
+Photo Credit [Ran Yanviv Hartstein](https://flic.kr/p/4tNKus). License CC BY 2.0.
