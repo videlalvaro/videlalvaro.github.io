@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "This Erlanger Used The Process Dict, Look What He Found"
+title: "This Erlanger Used The Process Dictionary, Look What He Found"
 ---
 
 # {{page.title}} #
