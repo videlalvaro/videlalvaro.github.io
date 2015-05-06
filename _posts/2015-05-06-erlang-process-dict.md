@@ -97,6 +97,9 @@ commands. Note, you'll need a 3MB file or similar, for science.
 7> erlang:process_info(Pid, dictionary).
 {% endhighlight %}
 
+If everything ran as expected, you should have seen the `beam.smp` RAM
+usage spiked.
+
 That was a rather artificial experiment to prove a point, but if
 academia taught me anything, is that I should run artificial and
 carefully selected experiments to prove my points.
