@@ -98,7 +98,8 @@ commands. Note, you'll need a 3MB file or similar, for science.
 {% endhighlight %}
 
 If everything ran as expected, you should have seen the `beam.smp` RAM
-usage spiked.
+usage spiking to about the double of what was before you called
+`process_info/2`.
 
 That was a rather artificial experiment to prove a point, but if
 academia taught me anything, is that I should run artificial and
