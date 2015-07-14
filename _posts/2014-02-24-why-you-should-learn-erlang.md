@@ -7,11 +7,11 @@ title: Why you should learn Erlang
 
 <span class="meta">February 24 2014</span>
 
-With all the rage about [WhatsApp acquisition by Facebook](http://www.forbes.com/sites/briansolomon/2014/02/19/stunner-facebook-to-buy-whatsapp-for-16-billion-in-cash-stock/), 
+With all the rage about [WhatsApp acquisition by Facebook](http://www.forbes.com/sites/briansolomon/2014/02/19/stunner-facebook-to-buy-whatsapp-for-16-billion-in-cash-stock/),
 people is going crazy over Erlang. Even [recruiters](https://twitter.com/susanpotter/status/437940423776927745) are using it as a weapon to lure
 engineers in. So I said, what don't I write that blogpost about why I consider people should learn Erlang?
 
-Keep in mind this is not a blog post about _how to program_ in Erlang, nor is it a fanboy attempt to say Erlang is better than language X. So please refrain from language flamewars. 
+Keep in mind this is not a blog post about _how to program_ in Erlang, nor is it a fanboy attempt to say Erlang is better than language X. So please refrain from language flamewars.
 Also, I don't think I will provide many code examples, since I think they don't matter for this particular kind of discussion.
 
 ## The reasons ##
@@ -21,12 +21,12 @@ So without much further ado, here are the reasons why you should learn Erlang:
 
 ### Single Assignment Variables ###
 
-The first thing that was remarkable for me from Erlang was that variables don't vary. In Erlang, once you _assign_ a value to a variable, then it can't be changed. If you come from the 
+The first thing that was remarkable for me from Erlang was that variables don't vary. In Erlang, once you _assign_ a value to a variable, then it can't be changed. If you come from the
 imperative programming world (Java, PHP, .Net, Python, etc.), then learning to live with that it's a lot, because in our programs we are making assignments and mutating variables all
 the time.
 
-Now, what is so cool about this "feature" of Erlang, that actually prevents you from doing things? Remember that time you had to track the lifecycle of one variable to try to debug why at 
-in production, when it was 3:03 PM sharp after the 20th request has been served, the variable will become `true` instead of `false`, as it should have been? Did you enjoy wasting time 
+Now, what is so cool about this "feature" of Erlang, that actually prevents you from doing things? Remember that time you had to track the lifecycle of one variable to try to debug why at
+in production, when it was 3:03 PM sharp after the 20th request has been served, the variable will become `true` instead of `false`, as it should have been? Did you enjoy wasting time
 reproducing that bug to be able to track it down? No? Me neither.
 
 With Erlang it becomes quite easy to avoid such problems because you simply can't change a variable once it's been assigned a value. Little by little your brain starts to learn to live with
@@ -44,7 +44,7 @@ present a problem later.
 
 Pattern matching is the part of Erlang that sets it apart from most other languages. For example, Erlang doesn't have for loops, but you can implement a similar behaviour like this:
 
-```erlang
+{% highlight erlang %}
 do_n(F, N) ->
     do_n(F, 0, N, []).
 
@@ -52,7 +52,7 @@ do_n(_F, N, N, Acc) ->
     Acc;
 do_n(F, Count, N, Acc) ->
     do_n(F, Count+1, N, [F(Count)|Acc]).
-```
+{% endhighlight sh %}
 
 The first function definition `do_n(F, N)` is just a more usable interface to our `do_n/4` function that takes four arguments. We pass an anonymous function `F` to `do_n` and a number `N`
 indicating how many times we want to call that function. Then this function would call `do_n/4` like this for example: `do_n(F, 0, 10, [])`, where it's telling `do_n` to start counting at `0`
@@ -61,11 +61,11 @@ and to stop when the counter reaches `10`.
 On the second part we have a recursive function with two headers, that is: two function definitions that would be called depending on the value of its arguments. Every time the function is
 called, the `Count` variable will be increased, and the second part of the function will be called again. Now, we don't see any `if` statement there checking if the counter ever becomes `10`.
 
-The first header of the function is written like this: `do_n(_F, N, N, Acc)`, that is: only execute this body of the function if the 2nd and the 3rd argument are both the same. So when the 
+The first header of the function is written like this: `do_n(_F, N, N, Acc)`, that is: only execute this body of the function if the 2nd and the 3rd argument are both the same. So when the
 function is called, The first argument will be whatever is passed to it, and the second one will be `10` in our example, so unless the counter becomes `10` at some point, then this body of
 the function will never be called.
 
-For me the simplicity of this construct alone is what makes learning to program in Erlang so valuable. 
+For me the simplicity of this construct alone is what makes learning to program in Erlang so valuable.
 (See more about this feature in real world example from RabbitMQ [here](http://videlalvaro.github.io/2013/09/rabbitmq-validating-user-ids-with-erlang-pattern-matching.html)).
 
 Apart from that, Erlang's pattern matching comes with "destructuring". Another cool feature that will drive you mad next time you need to access a deeply nested data structure in a non Erlang
@@ -105,7 +105,7 @@ and [here](https://github.com/videlalvaro/rabbit-internals), and some slides [he
 
 ## Conclusion ##
 
-To sum it up, why you should learn Erlang? It will make you more aware of all the places were your code is modifying state, and perhaps there's a cleaner implementation that doesn't need that. 
+To sum it up, why you should learn Erlang? It will make you more aware of all the places were your code is modifying state, and perhaps there's a cleaner implementation that doesn't need that.
 Keep in mind that the more you write _pure functions_, function that always return the same value for the same arguments, the easier it will become to prove that code correct, for example by
 writing unit tests for it. Erlang has the notion of pattern matching. This will literally change the way you see code, and will make you wonder why your language of choice doesn't support this feature.
 The actor model will give you a new perspective on the words _encapsulation_ and probably make you think that the OOP we've been doing so far has been just putting namespaces around collections
