@@ -1,9 +1,9 @@
 ---
-layout: nil
+layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
+
  <title>Alvaro Videla</title>
  <link href="http://videlalvaro.github.com/atom.xml" rel="self"/>
  <link href="http://videlalvaro.github.com/"/>
@@ -13,7 +13,7 @@ layout: nil
    <name>Alvaro Videla</name>
    <email>videlalvaro@gmail.com</email>
  </author>
- 
+
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
@@ -23,5 +23,5 @@ layout: nil
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
+
 </feed>
