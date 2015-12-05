@@ -67,6 +67,22 @@ different kinds of attributes. Some classifications are: the timing
 model; the kind of interprocess communication used; the failure model
 assumed for the algorithm; and many others as we will see.
 
+Here are the main concepts we will see:
+
+<p>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#timing-model">Timing Model</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#interprocess-communication">Interprocess Communication</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#failure-modes">Failure Modes</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#failure-detectors">Failure Detectors</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#leader-election">Leader Election</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#consensus">Consensus</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#quorums">Quorums</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#time-in-distributed-systems">Time In Distributed Systems</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#a-quick-look-at-flp">A Quick Look At FLP</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#conclusion">Conclusion</a></li>
+<li><a href="http://videlalvaro.github.io/2015/12/learning-about-distributed-systems.html#references">References</a></li>
+</p>
+
 ### Timing Model ###
 
 Here we have the _synchronous model_, the _asynchronous model_ and the
