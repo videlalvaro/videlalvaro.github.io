@@ -24,7 +24,7 @@ grows:
 [Paxos](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf),
 [Chubby](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
 and on and on. My problem is that many times I don't see a
-justification of _why_ should I read this or that paper. I love the
+justification of _why_ I should read this or that paper. I love the
 idea of learning just for knowledge's sake, to satisfy curiosity, but
 at the same time one needs to prioritise what to read, since the day
 only has 24hs.
@@ -32,7 +32,7 @@ only has 24hs.
 Apart from the abundance of papers and research material, as mentioned
 above, there are also lots books. Having bought quite a few of them
 and read chapters here and there, I started to see that a book that
-had a promising title, was quite unrelated to what I was looking for,
+had a promising title was quite unrelated to what I was looking for,
 or that the content didn't directly target the problems I would have
 liked to solve. Therefore, I would like to go over what I think are
 the main concepts of distributed systems, citing papers, books or
@@ -107,15 +107,15 @@ The **asynchronous model** gets a bit more complex. Here components
 can take steps in whatever order they choose and they don't offer any
 guarantee about the speed in which they will take such steps. One
 problem with this model is that while it can be simple to describe and
-closer to reality, it still doesn't reflects it properly. For example
+closer to reality, it still doesn't reflect it properly. For example,
 a process might take infinitely long to respond to a request, but in a
 real project, we would probably impose a timeout on said request, and
-once the time out expires we will abort the request. A difficulty that
+once the timeout expires we will abort the request. A difficulty that
 comes with this model is how to assure the liveness condition of a
 process. One of the most famous _impossibility results_, the
 ["Impossibility of Consensus with one Faulty Process"](http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf)
 belongs to this timing model, where it is not possible to detect if a
-process has crashed, or if the process is just taking infinitely long
+process has crashed, or if the process is just taking an infinitely long
 time to reply to a message.
 
 In the **partially synchronous model**, components have some
@@ -136,13 +136,13 @@ information. They can do it by sending messages to each other, in the
 where they share data by accessing shared variables.
 
 One thing to keep in mind is that we can use a message passing
-algorithm to build a distributed shared memory object. Common examples
+algorithm to build a distributed shared memory object. A common example
 in books is the implementation of a read/write register. We also have
 queues and stacks, which are used by some authors to describe
 consistency properties, like
 [linearizabilty](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf). We
 should not confuse _shared memory_ as a way to share data between
-process, by accessing a shared variable, with _shared memory
+processes by accessing a shared variable with _shared memory
 abstractions_ built on top of message passing, like the ones just
 mentioned.
 
@@ -168,7 +168,7 @@ ordering, like in
 
 I already wrote an article about
 [failure modes in distributed systems](http://videlalvaro.github.io/2013/12/failure-modes-in-distributed-systems.html)
-but is worth reiterating here. A property of a distributed system
+but it is worth reiterating here. A property of a distributed system
 model is what kind of process failures are assumed. On the
 _crash-stop_ failure mode, a process is assumed to be correct until it
 crashes. Once it crashes, it never recovers. There's also the
@@ -181,20 +181,20 @@ membership algorithms, a process that crashes and then recovers could
 not be considered as the same process that was alive before. This
 usually depends if we have dynamic groups or fixed groups.
 
-There's also failure modes where processes fail to receive or send
-messages, these are called _omission failure mode_. There are
+There are also failure modes where processes fail to receive or send
+messages, these are called _omission failure modes_. There are
 different kind of omissions as well, a process can fail to receive a
 message, or to send a message. Why does this matter? Imagine the
 scenario where a group of processes implement a distributed cache. If
 a process is failing to reply to requests from other processes on the
-group, even tho it is able to receive requests from them, that process
+group, even thoough it is able to receive requests from them, that process
 will still have its state up to date, which means it can reply to read
 requests from clients.
 
 A more complex failure mode is the one called Byzantine or _arbitrary
 failures_ mode, where processes can send wrong information to their
 peers; they can impersonate processes; reply to other process with the
-correct data, but garble it's local database contents, and more.
+correct data, but garble its local database contents, and more.
 
 When thinking about the design of a system, we should consider which
 kind of process failures we want to cope with. Birman (see
@@ -213,27 +213,27 @@ crash-stop failure mode plus a synchronous system, we can implement
 this algorithm by just using timeouts. If we ask processes to
 periodically ping back to the Failure Detector Process, we know
 exactly when a ping should arrive to the failure detector (due to the
-synchronous model guarantees). If the ping doesn't arrive after
+synchronous model guarantees). If the ping doesn't arrive after a
 certain configurable timeout, then we can assume the other node has
 crashed.
 
 On a more realistic system, it might not be possible to always assume
 the time needed for a message to reach its destination, or how long
-will it take for a process to execute a step. In this case we can have
+it will take for a process to execute a step. In this case we can have
 a failure detector `p` that would report a process `q` as _suspected_
 if `q` doesn't reply after a timeout of `N` milliseconds. If `q` later
 replies, then `p` will remove `q` from the list of suspected
-processes, and it will increase `N`, since it doesn't know what's the
-actual network delay between itself and `q`, but it wants to stop
-suspecting `q` of having crashed, since `q` was alive, but it was just
-taking longer than `N` to ping back. If at some point `q` crashes,
+processes, and it will increase `N`, since it doesn't know what the
+actual network delay between itself and `q` is, but it wants to stop
+suspecting `q` of having crashed, since `q` was alive, as it took 
+longer than `N` to ping back. If at some point `q` crashes,
 then `p` will first suspect it has crashed, and it will never revise
 its judgement (since `q` will never ping back). A better description
 of this algorithm can be found in
 [Introduction to Reliable and Secure Distributed Programming](http://www.amazon.com/Introduction-Reliable-Secure-Distributed-Programming/dp/3642152597/)
 under the name "Eventually Perfect Failure Detector".
 
-Failure Detectors usually offer two properties: completness and
+Failure Detectors usually offer two properties: completeness and
 accuracy. For the _Eventually Perfect Failure Detector_ type, we have
 the following:
 
@@ -243,12 +243,12 @@ the following:
   suspected by any correct process.
 
 Failure detectors have been crucial in solving consensus in the
-asynchronous model. There's quite a famous impossibility result
+asynchronous model. There's a quite famous impossibility result
 presented in the
 [FLP](http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf)
 paper mentioned above. This paper talks about the impossibility of
 consensus in asynchronous distributed systems where one process might
-fail. On way to go around this impossibility result is to introduce a
+fail. One way to go around this impossibility result is to introduce a
 failure detector that can
 [circumvent the problem](http://www.cs.utexas.edu/~lorenzo/corsi/cs380d/papers/p225-chandra.pdf).
 
@@ -267,9 +267,9 @@ Having a leader in a protocol introduces asymmetry between nodes,
 since non-leader nodes will then be followers. This will have the
 consequence that the leader node will end up being a bottleneck for
 many operations, so depending on the problem we are trying to solve,
-using a protocol that requiers leader election might not be what we
+using a protocol that requires leader election might not be what we
 want. Note that most protocols that achieve consistency via some sort
-of consensus, use a leader process, and a set of followers. See
+of consensus use a leader process and a set of followers. See
 [Paxos](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf),
 [Zab](https://web.stanford.edu/class/cs347/reading/zab.pdf) or
 [Raft](https://raft.github.io) for some examples.
@@ -300,12 +300,12 @@ computer needs to agree on how much pressure it should apply on the
 breaks. That's a consensus problem being solved in our everyday lives.
 The book
 [Fault-Tolerant Real-Time Systems](http://www.springer.com/us/book/9780792396574)
-explains consensus an other problems in distributed systems in the
+explains consensus and other problems in distributed systems in the
 context of the automotive industry.
 
 A process that implements some form of consensus works via exposing an
 API with _propose_ and _decide_ functions. A process will propose
-certain value when consensus starts and then it will have to decide on
+a certain value when consensus starts and then it will have to decide on
 a value, based on the values that were proposed in the system. These
 algorithms must satisfy certain properties, which are: Termination,
 Validity, Integrity and Agreement. For example for _Regular Consensus_
@@ -331,17 +331,17 @@ systems. Quorums refer to intersecting sets of processes that can be
 used to understand the characteristic of a sytem when some processes
 might fail.
 
-For example if we have an algorithm where N process have crash-failure
+For example if we have an algorithm where N processes have crash-failure
 modes, we have a quorum of processes whenever we have a majority of
 processes applying certain operation to the system, for example a
 write to the database. If a minority of process might crash, that is
-`N/2 - 1` process crashes, we stil have a majority of processes that
-know about the last operation applied into the system. For example
+`N/2 - 1` process crashes, we still have a majority of processes that
+know about the last operation applied to the system. For example
 Raft uses majorities when committing logs to the system. The leader
 will apply an entry to its state machine as soon as half the servers
 in the cluster have replied to its request of log replication. The
 leader plus half the servers constitute a majority. This has the
-advantage that Raft doesn't need to wait for the whole cluter to reply
+advantage that Raft doesn't need to wait for the whole cluster to reply
 to a log-replication RPC request.
 
 Another example would be: let's say we want to limit the access to a
@@ -378,7 +378,7 @@ life happening one after the other, with a perfectly defined
 [happened before](https://en.wikipedia.org/wiki/Happened-before)
 order, but when we have a series of distributed processes, exchanging
 messages, accessing resources concurrently, and so on, how can we tell
-which process event happened before? To be able to answer these kind
+which process event happened before? To be able to answer these kinds
 of questions, processes would need to share a synchronised clock, and
 know exactly how long it takes for electrons to move around the
 network; for CPUs to schedule tasks, and so on. Clearly this is not
@@ -401,14 +401,14 @@ recommend reading the article
 [There Is No Now](https://queue.acm.org/detail.cfm?id=2745385) by
 Justin Sheehy.
 
-I would claim that time and its problems in distributed systems are
+I would claim that time and its problems in distributed systems is
 one of the crucial concepts to understand. **The idea of simultaneity
 is something we have to let go**. This is related with the old belief
 of "Absolute Knowledge", where we used to think that such a thing as
 absolute knowledge was attainable. The laws of physics show us that
 even light requires some time in order to get from one place to
 another, so whenever it reaches our eyes, and it's processed by our
-brains, whatever the light is communicating, it's and old view of the
+brains, whatever the light is communicating, it's an old view of the
 world. This idea is discussed by Umberto Eco in the book
 [Inventing the Enemy](http://www.amazon.com/Inventing-Enemy-Essays-Umberto-Eco/dp/0544104684),
 chapter "Absolute and Relative".
@@ -417,7 +417,7 @@ chapter "Absolute and Relative".
 
 To finalize this article, let's take a quick look at the
 **Impossibility of Distributed Consensus with One Faulty Process**
-paper to try to related the concepts we have just learnt about
+paper to try to relate the concepts we have just learned about
 distributed systems.
 
 The abstract starts like this:
@@ -486,7 +486,7 @@ As you can see, learning about distributed systems takes time. It's a
 very vast topic, with tons of research on each of its sub-areas. At
 the same time implementing and verifying distributed systems is also
 quite complex. There are many subtle places where to commit mistakes
-than can make our implementations totally broken under unexpected
+can make our implementations totally broken under unexpected
 circumstances.
 
 What if we choose the wrong quorum and then our new fancy replication
@@ -494,18 +494,18 @@ algorithm loses critical data? Or we choose a very conservative quorum
 that slows down our application without need, making us break SLAs
 with customers? What if the problem we are trying to solve doesn't
 need consensus at all and we can live with eventual consistency?
-Perhaps our system has the wrong timing assumptions? Or it uUses a
+Perhaps our system has the wrong timing assumptions? Or it uses a
 failure detector unfit for the underlying system properties? What if
 we decide to optimise an algorithm like Raft, by avoiding a small step
-here or there and we end up breaking it's safety guarantees? All these
+here or there and we end up breaking its safety guarantees? All these
 things and many more can happen if we don't understand the underlying
 theory of distributed systems.
 
 OK, I get it, I won't reinvent the distributed systems wheel, but with
-such vast literature and set of problems, where to start then? As
-stated at the top of this article I think randomly reading papers will
+such vast literature and set of problems, where to start, then? As
+stated at the top of this article, I think randomly reading papers will
 get you nowhere, as shown with the FLP paper, where understanding the
-first sentence requires to know about the various timing
+first sentence requires you to know about the various timing
 models. Therefore I recommend the following books in order to get
 started:
 
