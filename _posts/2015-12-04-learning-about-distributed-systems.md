@@ -285,7 +285,7 @@ this:
 >Fault-tolerant systems often require a means by which independent
  processors or processes can arrive at an exact mutual agreement of
  some kind. It may be necessary, for example, for the processors of a
- redundant system to synchronise their internal docks periodically. Or
+ redundant system to synchronise their internal clocks periodically. Or
  they may have to settle upon a value of a time-varying input sensor
  that gives each of them a slightly different reading.
 
