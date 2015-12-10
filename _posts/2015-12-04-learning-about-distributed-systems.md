@@ -187,7 +187,7 @@ different kind of omissions as well, a process can fail to receive a
 message, or to send a message. Why does this matter? Imagine the
 scenario where a group of processes implement a distributed cache. If
 a process is failing to reply to requests from other processes on the
-group, even thoough it is able to receive requests from them, that process
+group, even though it is able to receive requests from them, that process
 will still have its state up to date, which means it can reply to read
 requests from clients.
 
@@ -225,7 +225,7 @@ if `q` doesn't reply after a timeout of `N` milliseconds. If `q` later
 replies, then `p` will remove `q` from the list of suspected
 processes, and it will increase `N`, since it doesn't know what the
 actual network delay between itself and `q` is, but it wants to stop
-suspecting `q` of having crashed, since `q` was alive, as it took 
+suspecting `q` of having crashed, since `q` was alive, as it took
 longer than `N` to ping back. If at some point `q` crashes,
 then `p` will first suspect it has crashed, and it will never revise
 its judgement (since `q` will never ping back). A better description
