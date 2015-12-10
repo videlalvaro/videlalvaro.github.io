@@ -315,7 +315,7 @@ we have:
 - **Validity**: If a process decides _v_, then _v_ was proposed by some
   process.
 - **Integrity**: No process decides twice.
-- **Agreement**: No two correct process decide differently.
+- **Agreement**: No two correct processes decide differently.
 
 For more details on consensus please consult the original paper
 mentioned above. Also the following books are a great reference:
@@ -460,7 +460,7 @@ And finally they also add this constraint:
 
 So we can't use failure detectors either.
 
-To recap, this means they FLP impossibility applies for asynchronous
+To recap, this means that the FLP impossibility applies for asynchronous
 systems with fail-stop processors, with access to a reliable message
 system, and where detecting the death of a process is not
 possible. Without knowing the theory related to the different models
