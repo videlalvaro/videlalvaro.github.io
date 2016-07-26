@@ -165,14 +165,6 @@ Then we need to configure the `scala-maven-plugin` and the
 tests. Here's what we need to add to our `pom.xml` file:
 
 {% highlight xml %}
-<pluginRepositories>
-        <pluginRepository>
-            <id>scala-tools.org</id>
-            <name>Scala-Tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <plugins>
             <plugin>
