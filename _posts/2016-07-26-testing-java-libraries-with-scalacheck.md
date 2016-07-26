@@ -114,43 +114,43 @@ we need to add a couple of libraries as dependencies. Here's an
 excerpt from the `pom.xml` file
 
 {% highlight xml %}
-	<dependencies>
-		<dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.0.36.Final</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.10</artifactId>
-            <version>2.2.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest-maven-plugin</artifactId>
-            <version>1.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.scalacheck</groupId>
-            <artifactId>scalacheck_2.10</artifactId>
-            <version>1.12.5</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+<dependencies>
+	<dependency>
+		<groupId>io.netty</groupId>
+		<artifactId>netty-all</artifactId>
+		<version>4.0.36.Final</version>
+		<scope>compile</scope>
+	</dependency>
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.6</version>
+	</dependency>
+	<dependency>
+		<groupId>org.scala-lang</groupId>
+		<artifactId>scala-library</artifactId>
+		<version>${scala.version}</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.scalatest</groupId>
+		<artifactId>scalatest_2.10</artifactId>
+		<version>2.2.5</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.scalatest</groupId>
+		<artifactId>scalatest-maven-plugin</artifactId>
+		<version>1.0</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.scalacheck</groupId>
+		<artifactId>scalacheck_2.10</artifactId>
+		<version>1.12.5</version>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
 {% endhighlight %}
 
 There we specify the dependencies on Scala the language, ScalaTest
@@ -165,69 +165,69 @@ Then we need to configure the `scala-maven-plugin` and the
 tests. Here's what we need to add to our `pom.xml` file:
 
 {% highlight xml %}
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.2</version>
-                <configuration>
-                    <recompileMode>incremental</recompileMode>
-                    <useZincServer>true</useZincServer>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>doc</goal>
-                            <goal>doc-jar</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <goals>
-                            <goal>doc</goal>
-                        </goals>
-                        <phase>site</phase>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- disable surefire -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-            <!--enable scalatest-->
-            <plugin>
-                <groupId>org.scalatest</groupId>
-                <artifactId>scalatest-maven-plugin</artifactId>
-                <version>1.0</version>
-                <configuration>
-                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                    <junitxml>.</junitxml>
-                    <filereports>WDF TestSuite.txt</filereports>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>test</id>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+<build>
+	<plugins>
+		<plugin>
+			<groupId>net.alchim31.maven</groupId>
+			<artifactId>scala-maven-plugin</artifactId>
+			<version>3.2.2</version>
+			<configuration>
+				<recompileMode>incremental</recompileMode>
+				<useZincServer>true</useZincServer>
+			</configuration>
+			<executions>
+				<execution>
+					<id>compile</id>
+					<goals>
+						<goal>compile</goal>
+						<goal>testCompile</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>doc</goal>
+						<goal>doc-jar</goal>
+					</goals>
+				</execution>
+				<execution>
+					<goals>
+						<goal>doc</goal>
+					</goals>
+					<phase>site</phase>
+				</execution>
+			</executions>
+		</plugin>
+		<!-- disable surefire -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.7</version>
+			<configuration>
+				<skipTests>true</skipTests>
+			</configuration>
+		</plugin>
+		<!--enable scalatest-->
+		<plugin>
+			<groupId>org.scalatest</groupId>
+			<artifactId>scalatest-maven-plugin</artifactId>
+			<version>1.0</version>
+			<configuration>
+				<reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+				<junitxml>.</junitxml>
+				<filereports>WDF TestSuite.txt</filereports>
+			</configuration>
+			<executions>
+				<execution>
+					<id>test</id>
+					<goals>
+						<goal>test</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+</build>
 {% endhighlight %}
 
 As you can see we are telling maven how to build our Scala test
