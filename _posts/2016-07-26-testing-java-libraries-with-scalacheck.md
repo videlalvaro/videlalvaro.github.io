@@ -5,13 +5,25 @@ title: "Testing Java Libraries from ScalaCheck"
 
 # {{page.title}} #
 
-In this article I would like to show you how to integrate ScalaCheck into a Maven project in order to test your Java classes. I will use as an example the PhoneNumber class as seen on Item 9 on the book Effective Java. The idea will be to test that the `equals` method implementation on that class conforms to the _equals contract_ according to the Java Specification (more on that later). Also we will be testing a couple of Netty handlers that could be used to Encode/Decode a `PhoneBook` object in order to send it on the network.
+In this article I would like to show you how to integrate ScalaCheck
+into a Maven project in order to test your Java classes. I will use as
+an example the PhoneNumber class as seen on Item 9 on the book
+Effective Java. The idea will be to test that the `equals` method
+implementation on that class conforms to the _equals contract_
+according to the Java Specification (more on that later). Also we will
+be testing a couple of Netty handlers that could be used to
+Encode/Decode a `PhoneBook` object in order to send it on the network.
 
-The finished project could be found on this Github repo: [https://github.com/videlalvaro/phone-guide](https://github.com/videlalvaro/phone-guide)
+The finished project could be found on this Github repo:
+[https://github.com/videlalvaro/phone-guide](https://github.com/videlalvaro/phone-guide)
 
 ## The PhoneNumber Class ##
 
-Here's the `PhoneNumber` class based on Item 9 from the book Effective Java. This class is special because it overrides the `equals` method, so we want to use ScalaCheck to verify that our `equals` implementation follows the contract specified in the Java Specification.
+Here's the `PhoneNumber` class based on Item 9 from the book Effective
+Java. This class is special because it overrides the `equals` method,
+so we want to use ScalaCheck to verify that our `equals`
+implementation follows the contract specified in the Java
+Specification.
 
 Here's the full sourcecode for this class:
 
@@ -82,15 +94,24 @@ public final class PhoneNumber {
 }
 {% endhighlight %}
 
-This class goes into the `src/main/java/org/videlalvaro/phoneguide/PhoneNumber.java ` file.
+This class goes into the
+`src/main/java/org/videlalvaro/phoneguide/PhoneNumber.java ` file.
 
-As you can see in the code we also override `hashCode` since whenever we override `equals` we should override `hashCode` as well. Here I took the liberty of using the `HashCodeBuilder` class from `apache-commons`, since it provides helper methods that let you build a correct implementation of `hashCode`.
+As you can see in the code we also override `hashCode` since whenever
+we override `equals` we should override `hashCode` as well. Here I
+took the liberty of using the `HashCodeBuilder` class from
+`apache-commons`, since it provides helper methods that let you build
+a correct implementation of `hashCode`.
 
-Now that we have the class we want to test, let's see how to setup the build environment.
+Now that we have the class we want to test, let's see how to setup the
+build environment.
 
 ## Maven Setup ##
 
-In this project I've decided to use Maven, since it's one of the most popular tools for building Java projects. In order to use ScalaCheck we need to add a couple of libraries as dependencies. Here's an excerpt from the `pom.xml` file
+In this project I've decided to use Maven, since it's one of the most
+popular tools for building Java projects. In order to use ScalaCheck
+we need to add a couple of libraries as dependencies. Here's an
+excerpt from the `pom.xml` file
 
 {% highlight xml %}
 	<dependencies>
@@ -132,9 +153,16 @@ In this project I've decided to use Maven, since it's one of the most popular to
     </dependencies>
 {% endhighlight %}
 
-There we specify the dependencies on Scala the language, ScalaTest which we will use for writing our test suites and running the tests, and finally there's the ScalaCheck dependency which we will use to write our property based tests. We also added the dependencies for Netty, which we will use later in the project, and `commons-lang` which gives use the `HashCodeBuilder` class.
+There we specify the dependencies on Scala the language, ScalaTest
+which we will use for writing our test suites and running the tests,
+and finally there's the ScalaCheck dependency which we will use to
+write our property based tests. We also added the dependencies for
+Netty, which we will use later in the project, and `commons-lang`
+which gives use the `HashCodeBuilder` class.
 
-Then we need to configure the `scala-maven-plugin` and the `scalatest-maven-plugin` which we will use to compile and run our tests. Here's what we need to add to our `pom.xml` file:
+Then we need to configure the `scala-maven-plugin` and the
+`scalatest-maven-plugin` which we will use to compile and run our
+tests. Here's what we need to add to our `pom.xml` file:
 
 {% highlight xml %}
 <pluginRepositories>
@@ -210,13 +238,17 @@ Then we need to configure the `scala-maven-plugin` and the `scalatest-maven-plug
     </build>
 {% endhighlight %}
 
-As you can see we are telling maven how to build our Scala test sources and then how to execute them. For that we first disable maven's Surefire to enable the test runner provided by ScalaTest.
+As you can see we are telling maven how to build our Scala test
+sources and then how to execute them. For that we first disable
+maven's Surefire to enable the test runner provided by ScalaTest.
 
-If at this point we run `mvn compile` it should build our project. Now let's add some tests.
+If at this point we run `mvn compile` it should build our project. Now
+let's add some tests.
 
 ## Testing our equals implementation ##
 
-According to Effective Java, a conforming implementation of `equals` should have the following properties:
+According to Effective Java, a conforming implementation of `equals`
+should have the following properties:
 
 - Reflexive: For any non-null reference value `x`, `x.equals(x)` must return `true`.
 - Symmetric: For any non-null reference values `x` and `y`, `x.equals(y)` must return true if and only if `y.equals(x)` returns `true`.
@@ -224,9 +256,14 @@ According to Effective Java, a conforming implementation of `equals` should have
 - Consistent: For any non-null reference values `x` and `y`, multiple invocations of `x.equals(y)` consistently return `true` or consistently return `false`, provided no information used in `equals` comparisons on the objects is modified.
 - For any non-null reference value `x`, `x.equals(null)` must return `false`.
 
-Let's try to use ScalaCheck to test these properties. If you want to learn more about ScalaCheck, take a look at their [user guide](https://github.com/rickynils/scalacheck/blob/master/doc/UserGuide.md)
+Let's try to use ScalaCheck to test these properties. If you want to
+learn more about ScalaCheck, take a look at their [user
+guide](https://github.com/rickynils/scalacheck/blob/master/doc/UserGuide.md)
 
-In order to test our `PhoneBook` class first we need to tell ScalaCheck how to generate arbitrary instances of our class. Let's add the following code inside the file `src/test/scala/org/videlalvaro/phoneguide/generators/Generators.scala`
+In order to test our `PhoneBook` class first we need to tell
+ScalaCheck how to generate arbitrary instances of our class. Let's add
+the following code inside the file
+`src/test/scala/org/videlalvaro/phoneguide/generators/Generators.scala`
 
 {% highlight scala %}
 package org.videlalvaro.phoneguide.generators
@@ -247,9 +284,15 @@ object Generators {
 }
 {% endhighlight %}
 
-There we have a function `genPhoneNumber` which lets ScalaCheck generate random values for the `areaCode`, `prefix` and `lineNumber` fields, and based on those we _yield_ new instances of the `PhoneNumber` class.
+There we have a function `genPhoneNumber` which lets ScalaCheck
+generate random values for the `areaCode`, `prefix` and `lineNumber`
+fields, and based on those we _yield_ new instances of the
+`PhoneNumber` class.
 
-Then for ScalaCheck to be able to use our generator we need to provide an implicit conversion from our generator into ScalaCheck's `Arbitrary` class, which is what the `implicit val arbPhoneNumber: Arbitrary[PhoneNumber] = Arbitrary(genPhoneNumber)` line is doing.
+Then for ScalaCheck to be able to use our generator we need to provide
+an implicit conversion from our generator into ScalaCheck's
+`Arbitrary` class, which is what the `implicit val arbPhoneNumber:
+Arbitrary[PhoneNumber] = Arbitrary(genPhoneNumber)` line is doing.
 
 With that code in place then we can write code like:
 
@@ -259,7 +302,8 @@ With that code in place then we can write code like:
     }
 {% endhighlight %}
 
-Provided that the generator and the arbitrary definitions are in scope.
+Provided that the generator and the arbitrary definitions are in
+scope.
 
 Now let's see how the test code looks like:
 
@@ -322,7 +366,8 @@ In our `PhoneNumberTest` class we extend the [FunSuite](http://www.scalatest.org
 
 In our tests we are saying that for all PhoneNumber instances: `forAll { (phoneNumber: PhoneNumber) =>` what follows in the method body should be true, like in our first test, where and object should be equal to itself: `phoneNumber.equals(phoneNumber) should be (true)`. In a similar way we test the other properties of a correct `equals` implementation.
 
-Let's execute the tests by running `mvn test`. If all went well you should see output like this:
+Let's execute the tests by running `mvn test`. If all went well you
+should see output like this:
 
 {% highlight bash %}
 Discovery starting.
@@ -341,26 +386,46 @@ Tests: succeeded 5, failed 0, canceled 0, ignored 0, pending 0
 All tests passed.
 {% endhighlight %}
 
-To finish the article, let's add a couple of Netty encoders and decoders and see how to test them using ScalaCheck.
+To finish the article, let's add a couple of Netty encoders and
+decoders and see how to test them using ScalaCheck.
 
 ## Testing Netty Handlers Using ScalaCheck ##
 
-Let's say that our little phone-guide got distributed and now we need to send our `PhoneNumber` objects over the network. In Java there's a pretty cool library to implement network servers called [Netty](http://netty.io/). In order to write our `PhoneNumber` objects to the network we need to write an encoder class, and to be able to read them back from the network we have to write a decoder class. Then we provide those classes to Netty and it will know how to call them in order to send and receive `PhoneNumber` objects.
+Let's say that our little phone-guide got distributed and now we need
+to send our `PhoneNumber` objects over the network. In Java there's a
+pretty cool library to implement network servers called
+[Netty](http://netty.io/). In order to write our `PhoneNumber` objects
+to the network we need to write an encoder class, and to be able to
+read them back from the network we have to write a decoder class. Then
+we provide those classes to Netty and it will know how to call them in
+order to send and receive `PhoneNumber` objects.
 
-Here's the `MessageEncoder` implementation that you should store in the `src/main/java/org/videlalvaro/phoneguide/netty/MessageEncoder.java ` file:
+Here's the `MessageEncoder` implementation that you should store in
+the
+`src/main/java/org/videlalvaro/phoneguide/netty/MessageEncoder.java `
+file:
 
 {% highlight java %}
 {% endhighlight %}
 
-And here is the `MessageDecoder` class that should go in the `src/main/java/org/videlalvaro/phoneguide/netty/MessageDecoder.java` file:
+And here is the `MessageDecoder` class that should go in the
+`src/main/java/org/videlalvaro/phoneguide/netty/MessageDecoder.java`
+file:
 
 {% highlight java %}
 {% endhighlight %}
 
-The implementation of these encoder/decoder classes is quite simple. We just tell netty how to write each class field to the network and how to read it back. For more details check the Netty [documentation](http://netty.io/wiki/index.html).
+The implementation of these encoder/decoder classes is quite
+simple. We just tell netty how to write each class field to the
+network and how to read it back. For more details check the Netty
+[documentation](http://netty.io/wiki/index.html).
 
-In an usual Netty application we would create a channel that will write or read data from the network, but for a test we don't want to setup a whole network stack. Luckily Netty provides an `EmbeddedChannel` class that let use simulate writing and reading from a channel without having to create network connections. Let's create the test for our encoder/decoder classes.s
-
+In an usual Netty application we would create a channel that will
+write or read data from the network, but for a test we don't want to
+setup a whole network stack. Luckily Netty provides an
+`EmbeddedChannel` class that let use simulate writing and reading from
+a channel without having to create network connections. Let's create
+the test for our encoder/decoder classes.
 
 {% highlight scala %}
 package org.videlalvaro.phoneguide.netty
@@ -388,7 +453,10 @@ class EncoderDecoderTest extends FunSuite with GeneratorDrivenPropertyChecks wit
 }
 {% endhighlight %}
 
-There we want to test that for all instances of our `PhoneNumber` class, if we encode it using Netty, we write it to the channel, and then we read it back and decode it, we get the right `PhoneNumber` instance, that is, it should be `equal` to the one we started from.
+There we want to test that for all instances of our `PhoneNumber`
+class, if we encode it using Netty, we write it to the channel, and
+then we read it back and decode it, we get the right `PhoneNumber`
+instance, that is, it should be `equal` to the one we started from.
 
 If we now run `mvn test` we should see something like this:
 
@@ -411,8 +479,17 @@ Tests: succeeded 6, failed 0, canceled 0, ignored 0, pending 0
 All tests passed.
 {% endhighlight %}
 
-As you can see instead of us providing very specific sample instances of our `PhoneNumber` class to unit tests, we are letting ScalaCheck generate them so we can verify properties on them. I think this is quite powerful.
+As you can see instead of us providing very specific sample instances
+of our `PhoneNumber` class to unit tests, we are letting ScalaCheck
+generate them so we can verify properties on them. I think this is
+quite powerful.
 
 ## Wrapping Up ##
 
-In this article we learned how to setup a Java project that will be tested from ScalaTest using ScalaCheck. Once we had the build system set up, we implemented our Java class and then went straight to writing tests for it, seeing how to extend ScalaTest `FunSuite` so we could write `ScalaCheck` style properties in our tests. I hope the article would be useful for you and let's you get started with ScalaCheck even if you are implementing a Java project.
+In this article we learned how to setup a Java project that will be
+tested from ScalaTest using ScalaCheck. Once we had the build system
+set up, we implemented our Java class and then went straight to
+writing tests for it, seeing how to extend ScalaTest `FunSuite` so we
+could write `ScalaCheck` style properties in our tests. I hope the
+article would be useful for you and let's you get started with
+ScalaCheck even if you are implementing a Java project.
