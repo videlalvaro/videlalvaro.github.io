@@ -2,6 +2,6 @@ destination: ./_site
 auto:        true
 lsi:         false
 port:        4000
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 permalink:   /:year/:month/:title.html
