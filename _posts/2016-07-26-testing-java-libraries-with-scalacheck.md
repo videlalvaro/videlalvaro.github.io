@@ -289,9 +289,9 @@ Arbitrary[PhoneNumber] = Arbitrary(genPhoneNumber)` line is doing.
 With that code in place then we can write code like:
 
 {% highlight scala %}
-	forAll { (phoneNumber: PhoneNumber) =>
-      phoneNumber.equals(phoneNumber) should be (true)
-    }
+forAll { (phoneNumber: PhoneNumber) =>
+  phoneNumber.equals(phoneNumber) should be (true)
+}
 {% endhighlight %}
 
 Provided that the generator and the arbitrary definitions are in
