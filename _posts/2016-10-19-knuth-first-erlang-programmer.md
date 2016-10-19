@@ -2,7 +2,7 @@
 layout: post
 title: "Donald Knuth Was The First Erlang Programmer"
 ---
-<meta name="twitter:card" content="DEK_Erlang_Programmer">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@old_sound">
 <meta name="twitter:creator" content="@old_sound">
 <meta name="twitter:title" content="Donald Knuth Was The First Erlang Programmer">
