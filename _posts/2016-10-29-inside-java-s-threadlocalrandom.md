@@ -338,7 +338,7 @@ for PRNGs and their PRNGs produce periods of `2^128` numbers.
 
 ## Getting the Puzzle Together ##
 
-So now we are managing to put together the puzzle that's
+So now we are managing to put together the puzzle of
 ThreadLocalRandom. From DotMix we have the mixing function and from
 Salmon et al. we get the idea of Counter-Based PRNGs. There's still a
 missing piece though: why is ThreadLocalRandom using what seems to be
@@ -378,8 +378,9 @@ private static int mix32(long z) {
 The constants used here were suggested by David Stafford in
 his
 [blog](http://zimbry.blogspot.ch/2011/09/better-bit-mixing-improving-on.html) who
-after some experiments. For some reason `SplittableRandom` has the
-_better_ constants while ThreadLocalRandom does not.
+found them after running some experiments. For some reason
+`SplittableRandom` has the _better_ constants while ThreadLocalRandom
+does not.
 
 ## ThreadLocalRandom a Random Algorithm? ##
 
