@@ -170,7 +170,7 @@ the multiplier to 1 in the Linear Congruence Method.
 So there's either something very wrong with ThreadLocalRandom or I am
 missing something. Considering that ThreadLocalRandom is part of the
 JDK used by millions of developers, I'm pretty sure that I am at
-fault, and I'm the one that's missing something. Time to read those
+fault, and I'm for sure missing something. Time to read those
 comments.
 
 Right at the top of the class we have this comment:
@@ -182,11 +182,12 @@ So let's
 check
 [SplittableRandom](http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/SplittableRandom.java) and
 see what we find out over there, but this time let's read the
-comments.
+comments there as well.
 
-## The Theory behind ThreadLocalRandom ##
+## The Theory Behind ThreadLocalRandom ##
 
-When we open SplittableRandom's sourcecode we find this illustrative comment:
+When we open SplittableRandom's sourcecode we find this illustrative
+comment:
 
 {% highlight java %}
 /*
@@ -222,13 +223,13 @@ DotMix has a statistic quality which rivals the one from
 the [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
 algorithm and should work for hundreds of thousands of _strands_.
 
-What they mean by saying the don't scale? The problem of parallel
-streams of random numbers is that there has to be some way to prevent
-two streams from producing the same sequence of random numbers. We
-could keep state around and synchronise using locks among threads, but
-that will be slow. They are trying to find a way for each thread to be
-able to have a seed for their random numbers that doesn't depend of a
-shared state.
+What they mean by saying those other algorithms don't scale? The
+problem of parallel streams of random numbers is that there has to be
+some way to prevent two streams from producing the same sequence of
+random numbers. We could keep state around and synchronise using locks
+among threads, but that will be slow. They are trying to find a way
+for each thread to be able to have a seed for their random numbers
+that doesn't depend on shared state.
 
 ### What's a Pedigree? ###
 
@@ -238,12 +239,12 @@ don't read the original paper, it won't make much sense:
 >A pedigree scheme uniquely identifies each strand of a dthreaded
 program in a scheduler-independent manner.
 
-Let's try to understand that in the context of a fork-join parallel
-computing model. Each thread can fork multiple threads by calling fork
-(spawn in LSS paper), or could generate a value. At the same time the
-spawned threads can also do the same: either spawn a new child thread
-or generate more values. Now let's represent that model using the
-following tree:
+Let's try to understand that definition in the context of a fork-join
+parallel computing model. Each thread can fork multiple threads by
+calling fork (_spawn_ in the LSS paper), or could generate a value. At
+the same time the spawned threads can also do the same: either spawn a
+new child thread or generate more values. Now let's represent that
+model using the following tree:
 
 ![fork-join-tree](/images/fork-join-tree.png)
 
@@ -275,7 +276,7 @@ they introduced the mixing part to DotMix. So, what's mixing?
 
 ### What's Mixing? ###
 
-Mixing step of the algorithm applies a function to the hash value
+The mixing step of the algorithm applies a function to the hash value
 obtained from the pedigree in order to reduce the statistical
 correlation of two hash values, so it becomes hard to predict their
 sequence. In the case of DotMix, the mix function swaps the the high
@@ -294,7 +295,7 @@ do with pedigrees. Here's where the other paper mentioned in the
 comments comes into play.
 
 The paper "Parallel random numbers: as easy as 1, 2, 3" by Salmon,
-Morae, Dror, and Shaw presents the idea of counter based PRNGs. In
+Morae, Dror, and Shaw presents the idea of Counter Based PRNGs. In
 their paper they are trying to solve the problem of having "massively
 parallel high-performance computations", for which they say
 traditional PRNGs don't scale well.
