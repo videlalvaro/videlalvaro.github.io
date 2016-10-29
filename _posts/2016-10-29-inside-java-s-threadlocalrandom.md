@@ -2,6 +2,12 @@
 layout: post
 title: Java Thread Local Random Implementation Details
 ---
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@old_sound">
+<meta name="twitter:creator" content="@old_sound">
+<meta name="twitter:title" content="Java Thread Local Random Implementation Details">
+<meta name="twitter:description" content="In this blogpost we'll see the details behind ThreadLocalRandom's algorithm.">
+<meta name="twitter:image" content="http://videlalvaro.github.io/images/fork-join-tree.png">
 
 # {{page.title}}
 
