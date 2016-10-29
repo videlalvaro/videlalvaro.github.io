@@ -369,9 +369,11 @@ because they produce an Avalanche Effect with a probability near to
 the same constants!
 
 {% highlight java %}
-private static int mix32(long z) {
-    z = (z ^ (z >>> 33)) * 0xff51afd7ed558ccdL;
-    return (int)(((z ^ (z >>> 33)) * 0xc4ceb9fe1a85ec53L) >>> 32);
+// SplittableRandom implementation
+private static long mix64(long z) {
+    z = (z ^ (z >>> 30)) * 0xbf58476d1ce4e5b9L;
+    z = (z ^ (z >>> 27)) * 0x94d049bb133111ebL;
+    return z ^ (z >>> 31);
 }
 {% endhighlight %}
 
