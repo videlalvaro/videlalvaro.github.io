@@ -236,7 +236,7 @@ spawned threads can also do the same: either spawn a new child thread
 or generate more values. Now let's represent that model using the
 following tree:
 
-![fork-join-tree](./images/fork-join-tree.png)
+![fork-join-tree](/images/fork-join-tree.png)
 
 We have that the root task `A` generated the value `6A`, forked the
 thread `B` and then `C`, and generated `81`. Then the task `B`
