@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java ThreadLocalRandom Implementation Details
+title: Java Thread Local Random Implementation Details
 ---
 
 # {{page.title}}
