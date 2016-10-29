@@ -279,7 +279,7 @@ they introduced the mixing part to DotMix. So, what's mixing?
 The mixing step of the algorithm applies a function to the hash value
 obtained from the pedigree in order to reduce the statistical
 correlation of two hash values, so it becomes hard to predict their
-sequence. In the case of DotMix, the mix function swaps the the high
+sequence. In the case of DotMix, the mix function swaps the high
 and low order bits of the hash value, that is, a function that in a
 64bit hash for example, swaps the first 32bit part with the second
 one. For DotMix they use a mixing function based on
