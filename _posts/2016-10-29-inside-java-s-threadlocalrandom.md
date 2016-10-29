@@ -393,14 +393,14 @@ ThreadLocalRandom. What are we missing?
 
 There's yet another paper
 called
-[Fast Splittable Pseudorandom Number Generators](http://dl.acm.org/citation.cfm?id=2660195) and
-its authors are Guy Steele, Doug Lea and Christine H. Flood, which in
-case you don't know, they are all people involved with the development
-of the JDK. What is that paper about? It explains the algorithm behind
+[Fast Splittable Pseudorandom Number Generators](http://dl.acm.org/citation.cfm?id=2660195). Its
+authors are Guy Steele, Doug Lea and Christine H. Flood, which in case
+you don't know, they are all people involved with the development of
+the JDK. What is that paper about? It explains the algorithm behind
 `SplittableRandom`, which is the one used for `ThreadLocalRandom` as
 well (with some small diferences as explained above).
 
-In that paper they explain that the took DotMix and implemented it in
+In that paper they explain that they took DotMix and implemented it in
 Scala because the language would permit them a clean implementation
 which they could analyse for further improvements which then would be
 translated to Java. That's a pretty interesting use case for Scala.
@@ -409,20 +409,23 @@ Once they had DotMix implemented they tried to refine it, focusing on
 simplifying it's steps, trying to increase the performance of the
 algorithm, while at the same time keeping it secure enough to pass the
 TestU01 battery of tests. So a pedigree based PRNG became a counter
-based one; and cryptographically secure function (but arguably slow)
-became the mixing functionfrom MurmurHash3. Of course they put their
-new PRNG algorithm under the battery of tests offered by TestU01 which
-is the industry standard for testing PRNGs.
+based one; and cryptographically secure for mixing (but arguably slow)
+functions for mixing became the finaliser function from
+MurmurHash3. Of course they put their new PRNG algorithm under the
+battery of tests offered by TestU01 which is the industry standard for
+testing PRNGs.
 
 There's a historical note from that paper that it's worth
-noticing. The paper is from October 2014. On December that year a
-paper from INRIA got submitted for publication which discussed the
-`MRG32k3a` algorithm as a way to replace ThreadLocalRandom
-implementation. If we read Steele's et al paper we see that they
-reviewed `MRG32k3a` but they saw it didn't fit their selection
-criteria, because it wouldn't allow to split the stream beyond 192
-sub-threads. I've would assume that the authors of the INRIA paper
-didn't know about Steele's paper at the time of publication.
+noticing. The paper is from October 2014. On December that year
+a
+[paper from INRIA](https://hal.archives-ouvertes.fr/hal-01098598/document) got
+submitted for publication which discussed the `MRG32k3a` algorithm as
+a way to replace ThreadLocalRandom implementation. If we read Steele's
+et al paper we see that they reviewed `MRG32k3a` but they saw it
+didn't fit their selection criteria, because it wouldn't allow to
+split the stream beyond 192 sub-threads. I've would assume that the
+authors of the INRIA paper didn't know about Steele's paper at the
+time of publication.
 
 Another interesting note from that paper is their commentary on
 Haskell's System.Random implementation:
@@ -444,7 +447,8 @@ their SplitMix passes the TestU01 battery of tests.
 
 ## Credits ##
 
-The fork-join tree image and the explanation comes from the paper by Guy Steele et al mentioned above.
+The fork-join tree image and the explanation comes from the paper by
+Guy Steele et al mentioned above.
 
 ## Papers and Lings ##
 
@@ -455,3 +459,4 @@ The fork-join tree image and the explanation comes from the paper by Guy Steele 
 - [Deterministic Parallel Random-Number Generation for Dynamic-Multithreading Platforms](http://supertech.csail.mit.edu/papers/dprng.pdf) 
 - [Parallel random numbers: as easy as 1, 2, 3](http://www.thesalmons.org/john/random123/papers/random123sc11.pdf)
 - [Fast Splittable Pseudorandom Number Generators](http://dl.acm.org/citation.cfm?id=2660195)
+- [ThreadLocalMRG32k3a: A Statistically Sound Substitute to Pseudorandom Number Generation in Parallel Java Applications](https://hal.archives-ouvertes.fr/hal-01098598/document)
