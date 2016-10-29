@@ -437,6 +437,10 @@ ThreadLocalRandom). Even if that method seems sound, a PRNG needs
 testing of its statistical properties, and Steele et al tell us that
 their SplitMix passes the TestU01 battery of tests.
 
+## Credits ##
+
+The fork-join tree image and the explanation comes from the paper by Guy Steele et al mentioned above.
+
 ## Papers and Lings ##
 
 - [ThreadLocalRandom](http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/concurrent/ThreadLocalRandom.java)
