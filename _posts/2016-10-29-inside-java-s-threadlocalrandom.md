@@ -300,7 +300,7 @@ stream with its own seed becomes complicated.
 To counter that problem they propose a simple function to produce a
 sequence of numbers:
 
-{% highlight %}
+{% highlight java %}
 f(s) = (s + 1) mod 2^p
 {% endhighlight %}
 
