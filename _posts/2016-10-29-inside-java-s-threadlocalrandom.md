@@ -113,7 +113,7 @@ ThreadLocalRandom. As the name suggest, the idea is to have a source
 of random numbers, per thread, so we can obtain random numbers
 concurrently. This means that every time a thread initialises an
 instance of TLR, the code needs to initialise the random seed for that
-particular thread. The seed is initialised ot a _mixed_ version of
+particular thread. The seed is initialised on a _mixed_ version of
 `SEEDER_INCREMENT`; at the same time, a `PROBE` value is initialised
 for that particular thread by adding the `PROBE_INCREMENT` to the
 current `probeGenerator` value. What's that _probe_ value used for? It
