@@ -387,8 +387,8 @@ does not.
 One thing that Knuth tries to make clear in his book is that we should
 not use a random algorithm to produce a PRNGs. That is, the steps of
 the algorithm shouldn't be chosen at random, like grab a piece from
-here, another from there, put them together, shake it a bit, and TA
-DA! we got a PRNG. So far this seems to be the case with
+here, another from there, put them together, shake it a bit, and TAH
+DAH! we got a PRNG. So far this seems to be the case with
 ThreadLocalRandom. What are we missing?
 
 There's yet another paper
