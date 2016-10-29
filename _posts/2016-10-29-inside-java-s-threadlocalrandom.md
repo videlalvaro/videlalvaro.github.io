@@ -19,11 +19,11 @@ jdk8
 [ThreadLocalRandom](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html) class. What
 was my motivation for doing something like that? Over the weekend I
 was reading the Second Volume from Knuth's TAOCP "Seminumerical
-Algorithms", where he devotes a whole Chapter 3 describing techniques
-for generating random numbers with a computer, and then explaining how
-to test those random number generators (of couse we are talking about
-pseudo random number generators or PRNGs). Near the end of the chapter
-Knuth proposes the following exercise:
+Algorithms", where he devotes the whole of Chapter 3 describing
+techniques for generating random numbers with a computer, and then
+explaining how to test those random number generators (of couse we are
+talking about pseudo random number generators or PRNGs). Near the end
+of the chapter Knuth proposes the following exercise:
 
 >Look at the subroutine library of each computer installation in your
 organization, and replace the random number generators by good
@@ -46,7 +46,10 @@ the
 by Knuth on TAOCP. A quick foray into TLR revealed something totally
 different.
 
-In trying to understand TLR, I downloaded the source code for the class, and got it into IntelliJ. I tried to just ignore the comments, as usual, and go and read the code as is. What an interesting experience! The code is full of hardcoded constants like the following:
+In trying to understand TLR, I downloaded the source code for the
+class, and got it into IntelliJ. I tried to just ignore the comments,
+and go and read the code as is. What an interesting experience! The
+code is full of hardcoded constants like the following:
 
 {% highlight java %}
 private static int mix32(long z) {
@@ -71,7 +74,7 @@ and used it in the following formula to produce either
 `0x9e3779b97f4a7c15L` or `0x9e3779b9`:
 
 {% highlight java %}
-Q<sub>w</sub> = Odd((φ - 1)2<sup>w</sup>)
+Q = Odd((φ - 1)2^w)
 {% endhighlight %}
 
 Where Odd is a function that returns the nearest integer to the input
@@ -90,7 +93,7 @@ Then we have `0xbb67ae8584caa73bL` which in TLR is called
 part of the square root of 3 obtained like this:
 
 {% highlight java %}
-frac(sqrt(3)) * 2<sup>64</sup>
+frac(sqrt(3)) * 2^64
 {% endhighlight %}
 
 It happens that that constant is used in
@@ -101,7 +104,7 @@ which does a similar procedure to the first 8 prime numbers to extract
 
 Then we have `0xff51afd7ed558ccdL` and `0xc4ceb9fe1a85ec53L` which are
 used in the `mix32` method shown above. Google reveals that these
-constants come from the mix step of
+constants come from the finaliser step of
 the [MurmurHash3](https://en.wikipedia.org/wiki/MurmurHash) algorithm.
 
 So far so good, but what are all these numbers used for. To understand
