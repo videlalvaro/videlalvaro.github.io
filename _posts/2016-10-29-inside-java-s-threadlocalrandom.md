@@ -127,7 +127,7 @@ this.
 
 ## Obtaining Random Numbers ##
 
-To obtain a random number from ThreadLocalRandom we can call the
+To get a random number from ThreadLocalRandom we can call the
 method `nextInt()` which is part of the interface exposed by `Random`
 as well. Let's check the implementation of that method:
 
@@ -137,7 +137,7 @@ public int nextInt() {
 }
 {% endhighlight %}
 
-So we obtain the next seed and that's _mixed_ and returned to the
+So we compute the next seed and that's _mixed_ and returned to the
 user. Let's see what `nextSeed()` is doing:
 
 {% highlight java %}
