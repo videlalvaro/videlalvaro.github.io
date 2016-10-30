@@ -425,7 +425,7 @@ submitted for publication which discussed the `MRG32k3a` algorithm as
 a way to replace ThreadLocalRandom implementation. If we read Steele's
 et al paper we see that they reviewed `MRG32k3a` but they saw it
 didn't fit their selection criteria, because it wouldn't allow to
-split the stream beyond 192 sub-threads. I've would assume that the
+split the stream beyond 192 sub-threads. I would assume that the
 authors of the INRIA paper didn't know about Steele's paper at the
 time of publication.
 
@@ -442,7 +442,7 @@ while we found quite a few things along the way that seemed to have no
 logical explanation, there was in fact a reason for them to be
 there. In this case the authors of ThreadLocalRandom took two
 algorithms for producing PRNGs and refined their implementation until
-they reached to what SplittableRandom is (ans subsequently
+they reached to what SplittableRandom is (and subsequently
 ThreadLocalRandom). Even if that method seems sound, a PRNG needs
 testing of its statistical properties, and Steele et al tell us that
 their SplitMix passes the TestU01 battery of tests.
@@ -452,7 +452,7 @@ their SplitMix passes the TestU01 battery of tests.
 The fork-join tree image and the explanation comes from the paper by
 Guy Steele et al mentioned above.
 
-## Papers and Lings ##
+## Papers and Links ##
 
 - [ThreadLocalRandom](http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/util/concurrent/ThreadLocalRandom.java)
 - [Random](http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/Random.java)
