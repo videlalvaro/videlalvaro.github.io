@@ -2,7 +2,12 @@
 layout: post
 title: Folding Erlang Records
 ---
-
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@old_sound">
+<meta name="twitter:creator" content="@old_sound">
+<meta name="twitter:title" content="Folding Erlang Records">
+<meta name="twitter:description" content="Applying Functional Programming Patterns to Erlang problems.">
+<meta name="twitter:image" content="http://videlalvaro.github.io/images/2283737150_4b7a1775a9_z.jpg">
 # {{page.title}} #
 
 ![Fold Your Hands Child](/images/2283737150_4b7a1775a9_z.jpg)
