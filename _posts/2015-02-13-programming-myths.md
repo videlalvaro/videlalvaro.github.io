@@ -2,6 +2,12 @@
 layout: post
 title: "Harmful GOTOs, Premature Optimizations, and Programming Myths are the Root of all Evil"
 ---
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@old_sound">
+<meta name="twitter:creator" content="@old_sound">
+<meta name="twitter:title" content="Programming Mythds Considered Harmful">
+<meta name="twitter:description" content="Let's revisit some programming myths and see how harmful they have been to our industry.">
+<meta name="twitter:image" content="http://videlalvaro.github.io/images/fork-join-tree.png">
 
 # {{page.title}} #
 
