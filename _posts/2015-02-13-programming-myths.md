@@ -7,7 +7,7 @@ title: "Harmful GOTOs, Premature Optimizations, and Programming Myths are the Ro
 <meta name="twitter:creator" content="@old_sound">
 <meta name="twitter:title" content="Programming Mythds Considered Harmful">
 <meta name="twitter:description" content="Let's revisit some programming myths and see how harmful they have been to our industry.">
-<meta name="twitter:image" content="http://videlalvaro.github.io/images/fork-join-tree.png">
+<meta name="twitter:image" content="http://videlalvaro.github.io/images/myths/flamewar.gif">
 
 # {{page.title}} #
 
