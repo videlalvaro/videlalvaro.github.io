@@ -63,7 +63,7 @@ metaphors still. And no, monads are not like burritos!
 In what follows we are not going to discuss the book thesis any
 further, on the other hand, we will accept it and bring it into
 Computer Science. First we will see how metaphor help us understand
-the world of computers, a world that was didn't exist a mere 80 year
+the world of computers, a world that didn't exist a mere 80 years
 ago. Then we will try to see how metaphor works in the way we
 structure code, or design algorithms and data structures. We will see
 that we even face problems in our discipline based on what metaphors
