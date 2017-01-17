@@ -108,7 +108,7 @@ smart people before him, we managed to escape from the problems of the
 _telegraph_ direct metaphor and build whole discipline of Information
 Theory. We know that information must be encoded first, then sent into
 a channel, to be decoded at the other end of the channel so the
-destination receives it. [reference to The Information by Gleick]
+destination receives it.
 
 ## Metaphors and Code ##
 
