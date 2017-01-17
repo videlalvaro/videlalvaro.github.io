@@ -268,4 +268,4 @@ convey in the first place?
 
 ## Credits ##
 
-Image: https://flic.kr/p/6GRuVy License [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
+Image: [https://flic.kr/p/6GRuVy](https://flic.kr/p/6GRuVy) License [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
