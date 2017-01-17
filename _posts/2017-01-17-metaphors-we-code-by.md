@@ -158,7 +158,7 @@ give meaning to those bits, so we have to use the right metaphor on
 top of them to make our programs clearer. As it is said:
 
 >no one has seen a program which the machine could not comprehend but
->which humans did.
+>which humans did. –– Unknown author, although it might be Charles Baker. See [here](http://alvaro-videla.com/2014/09/a-programmers-role.html) for the paper with the original quote.
 
 The same way a metaphor enables certain ways of understanding and
 limits others, so do data structures. We saw already saw the problem
