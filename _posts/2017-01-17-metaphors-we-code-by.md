@@ -164,7 +164,7 @@ The same way a metaphor enables certain ways of understanding and
 limits others, so do data structures. We saw already saw the problem
 with using direct metaphors like the original telegraph. When it comes
 to data structures we can see that a Set will tell us that its
-elements are unique, an it would allow us to test if an element is a
+elements are unique, and it would allow us to test if an element is a
 member of the set. But a Linked List gives us the idea of traversing
 its elements on after the other, without being able to skip them. An
 Array gives us the idea that we can address its elements by index. The
