@@ -96,11 +96,11 @@ how the word we are using to explain a new concept limits our
 understanding of the very concept we are trying to explain. James
 Gleick on his book The Information gives a fascinating account of the
 invention of the telegraph. The word "tele-graph" means
-far-writing. Lo and behold the original telegraphs were strange
-machines that tried to actually write at a distance, using one-to-one
-mapping of letters of the alphabet into wires which sounds terribly
-impractical. Earlier, thanks to Braille we understood that language
-could be coded in a form different from how it sounds (or is
+far-writing. Lo and behold early telegraphs were strange machines that
+tried to actually write at a distance, using one-to-one mapping of
+letters of the alphabet into wires which sounds terribly
+impractical. Around that time, thanks to Braille we understood that
+language could be coded in a form different from how it sounds (or
 written). Morse Code was the next step to improve our telegraphs, and
 to understand that we don't have to write-at-a-distance to have actual
 long distance communications. Thanks to Claude Shannon and the many
