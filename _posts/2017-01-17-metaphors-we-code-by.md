@@ -112,7 +112,7 @@ destination receives it.
 
 ## Metaphors and Code ##
 
-[Charles Baker](http://history.computer.org/pioneers/baker.html) on a
+[Charles Baker](http://history.computer.org/pioneers/baker.html) in a
 letter to Donald Knuth said that _to program is to write to another
 programmer about our solution to a problem_. A program is our
 explanation of how a problem might be solved, it's a metaphor that
