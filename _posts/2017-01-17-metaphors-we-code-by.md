@@ -199,7 +199,7 @@ mathematical tools from queueing theory were at our disposition. Graph
 Theory is filled with examples of mundane tasks that once converted to
 a graph problem, have well known solutions. Whenever you ask Google
 Maps to get you to your destination, Google is translating your
-problem to a graph representation.  Graphs are the right metaphor,
+problem to a graph representation. Graphs are the right metaphor,
 understood by mathematicians and computers alike. Do we have more
 instances of problems that seem difficult but that we crack once we
 find the right metaphor? The Distributed Systems literature has a very
