@@ -48,17 +48,18 @@ winners and losers, but in which language is a dance, where we have to
 cooperate with our partner in order to achieve our desired goal,
 reaching conclusions as a team. The book keeps going analyzing the
 different aspects of language and metaphors and how they affect our
-concepts and view of the world. Many examples are given in order to
-defend their thesis that we understand the world in term of metaphors
-and that we base our most basic behaviors on those metaphors.
+concepts and view of the world. The authors give many examples to
+defend the thesis that our understanding of the world is based on
+metaphors and that those metaphors are the foundation of our
+behaviors.
 
-What's very important to understand from the book is that metaphors
-enable certain ways of thinking while it restrict others, as the
-example above shows. In this article we are interested in
-understanding how metaphors shape the way we understand computing and
-its related problems. We want to see what kind of problems are enabled
-by the metaphors in use, and for which ones we lack the right
-metaphors still. And no, monads are not like burritos!
+A big takeaway from the book is that metaphors enable certain ways of
+thinking while it restrict others, as the example above shows. In this
+article we are interested in understanding how metaphors shape the way
+we understand computing and its related problems. We want to see what
+kind of problems are enabled by the metaphors in use, and for which
+ones we lack the right metaphors still. And no, monads are not like
+burritos!
 
 In what follows we are not going to discuss the book thesis any
 further, on the other hand, we will accept it and bring it into
@@ -66,7 +67,7 @@ Computer Science. First we will see how metaphor help us understand
 the world of computers, a world that didn't exist a mere 80 years
 ago. Then we will try to see how metaphor works in the way we
 structure code, or design algorithms and data structures. We will see
-that we even face problems in our discipline based on what metaphors
+that we even solve problems in our discipline based on what metaphors
 are part of our arsenal.
 
 >"Sometimes our tools do what we tell them to. Other times, we adapt
