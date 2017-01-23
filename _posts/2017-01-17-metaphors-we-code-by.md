@@ -162,7 +162,7 @@ top of them to make our programs clearer. As it is said:
 >which humans did. –– Unknown author, although it might be Charles Baker. See [here](http://alvaro-videla.com/2014/09/a-programmers-role.html) for the paper with the original quote.
 
 The same way a metaphor enables certain ways of understanding and
-limits others, so do data structures. We saw already saw the problem
+limits others, so do data structures. We already saw the problem
 with using direct metaphors like the original telegraph. When it comes
 to data structures we can see that a Set will tell us that its
 elements are unique, and it would allow us to test if an element is a
