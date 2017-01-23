@@ -239,7 +239,7 @@ process that takes care of making the final decision based on the
 _votes_ it has received from its _peers_. Nodes communicate sending
 _messages_ over a _channel_, which might get _congested due to too
 much traffic_. This could create an information _bottleneck_, with
-_queues_ at each end of the _channels_ backing up. These bottleneck
+_queues_ at each end of the _channels_ backing up. These bottlenecks
 might render one or more nodes unresponsive, causing _network
 partitions_. Is the process that's taking long to _respond dead_? We
 won't know unless we set a timeout. I could go on, but I guess you get
