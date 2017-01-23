@@ -83,7 +83,7 @@ we understood them as automatic brains. What's more interesting is the
 fact that the word _computer_ existed already, and it was the term
 used to refer to the person doing calculations for engineers. Think of
 an engineer having to know what would be the trajectory of a
-projectile, or how the wind would affect an airplane wing shape, so
+projectile, or how the wind would affect an airplane's wing shape, so
 they would throw a couple of formulas and numbers to their "human
 computers" in order to get the answer they wanted. Now they had these
 new machines that worked automatically, so they called them Electronic
@@ -101,15 +101,16 @@ far-writing. Lo and behold early telegraphs were strange machines that
 tried to actually write at a distance, using one-to-one mapping of
 letters of the alphabet into wires which sounds terribly
 impractical. Around that time, thanks to Braille we understood that
-language could be coded in a form different from how it sounds (or
-written). Morse Code was the next step to improve our telegraphs, and
-to understand that we don't have to write-at-a-distance to have actual
-long distance communications. Thanks to Claude Shannon and the many
-smart people before him, we managed to escape from the problems of the
-_telegraph_ direct metaphor and build whole discipline of Information
-Theory. We know that information must be encoded first, then sent into
-a channel, to be decoded at the other end of the channel so the
-destination receives it.
+language could be coded in a form different from how it sounds (or how
+it is written). Morse Code was the next step in improving our
+telegraphs, and to understand that we don't have to
+write-at-a-distance to have actual long distance
+communications. Thanks to Claude Shannon and the many smart people
+before him, we managed to escape from the problems of the _telegraph_
+direct metaphor and build whole discipline of Information Theory. We
+know that information must be encoded first, then sent into a channel,
+to be decoded at the other end of the channel so the destination
+receives it.
 
 ## Metaphors and Code ##
 
