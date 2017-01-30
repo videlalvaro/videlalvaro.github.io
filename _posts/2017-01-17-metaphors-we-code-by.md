@@ -212,11 +212,11 @@ mathematical tools from queueing theory were at our disposition. Graph
 Theory is filled with examples of mundane tasks that once converted to
 a graph problem, have well known solutions. Whenever you ask Google
 Maps to get you to your destination, Google is translating your
-problem to a graph representation. Graphs are the right metaphor,
-understood by mathematicians and computers alike. Do we have more
-instances of problems that seem difficult but that we crack once we
-find the right metaphor? The Distributed Systems literature has a very
-interesting one.
+problem to a graph representation and suggests one or more _paths_ in
+the graph. Graphs are the right metaphor, understood by mathematicians
+and computers alike. Do we have more instances of problems that seem
+difficult but that we crack once we find the right metaphor? The
+Distributed Systems literature has a very interesting one.
 
 In the late '80s Alan Demers and his colleagues from Xerox tried to
 find a solution to database replication in unreliable networks. They
@@ -254,9 +254,9 @@ _messages_ over a _channel_, which might get _congested due to too
 much traffic_. This could create an information _bottleneck_, with
 _queues_ at each end of the _channels_ backing up. These bottlenecks
 might render one or more nodes unresponsive, causing _network
-partitions_. Is the process that's taking long to _respond dead_? We
-won't know unless we set a timeout. I could go on, but I guess you get
-the point.
+partitions_. Is the process that's taking long to _respond dead_? Why
+didn’t it acknowledge the _heart beat_ and a timeout _triggered_?.". I
+could go on, but I guess you get the point.
 
 ## A Story in Code ##
 
