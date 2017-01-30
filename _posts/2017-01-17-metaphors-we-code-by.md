@@ -107,7 +107,7 @@ telegraphs, and to understand that we don't have to
 write-at-a-distance to have actual long distance
 communications. Thanks to Claude Shannon and the many smart people
 before him, we managed to escape from the problems of the _telegraph_
-direct metaphor and build whole discipline of Information Theory. We
+direct metaphor and build the whole discipline of Information Theory. We
 know that information must be encoded first, then sent into a channel,
 to be decoded at the other end of the channel so the destination
 receives it.
@@ -137,9 +137,11 @@ explain this setting without using the _Queue_ metaphor. We see that
 by choosing the right metaphor our program reaches a level of
 abstraction that requires the least effort for someone foreign to the
 problem to understand our solution. Also by solving our problem with
-queues, we get a whole mathematical theory for free. We are no longer
-punching blind in the dark. Now we can analyze and understand our
-problem with all the tools provided by Queueing Theory.
+queues, we get a whole mathematical theory for free. Mathematics is
+itself a field where often problems are only tackled once an
+appropriately expressive language is available to approach them. We
+are no longer punching blind in the dark. Now we can analyze and
+understand our problem with all the tools provided by Queueing Theory.
 
 ## Data Structures as Metaphors ##
 
@@ -160,7 +162,18 @@ give meaning to those bits, so we have to use the right metaphor on
 top of them to make our programs clearer. As it is said:
 
 >no one has seen a program which the machine could not comprehend but
->which humans did. –– Unknown author, although it might be Charles Baker. See [here](http://alvaro-videla.com/2014/09/a-programmers-role.html) for the paper with the original quote.
+>which humans did. –– Unknown author, although it might be Charles
+>Baker. See
+>[here](http://alvaro-videla.com/2014/09/a-programmers-role.html) for
+>the paper with the original quote.
+
+We must strive to make our programs as easy to understand to other
+programers as possible. Ease of comprehension should be the tally with
+which we measure our programs. We should keep in mind that we can
+arrange our code in many different ways to solve a computing problem,
+but not all those arrangements will favor human communication and
+understanding. We must ask ourselves: is someone reading my code going
+to understand how I solved this particular problem?
 
 The same way a metaphor enables certain ways of understanding and
 limits others, so do data structures. We already saw the problem
