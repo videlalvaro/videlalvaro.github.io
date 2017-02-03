@@ -285,6 +285,8 @@ convey in the first place?
 
 Image: [https://flic.kr/p/6GRuVy](https://flic.kr/p/6GRuVy) License [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
 
+## Slides ##
+
 I had the honor to present this blogpost as an eighteen minute talk at this year's [Monki Gras Conference in London](https://monkigras.com). Here are the slides:
 
 <p>
