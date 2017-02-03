@@ -13,13 +13,6 @@ title: Metaphors We Compute By
 
 <span class="meta">January 17 2017</span>
 
-I had the honor to present this blogpost as an eighteen minute talk at this year's [Monki Gras Conference in London](https://monkigras.com). Here are the slides:
-
-<p>
-<script async class="speakerdeck-embed" data-id="6315a8a09fb74058bb86fa84ee74330c" data-ratio="1.7" src="//speakerdeck.com/assets/embed.js"></script>
-</p>
-
-
 In the book Metaphors We Live By, George Lakoff and Mark Johnson set
 out to show the linguistic and philosophical worlds that metaphor
 wasn't just a matter of poetry and rhetorical flourish. They showed
@@ -291,3 +284,9 @@ convey in the first place?
 ## Credits ##
 
 Image: [https://flic.kr/p/6GRuVy](https://flic.kr/p/6GRuVy) License [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/)
+
+I had the honor to present this blogpost as an eighteen minute talk at this year's [Monki Gras Conference in London](https://monkigras.com). Here are the slides:
+
+<p>
+<script async class="speakerdeck-embed" data-id="6315a8a09fb74058bb86fa84ee74330c" data-ratio="1.7" src="//speakerdeck.com/assets/embed.js"></script>
+</p>
