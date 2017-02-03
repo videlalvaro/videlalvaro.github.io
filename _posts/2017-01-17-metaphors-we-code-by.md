@@ -13,6 +13,13 @@ title: Metaphors We Compute By
 
 <span class="meta">January 17 2017</span>
 
+I had the honor to present this blogpost as an eighteen minute talk at this year's [Monki Gras Conference in London](<script async class="speakerdeck-embed" data-id="6315a8a09fb74058bb86fa84ee74330c" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>). Here are the slides:
+
+<p>
+<script async class="speakerdeck-embed" data-id="6315a8a09fb74058bb86fa84ee74330c" data-ratio="1.7" src="//speakerdeck.com/assets/embed.js"></script>
+</p>
+
+
 In the book Metaphors We Live By, George Lakoff and Mark Johnson set
 out to show the linguistic and philosophical worlds that metaphor
 wasn't just a matter of poetry and rhetorical flourish. They showed
