@@ -123,7 +123,7 @@ book "The Geometry of Meaning – Semantics Based on Conceptual Spaces":
 
 Lakoff (quoted by Gärdenfors) says:
 
->Metaphorical mappings preserve the the cognitive topology of the
+>Metaphorical mappings preserve the cognitive topology of the
 >source domain in a way consistent with the inherent structure of the
 >target domain.
 
