@@ -112,9 +112,24 @@ know that information must be encoded first, then sent into a channel,
 to be decoded at the other end of the channel so the destination
 receives it.
 
+Peter Gärdenfors explains how metaphors create new knowledge in his
+book "The Geometry of Meaning – Semantics Based on Conceptual Spaces":
+
+>[…] a metaphor transfer information from one conceptual domain to
+>another; what is transferred is a pattern rather than domain specific
+>information. A metaphor can thus be used to identify a structure in a
+>domain that would not have been discovered otherwise. This is how
+>metaphors create new knowledge.
+
+Lakoff (quoted by Gärdenfors) says:
+
+>Metaphorical mappings preserve the the cognitive topology of the
+>source domain in a way consistent with the inherent structure of the
+>target domain.
+
 ## Metaphors and Code ##
 
-[Charles Baker](http://history.computer.org/pioneers/baker.html) in a
+[An Unknown author](http://history.computer.org/pioneers/baker.html) in a
 letter to Donald Knuth said that _to program is to write to another
 programmer about our solution to a problem_. A program is our
 explanation of how a problem might be solved, it's a metaphor that
@@ -162,8 +177,8 @@ give meaning to those bits, so we have to use the right metaphor on
 top of them to make our programs clearer. As it is said:
 
 >no one has seen a program which the machine could not comprehend but
->which humans did. –– Unknown author, although it might be Charles
->Baker. See
+>which humans did. –– Unknown author
+>See
 >[here](http://alvaro-videla.com/2014/09/a-programmers-role.html) for
 >the paper with the original quote.
 
@@ -277,9 +292,10 @@ convey in the first place?
 
 - Lakoff, George, and Mark Johnson. "Metaphors We Live By"
 - Gleick, James. "The Information: A History, a Theory, a Flood"
-- Shannon, Claude Elwood, and Warren Weaver. "The Mathematical Theory of Communication."
+- Shannon, Claude Elwood, and Warren Weaver. "The Mathematical Theory of Communication"
 - Bailey, Norman T. J. "The Mathematical Theory of Epidemics" 
 - Demers, Alan, Dan Greene, Carl Hauser, Wes Irish, and John Larson. "Epidemic Algorithms for Replicated Database Maintenance"
+- Gärdenfors, Peter. "The Geometry of Meaning – Semantics Based on Conceptual Spaces"
 
 ## Credits ##
 
