@@ -530,7 +530,7 @@ Gérard Genette defines as:
 > advertisements, jacket copy, title, subtitles, introduction, reviews,
 > and so on.
 
-Genette adds the following to his definition of paratext:
+Genette adds the following to his definition of paratext[14]:
 
 > \[a paratext is\] a privileged place of a pragmatics and a strategy,
 > of an influence on the public, an influence that--whether well or
@@ -763,7 +763,7 @@ territory**.
 11. Umberto Eco, Six walks in the fictional woods, Harvard Univ. Press, 2004.
 12. , On literature, Secker Warburg, 2005.
 13. , Lector in fabula: La cooperazione interpretativa nei testi narrativi, Bompiani, 2016.
-14. Grard Genette, Paratexts: Thresholds of interpretation, Cambridge Univ. Press, 2001.
+14. Gérard Genette, Paratexts: Thresholds of interpretation, Cambridge Univ. Press, 2001.
 15. Peter Gaerdenfors, Geometry of meaning: Semantics based on conceptual spaces, The MIT Press, 2017.
 16. Felienne Hermans and Marlies Aldewereld, Programming is writing is programming, Proceed- ings of the International Conference on the Art, Science, and Engineering of Programming (2017).
 17. William Kent and Steve Hoberman, Data and reality: a timeless perspective on perceiving and managing information in our imprecise world, Technics Publications, 2012.
