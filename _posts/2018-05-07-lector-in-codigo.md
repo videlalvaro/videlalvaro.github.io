@@ -7,8 +7,6 @@ title: Lector in Codigo
 
 <span class="meta">May 07 2018</span>
 
-Introduction
-============
 
 In this article I want to explore the relation between the process of
 writing computer programs with that of writing literary works of
@@ -22,8 +20,7 @@ ideas can we incorporate from that discipline into our day to day
 programming activities, so we write code that's easier to understand for
 other humans (or our future selves)?
     
-Programming as a Humans-First Activity
-======================================
+## Programming as a Humans-First Activity ##
 
 The need for computer programs that are easier to understand for humans
 is not a new one. Since the early '50s as programmers started to
@@ -101,8 +98,7 @@ preoccupation of the authors of *SICP*, of the anonymous author of *What
 A Programmer Does*, and that of David Wheeler, among others. Who else
 was interested in these ideas? Donald Knuth.
 
-Literate Programming
-====================
+## Literate Programming ##
 
 In Literate Programming Donald Knuth [18] wrote about the
 attitude we should have when we write programs: "instead of imagining
@@ -195,8 +191,7 @@ of the building and learn from Literature Theory, Linguistics and
 Semiotics and incorporate some of their techniques into our day to day
 activities as programmers.
 
-Knowledge sharing
-=================
+## Knowledge sharing ##
 
 Before we delve into the various ideas from Literary Theory that could
 help us improve the way we write our programs to we share knowledge
@@ -269,8 +264,7 @@ for the first time with a program.
 
 So what can we do as programmers to help others understand our code?
 
-The Encyclopedia
-================
+## The Encyclopedia ##
 
 In *Lector in Fabula* [13] and *Six Walks in the Fictional
 Woods* [11] Eco introduces the idea of the *Encyclopedia*, which
@@ -315,8 +309,7 @@ and later he adds:
 So how do we go about understanding the *target audience* for our
 programs? Eco has an answer for that as well, the *Model Reader*.
 
-The Model Reader
-================
+## The Model Reader ##
 
 The *Model Reader* is not the empirical reader (not you, or me). It's a
 reader that lives in the mind of the author, which the author builds as
@@ -397,8 +390,7 @@ The question is how does the concept of the Model Reader can help us
 think about how we write programs? Who is our Model Reader? Is it the
 computer? Is it another human, or a future me?
 
-A Programmer's Model Reader
-===========================
+## A Programmer's Model Reader ##
 
 As I wrote in the introduction to this article, a striking difference
 between writing programs and writing literature is that most of the time
@@ -422,8 +414,7 @@ how it will run our code based on our assumptions about that ideal
 computer. So our Model Reader fluctuates between trying to satisfy a
 compiler and an imaginary computer.
 
-A Cooperation Game
-==================
+## A Cooperation Game ##
 
 The idea of playing computer in our heads is interesting because it
 relates to Eco's idea of producing text as a game of strategy. To win in
@@ -464,8 +455,7 @@ point in his book about cybertext:
 This poses an interesting question, which can be related to Eco's idea
 of the different levels of readers.
 
-Different Levels of Readers
-===========================
+## Different Levels of Readers ##
 
 In the essay *Intertextual Irony and Levels of Reading* [12],
 Umberto Eco writes that texts that have an aesthetic aim tend to
@@ -484,8 +474,7 @@ meaning to it, understanding its intended goal? And how we as
 authors/programmers can help others understand our code? Let's talk
 about metaphors.
 
-Metaphors
-=========
+## Metaphors ##
 
 In *Metaphors We Compute By* [24] I wrote that code is a
 metaphor for a solution we found. A program is a translation into code
@@ -531,8 +520,7 @@ evolve the exponentiation algorithm for from Integers to Monoids).
 What other tool could we bring from literature that could help us write
 programs that are easier to understand? Enter paratexts.
 
-Paratexts
-=========
+## Paratexts ##
 
 In literature there's the idea of the *Paratext*, which Eco quoting
 Gérard Genette defines as:
@@ -677,8 +665,7 @@ the File System? So that comment about the class not being a person,
 even if funny, can lead us to interesting semiotical questions about the
 realities represented by our code.
 
-Conclusion
-==========
+## Conclusion ##
 
 The last point brings us back to metaphors, maps, and ultimately how we
 see the world. Espen Aarseth writes:
