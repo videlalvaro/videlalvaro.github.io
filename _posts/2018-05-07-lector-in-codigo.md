@@ -7,6 +7,7 @@ title: Lector in Codigo
 
 <span class="meta">May 07 2018</span>
 
+_You can download a PDF of the paper pre-print [here](http://alvaro-videla.com/pdfs/lector_in_codigo.pdf)_
 
 In this article I want to explore the relation between the process of
 writing computer programs with that of writing literary works of
