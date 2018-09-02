@@ -13,8 +13,6 @@ title: Programming Languages are not Languages
 
 <span class="meta">September 01 2018</span>
 
----
-
 In my [previous article](TODO) I talked about how the metaphors used to present a problem, set the stage for how we are going to talk about the problem. They provide a framework for our thinking, on one side helping us solve it, and on another side they constraining the solutions we find.
 
 I ended the article by saying that we are so used to call Programming Languages "languages" that we don't even stop for a second to think about the implications that are carried over (_metapherein_) when we liken them to natural languages.
