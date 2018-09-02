@@ -13,7 +13,7 @@ title: Programming Languages are not Languages
 
 <span class="meta">September 01 2018</span>
 
-In my [previous article](TODO) I talked about how the metaphors used to present a problem, set the stage for how we are going to talk about the problem. They provide a framework for our thinking, on one side helping us solve it, and on another side they constraining the solutions we find.
+In my [previous article](http://alvaro-videla.com/2018/08/the-power-of-generative-metaphor.html) I talked about how the metaphors used to present a problem, set the stage for how we are going to talk about the problem. They provide a framework for our thinking, on one side helping us solve it, and on another side they constraining the solutions we find.
 
 I ended the article by saying that we are so used to call Programming Languages "languages" that we don't even stop for a second to think about the implications that are carried over (_metapherein_) when we liken them to natural languages.
 
@@ -33,7 +33,7 @@ This is a very interesting point that brings to mind all these a-ha! moments tha
 
 On the other hand, after seeing what happened with Scala and [SBT](https://racket-lang.org/), where sometimes the project build description ends up written directly in Scala, I'm not sure having one language that encompasses all is something I'd want. Erlang suffered the same problem. RabbitMQ - as many other tools built in Erlang - exposed their configuration in Erlang. That was the source of many problems for people that tried to use RabbitMQ but that were foreign to Erlang. Is it worth to expose users to an alien configuration format, just so the developers of the project can program in just one language?
 
-Also when they refer to "extra-linguistic mechanisms" do they mean different [codes](https://en.wikipedia.org/wiki/Code_%28semiotics%29) as in semiotics? In a [previous article](TODO) I talked how different codes are used in film. Think for example a movie that shows a sad protagonist, with rain in the background and how that blends with the background music and sometimes even the lyrics. There the different codes work together to augment the meaning conveyed by that scene. Also having different codes, can allow one community (music) to evolve independently from another one (film), so when they are used in communion later on, we get an even richer experience. The same could be said about build tools vs. programming tools, [but I digress](https://increment.com/documentation/notes-on-the-synthesis-of-labyrinths/)…
+Also when they refer to "extra-linguistic mechanisms" do they mean different [codes](https://en.wikipedia.org/wiki/Code_%28semiotics%29) as in semiotics? In a [previous article](http://alvaro-videla.com/2018/08/a-veritable-system-of-intercodical-relations.html) I talked how different codes are used in film. Think for example a movie that shows a sad protagonist, with rain in the background and how that blends with the background music and sometimes even the lyrics. There the different codes work together to augment the meaning conveyed by that scene. Also having different codes, can allow one community (music) to evolve independently from another one (film), so when they are used in communion later on, we get an even richer experience. The same could be said about build tools vs. programming tools, [but I digress](https://increment.com/documentation/notes-on-the-synthesis-of-labyrinths/)…
 
 Back to the topic of this article, I wanted to see when the language metaphor doesn't hold. Let me bring back a sentence from the paragraph I cited above:
 
@@ -74,7 +74,7 @@ It would be interesting to see if this is in fact true: that different language 
 
 ## Conclusion ##
 
-Because metaphors are so commonplace in our day to day speaking, we lose track of when we are using them, which results in us framing problems in what perhaps could be a wrong setting, as explained in my previous [article](TODO).
+Because metaphors are so commonplace in our day to day speaking, we lose track of when we are using them, which results in us framing problems in what perhaps could be a wrong setting, as explained in my previous [article](http://alvaro-videla.com/2018/08/the-power-of-generative-metaphor.html).
 
 If we want to think about what kind of problems a programming language makes easy to solve, and which ones they make more difficult, I'd say it's better to use the tool metaphor, and see where that framing could take us.
 
