@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Programming Languages are not Languages
+title: The Power of Generative Metaphor
 ---
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@old_sound">
